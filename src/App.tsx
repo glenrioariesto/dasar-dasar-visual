@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { MateriId } from './types';
 import { useProgress } from './hooks/useProgress';
 import { SplashPage } from './pages/splash/SplashPage';
+import { WarnaIntroPage } from './pages/materi/WarnaIntroPage';
 import { PortraitWarning } from './components/PortraitWarning';
 
 export default function App() {
+  const [currentView, setCurrentView] = useState<'splash' | 'warna'>('splash');
   const { progress } = useProgress();
+
+  const handleStartMateri = (id: MateriId) => {
+    if (id === 'warna') {
+      setCurrentView('warna');
+    }
+  };
+
+  const handleBackToSplash = () => {
+    setCurrentView('splash');
+  };
 
   return (
     <div
@@ -14,10 +27,17 @@ export default function App() {
       {/* Mobile Landscape Orientation Advisory */}
       <PortraitWarning />
 
-      {/* Splash Page Only (Semua redirect ditiadakan untuk saat ini) */}
-      <SplashPage
-        completedMateri={progress.completedMateri}
-      />
+      {/* Screen Views */}
+      {currentView === 'splash' && (
+        <SplashPage
+          onStartMateri={handleStartMateri}
+          completedMateri={progress.completedMateri}
+        />
+      )}
+
+      {currentView === 'warna' && (
+        <WarnaIntroPage onBack={handleBackToSplash} />
+      )}
     </div>
   );
 }
