@@ -19,18 +19,18 @@ interface ColorSegment {
 }
 
 const colorWheelData: ColorSegment[] = [
-  { name: 'Merah', category: 'Primer', hex: '#EF4444', textColor: '#FFFFFF', emotion: 'Berani, nafsu makan, energi tinggi' },
-  { name: 'Merah-Oranye', category: 'Tersier', hex: '#F97316', textColor: '#FFFFFF', emotion: 'Hangat, antusias, dinamis' },
-  { name: 'Oranye', category: 'Sekunder', hex: '#FB923C', textColor: '#0F172A', emotion: 'Ramah, ceria, kreatif' },
-  { name: 'Kuning-Oranye', category: 'Tersier', hex: '#FBBF24', textColor: '#0F172A', emotion: 'Semangat, optimis, terang' },
-  { name: 'Kuning', category: 'Primer', hex: '#FACC15', textColor: '#0F172A', emotion: 'Ceria, menarik perhatian seketika' },
-  { name: 'Kuning-Hijau', category: 'Tersier', hex: '#A3E635', textColor: '#0F172A', emotion: 'Segar, pertumbuhan, tunas muda' },
-  { name: 'Hijau', category: 'Sekunder', hex: '#22C55E', textColor: '#FFFFFF', emotion: 'Alami, kesehatan, kesuburan, sejuk' },
-  { name: 'Biru-Hijau', category: 'Tersier', hex: '#14B8A6', textColor: '#FFFFFF', emotion: 'Ketenangan modern, jernih' },
-  { name: 'Biru', category: 'Primer', hex: '#3B82F6', textColor: '#FFFFFF', emotion: 'Tenang, terpercaya, intelektual, aman' },
-  { name: 'Biru-Ungu', category: 'Tersier', hex: '#6366F1', textColor: '#FFFFFF', emotion: 'Kedalaman ide, wibawa, stabilitas' },
-  { name: 'Ungu', category: 'Sekunder', hex: '#A855F7', textColor: '#FFFFFF', emotion: 'Mewah, imajinatif, misterius' },
-  { name: 'Merah-Ungu', category: 'Tersier', hex: '#EC4899', textColor: '#FFFFFF', emotion: 'Eksentrik, romantis, ekspresif' }
+  { name: 'Merah', category: 'Primer', hex: '#FF0033', textColor: '#FFFFFF', emotion: 'Berani, nafsu makan, energi tinggi' },
+  { name: 'Merah-Oranye', category: 'Tersier', hex: '#FF5500', textColor: '#FFFFFF', emotion: 'Hangat, antusias, dinamis' },
+  { name: 'Oranye', category: 'Sekunder', hex: '#FF8800', textColor: '#0F172A', emotion: 'Ramah, ceria, kreatif' },
+  { name: 'Kuning-Oranye', category: 'Tersier', hex: '#FFAA00', textColor: '#0F172A', emotion: 'Semangat, optimis, terang' },
+  { name: 'Kuning', category: 'Primer', hex: '#FFEE00', textColor: '#0F172A', emotion: 'Ceria, menarik perhatian seketika' },
+  { name: 'Kuning-Hijau', category: 'Tersier', hex: '#88FF00', textColor: '#0F172A', emotion: 'Segar, pertumbuhan, tunas muda' },
+  { name: 'Hijau', category: 'Sekunder', hex: '#00E676', textColor: '#FFFFFF', emotion: 'Alami, kesehatan, kesuburan, sejuk' },
+  { name: 'Biru-Hijau', category: 'Tersier', hex: '#00F0FF', textColor: '#0F172A', emotion: 'Ketenangan modern, jernih' },
+  { name: 'Biru', category: 'Primer', hex: '#0066FF', textColor: '#FFFFFF', emotion: 'Tenang, terpercaya, intelektual, aman' },
+  { name: 'Biru-Ungu', category: 'Tersier', hex: '#5B21FF', textColor: '#FFFFFF', emotion: 'Kedalaman ide, wibawa, stabilitas' },
+  { name: 'Ungu', category: 'Sekunder', hex: '#B000FF', textColor: '#FFFFFF', emotion: 'Mewah, imajinatif, misterius' },
+  { name: 'Merah-Ungu', category: 'Tersier', hex: '#FF0099', textColor: '#FFFFFF', emotion: 'Eksentrik, romantis, ekspresif' }
 ];
 
 export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
