@@ -131,7 +131,7 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-6 sm:px-10 md:px-14 pt-3 md:pt-10"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-4 md:px-10 lg:px-14 md:pt-10"
       >
         <div className="flex items-center gap-3">
           <img
@@ -147,7 +147,7 @@ export function SplashPage({
       {/* ========================================================================= */}
       <main
         id="splash-center-area"
-        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 pointer-events-none select-none"
+        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-12 md:-mt-25 pointer-events-none select-none"
       >
         {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
         <div className="transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
