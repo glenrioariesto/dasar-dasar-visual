@@ -14,7 +14,7 @@ import judulAtas from '../../assets/Judul Atas.webp';
 import judulBawah from '../../assets/Judul Bawah.webp';
 
 interface SplashPageProps {
-  onStartMateri: (id: MateriId) => void;
+  onStartMateri?: (id: MateriId) => void;
   completedMateri: Record<MateriId, boolean>;
 }
 
@@ -70,7 +70,7 @@ export function SplashPage({
 
   const handleCardClick = (id: MateriId) => {
     playClick();
-    onStartMateri(id);
+    onStartMateri?.(id);
   };
 
   return (
@@ -131,13 +131,13 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-4 md:px-10 lg:px-14 md:pt-10"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-6 lg:px-10 2xl:px-14 pt-6 lg:pt-10 2xl:pt-14"
       >
         <div className="flex items-center gap-3">
           <img
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-12 sm:h-16 md:h-20 lg:h-22 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
+            className="h-12 sm:h-16 md:h-20 lg:h-22 xl:h-26 2xl:h-28 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
           />
         </div>
       </header>
@@ -147,10 +147,10 @@ export function SplashPage({
       {/* ========================================================================= */}
       <main
         id="splash-center-area"
-        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-12 md:-mt-25 pointer-events-none select-none"
+        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-12 lg:-mt-25 2xl:-mt-28 pointer-events-none select-none"
       >
         {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
-        <div className="transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
+        <div className="transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
             id="splash-title-atas"
             src={judulAtas}
@@ -160,7 +160,7 @@ export function SplashPage({
         </div>
 
         {/* Title Bawah: "VISUAL" - capped at 2xl:max-w-[550px] */}
-        <div className="-mt-3 sm:-mt-5 md:-mt-7 lg:-mt-9 xl:-mt-10 2xl:-mt-12 transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
+        <div className="-mt-3  lg:-mt-3 xl:-mt-6 2xl:-mt-8 transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
             id="splash-title-bawah"
             src={judulBawah}
