@@ -257,36 +257,34 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
           {/* ===================================================================== */}
           <div
             id="warna-right-content"
-            className="lg:col-span-6 flex flex-col justify-center items-start text-left pl-0 lg:pl-4"
+            className="lg:col-span-6 flex flex-col justify-center items-center text-center pl-0 lg:pl-4"
           >
-            {/* 1. Judul Grafis 3D: judul-warna.webp */}
-            <div className="mb-2 transition-transform duration-300 hover:scale-[1.02]">
+            {/* 1. Judul Grafis 3D: judul-warna.webp (CENTERED) */}
+            <div className="w-full flex justify-center mb-3 transition-transform duration-300 hover:scale-[1.02]">
               <img
                 src={judulWarna}
                 alt="Warna"
-                className="w-full max-w-[220px] sm:max-w-[280px] md:max-w-[340px] h-auto object-contain drop-shadow-[0_8px_16px_rgba(234,88,12,0.25)]"
+                className="w-full max-w-[240px] sm:max-w-[300px] md:max-w-[360px] h-auto object-contain drop-shadow-[0_8px_16px_rgba(234,88,12,0.25)]"
               />
             </div>
 
-            {/* 2. Subjudul: Pengertian Warna */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-black text-slate-900 leading-tight mb-3">
-              Pengertian Warna
-            </h2>
 
-            {/* 3. Paragraf Deskripsi */}
-            <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl">
+            {/* 3. Paragraf Deskripsi (CENTERED) */}
+            <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl text-center">
               Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
             </p>
 
-            {/* 4. Button Cari Tahu */}
-            <button
-              type="button"
-              onClick={handleCariTahu}
-              className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 sm:border-3 border-[#004760] shadow-[4px_4px_0px_#00354c] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#00354c] rounded-2xl px-6 sm:px-8 py-2.5 sm:py-3 font-serif font-black text-sm sm:text-base uppercase tracking-wider flex items-center gap-2.5 transition-all cursor-pointer group"
-            >
-              <span>Cari Tahu</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            {/* 4. Button Cari Tahu (CENTERED) */}
+            <div className="w-full flex justify-center">
+              <button
+                type="button"
+                onClick={handleCariTahu}
+                className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 sm:border-3 border-[#004760] shadow-[4px_4px_0px_#00354c] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#00354c] rounded-2xl px-8 sm:px-10 py-3 font-serif font-black text-sm sm:text-base uppercase tracking-wider flex items-center gap-2.5 transition-all cursor-pointer group"
+              >
+                <span>Cari Tahu</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
           </div>
         </div>
       </main>
