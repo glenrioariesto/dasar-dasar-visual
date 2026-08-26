@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
-import { ArrowLeft, ArrowRight, Sparkles, RefreshCw } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import gambarBackground from '../../assets/gambar-background.webp';
 import judulWarna from '../../assets/judul-warna.webp';
@@ -19,18 +19,18 @@ interface ColorSegment {
 }
 
 const colorWheelData: ColorSegment[] = [
-  { name: 'Merah', category: 'Primer', hex: '#FF0033', textColor: '#FFFFFF', emotion: 'Berani, nafsu makan, energi tinggi' },
-  { name: 'Merah-Oranye', category: 'Tersier', hex: '#FF5500', textColor: '#FFFFFF', emotion: 'Hangat, antusias, dinamis' },
-  { name: 'Oranye', category: 'Sekunder', hex: '#FF8800', textColor: '#0F172A', emotion: 'Ramah, ceria, kreatif' },
-  { name: 'Kuning-Oranye', category: 'Tersier', hex: '#FFAA00', textColor: '#0F172A', emotion: 'Semangat, optimis, terang' },
-  { name: 'Kuning', category: 'Primer', hex: '#FFEE00', textColor: '#0F172A', emotion: 'Ceria, menarik perhatian seketika' },
-  { name: 'Kuning-Hijau', category: 'Tersier', hex: '#88FF00', textColor: '#0F172A', emotion: 'Segar, pertumbuhan, tunas muda' },
-  { name: 'Hijau', category: 'Sekunder', hex: '#00E676', textColor: '#FFFFFF', emotion: 'Alami, kesehatan, kesuburan, sejuk' },
-  { name: 'Biru-Hijau', category: 'Tersier', hex: '#00F0FF', textColor: '#0F172A', emotion: 'Ketenangan modern, jernih' },
-  { name: 'Biru', category: 'Primer', hex: '#0066FF', textColor: '#FFFFFF', emotion: 'Tenang, terpercaya, intelektual, aman' },
-  { name: 'Biru-Ungu', category: 'Tersier', hex: '#5B21FF', textColor: '#FFFFFF', emotion: 'Kedalaman ide, wibawa, stabilitas' },
-  { name: 'Ungu', category: 'Sekunder', hex: '#B000FF', textColor: '#FFFFFF', emotion: 'Mewah, imajinatif, misterius' },
-  { name: 'Merah-Ungu', category: 'Tersier', hex: '#FF0099', textColor: '#FFFFFF', emotion: 'Eksentrik, romantis, ekspresif' }
+  { name: 'Merah', category: 'Primer', hex: '#EF4444', textColor: '#FFFFFF', emotion: 'Berani, nafsu makan, energi tinggi' },
+  { name: 'Merah-Oranye', category: 'Tersier', hex: '#F97316', textColor: '#FFFFFF', emotion: 'Hangat, antusias, dinamis' },
+  { name: 'Oranye', category: 'Sekunder', hex: '#FB923C', textColor: '#0F172A', emotion: 'Ramah, ceria, kreatif' },
+  { name: 'Kuning-Oranye', category: 'Tersier', hex: '#FBBF24', textColor: '#0F172A', emotion: 'Semangat, optimis, terang' },
+  { name: 'Kuning', category: 'Primer', hex: '#FACC15', textColor: '#0F172A', emotion: 'Ceria, menarik perhatian seketika' },
+  { name: 'Kuning-Hijau', category: 'Tersier', hex: '#A3E635', textColor: '#0F172A', emotion: 'Segar, pertumbuhan, tunas muda' },
+  { name: 'Hijau', category: 'Sekunder', hex: '#22C55E', textColor: '#FFFFFF', emotion: 'Alami, kesehatan, kesuburan, sejuk' },
+  { name: 'Biru-Hijau', category: 'Tersier', hex: '#14B8A6', textColor: '#FFFFFF', emotion: 'Ketenangan modern, jernih' },
+  { name: 'Biru', category: 'Primer', hex: '#3B82F6', textColor: '#FFFFFF', emotion: 'Tenang, terpercaya, intelektual, aman' },
+  { name: 'Biru-Ungu', category: 'Tersier', hex: '#6366F1', textColor: '#FFFFFF', emotion: 'Kedalaman ide, wibawa, stabilitas' },
+  { name: 'Ungu', category: 'Sekunder', hex: '#A855F7', textColor: '#FFFFFF', emotion: 'Mewah, imajinatif, misterius' },
+  { name: 'Merah-Ungu', category: 'Tersier', hex: '#EC4899', textColor: '#FFFFFF', emotion: 'Eksentrik, romantis, ekspresif' }
 ];
 
 export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
@@ -164,7 +164,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center w-full h-full max-h-[620px]">
           {/* ===================================================================== */}
-          {/* SISI KIRI: COLOR WHEEL INTERAKTIF                                     */}
+          {/* SISI KIRI: COLOR WHEEL INTERAKTIF (RESTORE KE AWAL)                   */}
           {/* ===================================================================== */}
           <div
             id="warna-left-colorwheel"
@@ -253,7 +253,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
           </div>
 
           {/* ===================================================================== */}
-          {/* SISI KANAN: JUDUL-WARNA.WEBP + PENGERTIAN WARNA + BUTTON CARI TAHU     */}
+          {/* SISI KANAN: JUDUL-WARNA.WEBP (CENTER) + DESKRIPSI (JUSTIFY) + CARI TAHU */}
           {/* ===================================================================== */}
           <div
             id="warna-right-content"
@@ -268,13 +268,12 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
               />
             </div>
 
-
             {/* 2. Paragraf Deskripsi (JUSTIFIED) */}
             <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl text-justify">
               Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
             </p>
 
-            {/* 4. Button Cari Tahu (CENTERED) */}
+            {/* 3. Button Cari Tahu (CENTERED) */}
             <div className="w-full flex justify-center">
               <button
                 type="button"
