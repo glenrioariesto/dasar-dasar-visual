@@ -219,17 +219,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                   );
                 })}
 
-                {/* Lingkaran Donut Tengah (Outline #004760) */}
-                <circle cx="0" cy="0" r="58" fill="#FFFFFF" stroke="#004760" strokeWidth="3.5" />
               </svg>
-
-              {/* Konten Tengah Roda Warna: Swatch Warna Terpilih (Outline #004760) */}
-              <div className="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center pointer-events-none select-none">
-                <span
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-3 border-[#004760] shadow-sm transition-colors duration-200"
-                  style={{ backgroundColor: activeHex }}
-                />
-              </div>
             </div>
           </div>
 
