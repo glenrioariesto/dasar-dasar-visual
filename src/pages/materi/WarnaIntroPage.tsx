@@ -269,8 +269,8 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
             </div>
 
 
-            {/* 3. Paragraf Deskripsi (CENTERED) */}
-            <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl text-center">
+            {/* 2. Paragraf Deskripsi (JUSTIFIED) */}
+            <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl text-justify">
               Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
             </p>
 
