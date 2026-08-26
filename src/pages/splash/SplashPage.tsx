@@ -147,25 +147,25 @@ export function SplashPage({
       {/* ========================================================================= */}
       <main
         id="splash-center-area"
-        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-7xl mx-auto -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 pointer-events-none select-none"
+        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 pointer-events-none select-none"
       >
-        {/* Title Atas: "DASAR DESAIN" */}
+        {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
         <div className="transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
             id="splash-title-atas"
             src={judulAtas}
             alt="Dasar Desain"
-            className="w-full max-w-[320px] xs:max-w-[400px] sm:max-w-[540px] md:max-w-[740px] lg:max-w-[1000px] xl:max-w-[1100px] 2xl:max-w-[1200px] max-h-[26vh] h-auto object-contain"
+            className="w-full max-w-[300px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[620px] lg:max-w-[760px] xl:max-w-[880px] 2xl:max-w-[1000px] max-h-[26vh] h-auto object-contain"
           />
         </div>
 
-        {/* Title Bawah: "VISUAL" */}
-        <div className="-mt-3 sm:-mt-6 md:-mt-9 lg:-mt-12 xl:-mt-14 transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
+        {/* Title Bawah: "VISUAL" - capped at 2xl:max-w-[550px] */}
+        <div className="-mt-3 sm:-mt-5 md:-mt-7 lg:-mt-9 xl:-mt-10 2xl:-mt-12 transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
             id="splash-title-bawah"
             src={judulBawah}
             alt="Visual"
-            className="w-full max-w-[180px] xs:max-w-[220px] sm:max-w-[300px] md:max-w-[410px] lg:max-w-[550px] xl:max-w-[610px] 2xl:max-w-[660px] max-h-[22vh] h-auto object-contain"
+            className="w-full max-w-[165px] xs:max-w-[200px] sm:max-w-[255px] md:max-w-[340px] lg:max-w-[420px] xl:max-w-[485px] 2xl:max-w-[550px] max-h-[22vh] h-auto object-contain"
           />
         </div>
       </main>
