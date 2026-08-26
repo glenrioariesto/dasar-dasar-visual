@@ -147,7 +147,7 @@ export function SplashPage({
       {/* ========================================================================= */}
       <main
         id="splash-center-area"
-        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -mt-2 md:-mt-25 pointer-events-none select-none"
+        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-7xl mx-auto -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 pointer-events-none select-none"
       >
         {/* Title Atas: "DASAR DESAIN" */}
         <div className="transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
@@ -155,17 +155,17 @@ export function SplashPage({
             id="splash-title-atas"
             src={judulAtas}
             alt="Dasar Desain"
-            className="w-full max-w-[280px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[560px] lg:max-w-[1000px] h-auto object-contain"
+            className="w-full max-w-[320px] xs:max-w-[400px] sm:max-w-[540px] md:max-w-[740px] lg:max-w-[1000px] xl:max-w-[1100px] 2xl:max-w-[1200px] max-h-[26vh] h-auto object-contain"
           />
         </div>
 
         {/* Title Bawah: "VISUAL" */}
-        <div className="-mt-3 sm:-mt-5 md:-mt-7 lg:-mt-9 transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
+        <div className="-mt-3 sm:-mt-6 md:-mt-9 lg:-mt-12 xl:-mt-14 transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
             id="splash-title-bawah"
             src={judulBawah}
             alt="Visual"
-            className="w-full max-w-[160px] xs:max-w-[210px] sm:max-w-[270px] md:max-w-[330px] lg:max-w-[550px] h-auto object-contain"
+            className="w-full max-w-[180px] xs:max-w-[220px] sm:max-w-[300px] md:max-w-[410px] lg:max-w-[550px] xl:max-w-[610px] 2xl:max-w-[660px] max-h-[22vh] h-auto object-contain"
           />
         </div>
       </main>
