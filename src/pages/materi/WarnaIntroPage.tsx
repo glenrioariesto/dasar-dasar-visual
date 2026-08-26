@@ -31,6 +31,15 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
   const [showDeepLab, setShowDeepLab] = useState<boolean>(false);
   const activeHex = colorWheelHexes[selectedColorIndex];
 
+  const renderedColorSegments = [
+    ...colorWheelHexes
+      .map((hex, idx) => ({ hex, idx }))
+      .filter(({ idx }) => idx !== selectedColorIndex),
+    ...colorWheelHexes
+      .map((hex, idx) => ({ hex, idx }))
+      .filter(({ idx }) => idx === selectedColorIndex)
+  ];
+
   const handleSelectColor = (index: number) => {
     playClick();
     setSelectedColorIndex(index);
@@ -165,13 +174,13 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
             className="lg:col-span-6 flex flex-col items-center justify-center h-full relative"
           >
             {/* Color Wheel SVG Canvas */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-92 md:h-92 flex items-center justify-center">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
               <svg
                 viewBox="-160 -160 320 320"
                 className="w-full h-full drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
               >
                 {/* 12 Segmen Roda Warna (Outline #004760) */}
-                {colorWheelHexes.map((hex, idx) => {
+                {renderedColorSegments.map(({ hex, idx }) => {
                   const anglePerSegment = 360 / 12; // 30 deg
                   const startAngle = idx * anglePerSegment - 105;
                   const endAngle = startAngle + anglePerSegment;
@@ -179,7 +188,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                   const startRad = (startAngle * Math.PI) / 180;
                   const endRad = (endAngle * Math.PI) / 180;
 
-                  const rInner = 65;
+                  const rInner = 38;
                   const rOuter = selectedColorIndex === idx ? 148 : 138;
 
                   const x1 = rOuter * Math.cos(startRad);
@@ -207,12 +216,14 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                       key={hex}
                       d={pathData}
                       fill={hex}
-                      stroke="#004760"
-                      strokeWidth={isSelected ? '3.5' : '2.5'}
-                      className="transition-all duration-200 cursor-pointer hover:opacity-95"
+                      stroke="#ffffff"
+                      strokeWidth={isSelected ? '2.5' : '0'}
+                      className={`${isSelected ? 'z-50' : 'z-0'} transition-all duration-200 cursor-pointer hover:opacity-95`}
                       style={{
-                        transform: isSelected ? 'scale(1.03)' : 'scale(1)',
-                        transformOrigin: '0px 0px'
+                        transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+                        transformOrigin: '0px 0px',
+                        position: 'relative',
+                        zIndex: isSelected ? 10 : 0
                       }}
                       onClick={() => handleSelectColor(idx)}
                     />
