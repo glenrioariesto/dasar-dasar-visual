@@ -10,33 +10,26 @@ interface WarnaIntroPageProps {
   onBack: () => void;
 }
 
-interface ColorSegment {
-  name: string;
-  category: 'Primer' | 'Sekunder' | 'Tersier';
-  hex: string;
-  textColor: string;
-  emotion: string;
-}
-
-const colorWheelData: ColorSegment[] = [
-  { name: 'Merah', category: 'Primer', hex: '#EF4444', textColor: '#FFFFFF', emotion: 'Berani, nafsu makan, energi tinggi' },
-  { name: 'Merah-Oranye', category: 'Tersier', hex: '#F97316', textColor: '#FFFFFF', emotion: 'Hangat, antusias, dinamis' },
-  { name: 'Oranye', category: 'Sekunder', hex: '#FB923C', textColor: '#0F172A', emotion: 'Ramah, ceria, kreatif' },
-  { name: 'Kuning-Oranye', category: 'Tersier', hex: '#FBBF24', textColor: '#0F172A', emotion: 'Semangat, optimis, terang' },
-  { name: 'Kuning', category: 'Primer', hex: '#FACC15', textColor: '#0F172A', emotion: 'Ceria, menarik perhatian seketika' },
-  { name: 'Kuning-Hijau', category: 'Tersier', hex: '#A3E635', textColor: '#0F172A', emotion: 'Segar, pertumbuhan, tunas muda' },
-  { name: 'Hijau', category: 'Sekunder', hex: '#22C55E', textColor: '#FFFFFF', emotion: 'Alami, kesehatan, kesuburan, sejuk' },
-  { name: 'Biru-Hijau', category: 'Tersier', hex: '#14B8A6', textColor: '#FFFFFF', emotion: 'Ketenangan modern, jernih' },
-  { name: 'Biru', category: 'Primer', hex: '#3B82F6', textColor: '#FFFFFF', emotion: 'Tenang, terpercaya, intelektual, aman' },
-  { name: 'Biru-Ungu', category: 'Tersier', hex: '#6366F1', textColor: '#FFFFFF', emotion: 'Kedalaman ide, wibawa, stabilitas' },
-  { name: 'Ungu', category: 'Sekunder', hex: '#A855F7', textColor: '#FFFFFF', emotion: 'Mewah, imajinatif, misterius' },
-  { name: 'Merah-Ungu', category: 'Tersier', hex: '#EC4899', textColor: '#FFFFFF', emotion: 'Eksentrik, romantis, ekspresif' }
+// 12 Warna Spektrum Pilihan User
+const colorWheelHexes = [
+  '#FFA500',
+  '#DAFF00',
+  '#5AFF00',
+  '#00FF25',
+  '#00FFA5',
+  '#00DAFF',
+  '#005AFF',
+  '#2500FF',
+  '#A500FF',
+  '#FF00D9',
+  '#FF005A',
+  '#FF2500'
 ];
 
 export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
-  const [selectedColorIndex, setSelectedColorIndex] = useState<number>(8); // Default: Biru (#3B82F6)
+  const [selectedColorIndex, setSelectedColorIndex] = useState<number>(0);
   const [showDeepLab, setShowDeepLab] = useState<boolean>(false);
-  const activeColor = colorWheelData[selectedColorIndex];
+  const activeHex = colorWheelHexes[selectedColorIndex];
 
   const handleSelectColor = (index: number) => {
     playClick();
@@ -164,7 +157,8 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center w-full h-full max-h-[620px]">
           {/* ===================================================================== */}
-          {/* SISI KIRI: COLOR WHEEL INTERAKTIF (RESTORE KE AWAL)                   */}
+          {/* SISI KIRI: COLOR WHEEL INTERAKTIF                                     */}
+          {/* Outline kotak biru: #004760 | Tanpa Pop-up Badge                      */}
           {/* ===================================================================== */}
           <div
             id="warna-left-colorwheel"
@@ -176,10 +170,10 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                 viewBox="-160 -160 320 320"
                 className="w-full h-full drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
               >
-                {/* 12 Segmen Roda Warna */}
-                {colorWheelData.map((seg, idx) => {
+                {/* 12 Segmen Roda Warna (Outline #004760) */}
+                {colorWheelHexes.map((hex, idx) => {
                   const anglePerSegment = 360 / 12; // 30 deg
-                  const startAngle = idx * anglePerSegment - 105; // orientasi mulai
+                  const startAngle = idx * anglePerSegment - 105;
                   const endAngle = startAngle + anglePerSegment;
 
                   const startRad = (startAngle * Math.PI) / 180;
@@ -210,11 +204,11 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
 
                   return (
                     <path
-                      key={seg.name}
+                      key={hex}
                       d={pathData}
-                      fill={seg.hex}
-                      stroke="#0F172A"
-                      strokeWidth={isSelected ? '3' : '1.5'}
+                      fill={hex}
+                      stroke="#004760"
+                      strokeWidth={isSelected ? '3.5' : '2.5'}
                       className="transition-all duration-200 cursor-pointer hover:opacity-95"
                       style={{
                         transform: isSelected ? 'scale(1.03)' : 'scale(1)',
@@ -225,35 +219,23 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                   );
                 })}
 
-                {/* Lingkaran Donut Tengah: Kartu Status Warna Terpilih */}
-                <circle cx="0" cy="0" r="58" fill="#FFFFFF" stroke="#0F172A" strokeWidth="3" />
+                {/* Lingkaran Donut Tengah (Outline #004760) */}
+                <circle cx="0" cy="0" r="58" fill="#FFFFFF" stroke="#004760" strokeWidth="3.5" />
               </svg>
 
-              {/* Konten Tengah Roda Warna */}
-              <div className="absolute inset-0 m-auto w-24 h-24 sm:w-28 sm:h-28 rounded-full flex flex-col items-center justify-center text-center p-2 pointer-events-none">
+              {/* Konten Tengah Roda Warna: Swatch Warna Terpilih (Outline #004760) */}
+              <div className="absolute inset-0 m-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center pointer-events-none select-none">
                 <span
-                  className="w-4 h-4 rounded-full border-2 border-slate-900 shadow-xs mb-1"
-                  style={{ backgroundColor: activeColor.hex }}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-3 border-[#004760] shadow-sm transition-colors duration-200"
+                  style={{ backgroundColor: activeHex }}
                 />
-                <span className="text-[11px] sm:text-xs font-serif font-black text-slate-900 leading-tight">
-                  {activeColor.name}
-                </span>
-                <span className="text-[9px] font-mono font-bold text-slate-500 uppercase">
-                  {activeColor.category}
-                </span>
               </div>
-            </div>
-
-            {/* Keterangan Interaktif Warna Terpilih di Bawah Roda */}
-            <div className="mt-3 text-center px-4 py-1.5 rounded-full border-2 border-slate-900 bg-white shadow-[2px_2px_0px_#0f172a] max-w-sm">
-              <span className="text-[11px] font-mono font-bold text-slate-700">
-                ✨ {activeColor.emotion}
-              </span>
             </div>
           </div>
 
           {/* ===================================================================== */}
           {/* SISI KANAN: JUDUL-WARNA.WEBP (CENTER) + DESKRIPSI (JUSTIFY) + CARI TAHU */}
+          {/* Outline kotak biru: #004760                                           */}
           {/* ===================================================================== */}
           <div
             id="warna-right-content"
@@ -273,7 +255,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
               Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
             </p>
 
-            {/* 3. Button Cari Tahu (CENTERED) */}
+            {/* 3. Button Cari Tahu (CENTERED, Outline #004760) */}
             <div className="w-full flex justify-center">
               <button
                 type="button"
@@ -296,9 +278,9 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
           id="warna-lab-modal"
           className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
         >
-          <div className="bg-white rounded-3xl border-3 border-slate-900 shadow-[8px_8px_0px_#0f172a] w-full max-w-4xl h-[85vh] flex flex-col justify-between p-4 sm:p-6 relative overflow-hidden">
+          <div className="bg-white rounded-3xl border-3 border-[#004760] shadow-[8px_8px_0px_#00354c] w-full max-w-4xl h-[85vh] flex flex-col justify-between p-4 sm:p-6 relative overflow-hidden">
             {/* Header Modal */}
-            <div className="flex items-center justify-between border-b-2 border-slate-900 pb-3">
+            <div className="flex items-center justify-between border-b-2 border-[#004760] pb-3">
               <div className="flex items-center gap-3">
                 <img src={judulWarna} alt="Warna" className="h-8 w-auto object-contain" />
                 <h3 className="font-serif font-black text-lg sm:text-xl text-slate-900">
@@ -312,7 +294,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                   playClick();
                   setShowDeepLab(false);
                 }}
-                className="px-3.5 py-1.5 rounded-xl border-2 border-slate-900 bg-white hover:bg-slate-100 text-xs font-bold shadow-[2px_2px_0px_#0f172a] cursor-pointer"
+                className="px-3.5 py-1.5 rounded-xl border-2 border-[#004760] bg-white hover:bg-slate-100 text-xs font-bold shadow-[2px_2px_0px_#00354c] cursor-pointer"
               >
                 Tutup Lab ✕
               </button>
@@ -332,7 +314,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
                   playClick();
                   setShowDeepLab(false);
                 }}
-                className="font-bold text-orange-600 hover:underline cursor-pointer"
+                className="font-bold text-[#00a1db] hover:underline cursor-pointer"
               >
                 Kembali ke Pengertian Warna →
               </button>
