@@ -76,16 +76,16 @@ export function SplashPage({
   return (
     <div
       id="splash-page"
-      className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-slate-900 text-slate-900"
+      className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
       {/* ========================================================================= */}
-      {/* LAYER 0 (z-0): GAMBAR BACKGROUND (Di belakang frame SVG)                  */}
+      {/* LAYER 0 (z-0): GAMBAR BACKGROUND (Opacity 10% di belakang frame SVG)      */}
       {/* ========================================================================= */}
       <img
         id="splash-classroom-bg"
         src={gambarBackground}
         alt="Ruang Belajar Desain Visual"
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none opacity-25"
       />
 
       {/* ========================================================================= */}
@@ -131,7 +131,7 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-6 sm:px-10 md:px-14 pt-3 sm:pt-5"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-6 sm:px-10 md:px-14 pt-3 md:pt-10"
       >
         <div className="flex items-center gap-3">
           <img
@@ -147,7 +147,7 @@ export function SplashPage({
       {/* ========================================================================= */}
       <main
         id="splash-center-area"
-        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -mt-2 sm:-mt-5 pointer-events-none select-none"
+        className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto -mt-2 md:-mt-25 pointer-events-none select-none"
       >
         {/* Title Atas: "DASAR DESAIN" */}
         <div className="transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
@@ -155,7 +155,7 @@ export function SplashPage({
             id="splash-title-atas"
             src={judulAtas}
             alt="Dasar Desain"
-            className="w-full max-w-[280px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[560px] lg:max-w-[660px] h-auto object-contain"
+            className="w-full max-w-[280px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[560px] lg:max-w-[1000px] h-auto object-contain"
           />
         </div>
 
@@ -165,7 +165,7 @@ export function SplashPage({
             id="splash-title-bawah"
             src={judulBawah}
             alt="Visual"
-            className="w-full max-w-[160px] xs:max-w-[210px] sm:max-w-[270px] md:max-w-[330px] lg:max-w-[400px] h-auto object-contain"
+            className="w-full max-w-[160px] xs:max-w-[210px] sm:max-w-[270px] md:max-w-[330px] lg:max-w-[550px] h-auto object-contain"
           />
         </div>
       </main>
