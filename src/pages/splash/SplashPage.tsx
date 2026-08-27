@@ -2,69 +2,43 @@ import React, { useState } from 'react';
 import { MateriId } from '../../types';
 import { allMateris } from '../../data/materiData';
 import { playClick } from '../../utils/audio';
-import {
-  Palette,
-  Type,
-  Maximize2,
-  Scale
-} from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import gambarBackground from '../../assets/gambar-background.webp';
 import judulAtas from '../../assets/Judul Atas.webp';
 import judulBawah from '../../assets/Judul Bawah.webp';
+import iconWarna from '../../assets/icon-warna.svg';
+import iconTipografi from '../../assets/icon-tipografi.svg';
+import iconRuangKosong from '../../assets/icon-ruangkosong.svg';
+import iconKeseimbangan from '../../assets/icon-keseimbangan.svg';
+import iconContohDesain from '../../assets/icon-contohdesain.svg';
 
 interface SplashPageProps {
   onStartMateri?: (id: MateriId) => void;
   completedMateri: Record<MateriId, boolean>;
 }
 
-function PosterIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      {/* Frame Lembar Poster */}
-      <rect x="4" y="2.5" width="16" height="19" rx="2.5" />
-      {/* Header Judul Poster */}
-      <line x1="7.5" y1="6.5" x2="16.5" y2="6.5" strokeWidth="2.5" />
-      {/* Grafis Visual Seni di Poster: Matahari & Bukit Visual */}
-      <circle cx="8.5" cy="11" r="1.5" />
-      <path d="m6 16.5 3.5-3.5a1 1 0 0 1 1.4 0l5.1 5.1" />
-      {/* Teks Penutup Poster */}
-      <line x1="7.5" y1="18.5" x2="12.5" y2="18.5" />
-    </svg>
-  );
-}
-
 export function SplashPage({
   onStartMateri,
   completedMateri
 }: SplashPageProps) {
-  const materiKeys: MateriId[] = ['warna', 'tipografi', 'ruang-kosong', 'keseimbangan', 'kesimpulan'];
+  const materiKeys: MateriId[] = ['warna', 'tipografi', 'ruang-kosong', 'keseimbangan', 'contoh-desain'];
   const [hoveredMateri, setHoveredMateri] = useState<MateriId | null>(null);
 
   const getMateriIcon = (id: MateriId) => {
-    const iconClass = "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-13 lg:h-13 text-white transition-transform duration-200 group-hover:scale-110";
+    const imgClass = "w-9 h-9 sm:w-11 sm:h-11 md:w-13 md:h-13 lg:w-14 lg:h-14 object-contain transition-transform duration-200 group-hover:scale-110 select-none drop-shadow-sm";
     switch (id) {
       case 'warna':
-        return <Palette className={iconClass} />;
+        return <img src={iconWarna} alt="Ikon Warna" className={imgClass} />;
       case 'tipografi':
-        return <Type className={iconClass} />;
+        return <img src={iconTipografi} alt="Ikon Tipografi" className={imgClass} />;
       case 'ruang-kosong':
-        return <Maximize2 className={iconClass} />;
+        return <img src={iconRuangKosong} alt="Ikon Ruang Kosong" className={imgClass} />;
       case 'keseimbangan':
-        return <Scale className={iconClass} />;
-      case 'kesimpulan':
-        return <PosterIcon className={iconClass} />;
+        return <img src={iconKeseimbangan} alt="Ikon Keseimbangan" className={imgClass} />;
+      case 'contoh-desain':
+        return <img src={iconContohDesain} alt="Ikon Contoh Desain" className={imgClass} />;
       default:
-        return <Palette className={iconClass} />;
+        return <img src={iconWarna} alt="Ikon Materi" className={imgClass} />;
     }
   };
 
@@ -131,13 +105,14 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-4 lg:px-10 2xl:px-14 pt-3 lg:pt-8 2xl:pt-12"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16"
       >
-        <div className="flex items-center gap-3">
+        <div id="splash-logo-container" className="flex items-center gap-1.5 sm:gap-3 md:translate-y-1.5 2xl:translate-y-3">
           <img
+            id="splash-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-10 lg:h-20 2xl:h-26 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
+            className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
           />
         </div>
       </header>
@@ -194,18 +169,6 @@ export function SplashPage({
                 onMouseEnter={() => setHoveredMateri(mId)}
                 onMouseLeave={() => setHoveredMateri(null)}
               >
-                {/* Floating Tooltip Pill on Hover */}
-                <div
-                  className={`absolute -top-12 sm:-top-13 transition-all duration-200 pointer-events-none whitespace-nowrap z-40 ${
-                    isHovered
-                      ? 'opacity-100 -translate-y-1.5 scale-100'
-                      : 'opacity-0 translate-y-1 scale-95'
-                  }`}
-                >
-                  <span className="px-3.5 py-1 rounded-full text-xs sm:text-sm font-black bg-[#00354c] text-white border-2 border-[#f9db00] shadow-[2px_2px_0px_#000000] font-serif tracking-wider">
-                    {m.orderNumber}. {m.title}
-                  </span>
-                </div>
 
                 {/* Main Interactive Button:
                     Kotak biru: #00a1db
@@ -237,7 +200,7 @@ export function SplashPage({
                         : 'max-w-0 opacity-0 ml-0'
                     }`}
                   >
-                    <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-xl text-white whitespace-nowrap tracking-tight drop-shadow-[0_2px_3px_rgba(0,0,0,0.5)]">
+                    <span className="font-serif font-black text-sm sm:text-base md:text-lg lg:text-xl text-white whitespace-nowrap tracking-tight">
                       {m.title}
                     </span>
                   </div>
