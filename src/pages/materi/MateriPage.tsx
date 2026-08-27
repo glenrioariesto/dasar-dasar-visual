@@ -21,7 +21,7 @@ interface MateriPageProps {
   onSelectMateri: (id: MateriId) => void;
 }
 
-const materiOrder: MateriId[] = ['warna', 'tipografi', 'ruang-kosong', 'keseimbangan', 'kesimpulan'];
+const materiOrder: MateriId[] = ['warna', 'tipografi', 'ruang-kosong', 'keseimbangan', 'contoh-desain'];
 
 export function MateriPage({
   currentMateriId,
@@ -286,7 +286,7 @@ export function MateriPage({
           {currentMateriId === 'tipografi' && <TypographyLab />}
           {currentMateriId === 'ruang-kosong' && <SpaceLab />}
           {currentMateriId === 'keseimbangan' && <BalanceLab />}
-          {currentMateriId === 'kesimpulan' && <SummaryLab />}
+          {currentMateriId === 'contoh-desain' && <SummaryLab />}
         </div>
       </main>
 

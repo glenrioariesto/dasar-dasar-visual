@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
-import judulTipografi from '../../assets/judul-tifografi.webp';
-import tipografiIcon from '../../assets/tipografi-icon.webp';
+import roboHappyImg from '../../assets/images/page_11_image_9.png';
 
-interface TipografiPageProps {
+interface ContohDesainPageProps {
   onBack: () => void;
   onCariTahu?: () => void;
 }
 
-export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
+export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) {
   const handleCariTahu = () => {
     playSynthesizerNote('unlock');
     if (onCariTahu) {
@@ -21,33 +20,34 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
 
   return (
     <div
-      id="tipografi-page"
+      id="contoh-desain-page"
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
-      {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME (assets/background-judul.svg) */}
-      <BackgroundFrame idPrefix="tipografi" />
+      {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
+      <BackgroundFrame idPrefix="contoh-desain" />
 
       {/* ========================================================================= */}
       {/* LAYER 2 (z-30): TOP HEADER (Logo Kemendikdasmen & Tombol Beranda)         */}
       {/* ========================================================================= */}
       <header
-        id="tipografi-header"
+        id="contoh-desain-header"
         className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
       >
         <div
-          id="tipografi-logo-container"
+          id="contoh-desain-logo-container"
           className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
         >
           <img
-            id="tipografi-logo-img"
+            id="contoh-desain-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
             className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
           />
         </div>
 
+        {/* Back to Splash button */}
         <button
-          id="tipografi-btn-back"
+          id="contoh-desain-btn-back"
           type="button"
           onClick={() => {
             playClick();
@@ -60,34 +60,31 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
         </button>
       </header>
 
-      {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tidak terdorong */}
+      {/* SPACER ATAS */}
       <div
-        id="tipografi-header-spacer"
+        id="contoh-desain-header-spacer"
         className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
       {/* ========================================================================= */}
       {/* LAYER 2 (z-20): MAIN CONTENT (Split: Kiri Gambar, Kanan Materi)           */}
-      {/* Layout Konsisten 2-Kolom Berdampingan Seperti Desktop                      */}
       {/* ========================================================================= */}
       <main
-        id="tipografi-main-content"
+        id="contoh-desain-main-content"
         className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
-          id="tipografi-grid"
+          id="contoh-desain-grid"
           className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
         >
-          {/* ===================================================================== */}
-          {/* SISI KIRI: GAMBAR TIPOGRAFI (col-span-6)                              */}
-          {/* ===================================================================== */}
+          {/* SISI KIRI: GAMBAR CONTOH DESAIN (col-span-6) */}
           <div
-            id="tipografi-left-container"
+            id="contoh-desain-left-container"
             className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
           >
             <div
-              id="tipografi-img-wrapper"
+              id="contoh-desain-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
                 height: 'min(58vh, 440px)',
@@ -99,24 +96,21 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               }}
             >
               <img
-                id="tipografi-left-img"
-                src={tipografiIcon}
-                alt="Ilustrasi Tipografi"
+                id="contoh-desain-left-img"
+                src={roboHappyImg}
+                alt="Contoh Desain & Karya Nyata"
                 className="w-full h-full object-contain drop-shadow-[0_12px_24px_rgba(0,53,76,0.18)] select-none pointer-events-none"
               />
             </div>
           </div>
 
-          {/* ===================================================================== */}
-          {/* SISI KANAN: JUDUL-TIFOGRAFI.WEBP + DESKRIPSI + TOMBOL CARI TAHU       */}
-          {/* ===================================================================== */}
+          {/* SISI KANAN: JUDUL + DESKRIPSI + TOMBOL CARI TAHU (col-span-6) */}
           <div
-            id="tipografi-right-content"
+            id="contoh-desain-right-content"
             className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto"
           >
-            {/* Container Presisi: Selaras dengan Kartu Kiri */}
             <div
-              id="tipografi-content-box"
+              id="contoh-desain-content-box"
               className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
               style={{
                 height: 'min(58vh, 440px)',
@@ -124,39 +118,39 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
                 minHeight: '180px'
               }}
             >
-              {/* 1. Judul Grafis 3D: judul-tifografi.webp */}
+              {/* 1. Judul Halaman */}
               <div
-                id="tipografi-title-wrapper"
-                className="w-full flex justify-center items-start shrink-0 transition-transform duration-300 hover:scale-[1.02]"
+                id="contoh-desain-title-wrapper"
+                className="w-full flex flex-col items-center shrink-0 transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img
-                  id="tipografi-title-img"
-                  src={judulTipografi}
-                  alt="Tipografi"
-                  className="w-auto max-w-[190px] sm:max-w-[260px] lg:max-w-[380px] 2xl:max-w-[450px] max-h-[14vh] lg:max-h-[17vh] 2xl:max-h-[20vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(2,132,199,0.25)]"
-                />
+                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-2">
+                  Studi Kasus Karya Nyata
+                </span>
+                <h1 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#004760] uppercase tracking-tight drop-shadow-sm">
+                  Contoh Desain
+                </h1>
               </div>
 
-              {/* 2. Paragraf Deskripsi Sesuai Request */}
+              {/* 2. Paragraf Deskripsi */}
               <div
-                id="tipografi-desc-wrapper"
+                id="contoh-desain-desc-wrapper"
                 className="w-full my-auto py-1 lg:py-2 flex items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-2xl"
               >
                 <p
-                  id="tipografi-description"
+                  id="contoh-desain-description"
                   className="text-[10px] md:text-xs lg:text-[13px] xl:text-[14px] 2xl:text-lg text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify"
                 >
-                  Tipografi adalah cara memilih, mengatur, dan menggunakan huruf dalam sebuah desain agar informasi dapat dibaca dengan jelas, mudah dipahami, dan terlihat menarik. Jenis, ukuran, ketebalan, serta jarak antarhuruf dapat memengaruhi kesan yang muncul, seperti formal, modern, santai, tegas, atau elegan. Karena itu, penggunaan tipografi perlu disesuaikan dengan pesan, tujuan, dan karakter desain agar tulisan tidak hanya terlihat bagus, tetapi juga dapat menyampaikan informasi dengan efektif.
+                  Penguasaan empat pilar dasar desain—Warna, Tipografi, Ruang Kosong, dan Keseimbangan—adalah kunci utama dalam menghasilkan karya visual yang tidak hanya memukau, tetapi juga mampu mengomunikasikan pesan dengan jelas, efektif, dan meninggalkan kesan mendalam bagi audiens. Lihat bagaimana prinsip-prinsip ini berpadu harmonis dalam ragam poster karya nyata.
                 </p>
               </div>
 
               {/* 3. Button Cari Tahu */}
               <div
-                id="tipografi-btn-wrapper"
+                id="contoh-desain-btn-wrapper"
                 className="w-full flex justify-center items-end shrink-0"
               >
                 <button
-                  id="tipografi-btn-cari-tahu"
+                  id="contoh-desain-btn-cari-tahu"
                   type="button"
                   onClick={handleCariTahu}
                   className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
@@ -171,7 +165,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
       </main>
 
       {/* Footer Area Kosong */}
-      <footer id="tipografi-footer" className="h-2 lg:h-4 z-20 shrink-0 pointer-events-none" />
+      <footer id="contoh-desain-footer" className="h-2 lg:h-4 z-20 shrink-0 pointer-events-none" />
     </div>
   );
 }

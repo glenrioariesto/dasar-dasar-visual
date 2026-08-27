@@ -1,0 +1,366 @@
+import React, { useState } from 'react';
+import { playClick } from '../../utils/audio';
+import { ArrowLeft, Home, Sparkles, Layout, AlignJustify, Eye, MoveHorizontal } from 'lucide-react';
+import logoJenama from '../../assets/logo-jenama-primer.png';
+import { BackgroundFrame } from '../../components/BackgroundFrame';
+
+interface RuangKosongArtiPageProps {
+  onBack: () => void;
+  onHome: () => void;
+}
+
+interface SpacePrincipleDetail {
+  id: string;
+  name: string;
+  shortName: string;
+  badge: string;
+  iconName: string;
+  description: string;
+  traits: string[];
+  themeColor: string;
+  demoType: 'macro' | 'micro' | 'proximity' | 'focus' | 'rhythm';
+}
+
+const spacePrinciples: SpacePrincipleDetail[] = [
+  {
+    id: 'makro',
+    name: 'Ruang Makro (Macro Space)',
+    shortName: 'Makro',
+    badge: 'PRINSIP RUANG #1 · MAKRO',
+    iconName: 'Layout',
+    description: 'Ruang kosong besar di sekeliling layout utama dan margin tepi kanvas. Ruang makro berfungsi seperti bingkai tak terlihat yang memisahkan karya dari lingkungan luar, memberikan napas pertama bagi audiens, dan mencegah elemen menempel kaku ke batas layar.',
+    traits: ['Margin Luas', 'Lega & Tenang', 'Bingkai Alami', 'Bebas Sesak'],
+    themeColor: '#00a1db',
+    demoType: 'macro'
+  },
+  {
+    id: 'mikro',
+    name: 'Ruang Mikro (Micro Space)',
+    shortName: 'Mikro',
+    badge: 'PRINSIP RUANG #2 · MIKRO',
+    iconName: 'AlignJustify',
+    description: 'Jeda halus berukuran kecil di antara kata, antarhuruf (kerning), dan antarbaris kalimat (leading). Ruang mikro menjamin teks mudah dicerna tanpa membuat mata pembaca cepat lelah.',
+    traits: ['Keterbacaan', 'Spasi Baris', 'Kerning Presisi', 'Jeda Halus'],
+    themeColor: '#10b981',
+    demoType: 'micro'
+  },
+  {
+    id: 'proksimitas',
+    name: 'Hukum Proksimitas (Proximity)',
+    shortName: 'Proksimitas',
+    badge: 'PRINSIP RUANG #3 · PROKSIMITAS',
+    iconName: 'MoveHorizontal',
+    description: 'Elemen-elemen yang saling berhubungan didekatkan posisinya, sementara elemen yang berbeda topik diberi jarak ruang kosong yang lebih lebar. Ini membantu audiens memproses kelompok informasi secara logis dan cepat.',
+    traits: ['Pengelompokan', 'Struktur Logis', 'Alur Pikiran', 'Hirarki Cepat'],
+    themeColor: '#8b5cf6',
+    demoType: 'proximity'
+  },
+  {
+    id: 'fokus',
+    name: 'Fokus Melalui Ruang (Isolation)',
+    shortName: 'Fokus',
+    badge: 'PRINSIP RUANG #4 · FOKUS',
+    iconName: 'Eye',
+    description: 'Sebuah objek yang dikelilingi oleh banyak ruang kosong akan langsung menarik perhatian mata sebelum hal lainnya. Ruang kosong menjadi lampu sorot visual alami tanpa perlu warna yang terlalu mencolok.',
+    traits: ['Pusat Perhatian', 'Daya Tarik Kuat', 'Minimalis', 'Sorotan Instan'],
+    themeColor: '#ea580c',
+    demoType: 'focus'
+  },
+  {
+    id: 'irama',
+    name: 'Irama Napas (Visual Rhythm)',
+    shortName: 'Irama',
+    badge: 'PRINSIP RUANG #5 · IRAMA NAPAS',
+    iconName: 'Sparkles',
+    description: 'Variasi jarak rapat dan renggang secara berirama dalam sebuah karya. Menciptakan dinamika yang hidup seperti musik, di mana nada dan jeda hening saling melengkapi keindahan alur komposisi.',
+    traits: ['Harmoni Dinamis', 'Variasi Irama', 'Keseimbangan', 'Karya Berkelas'],
+    themeColor: '#f59e0b',
+    demoType: 'rhythm'
+  }
+];
+
+export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps) {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [interactiveGap, setInteractiveGap] = useState<'sedang' | 'lega'>('lega');
+
+  const activePrinciple = spacePrinciples[selectedIndex];
+
+  const handleSelectPrinciple = (index: number) => {
+    playClick();
+    setSelectedIndex(index);
+  };
+
+  return (
+    <div
+      id="ruang-kosong-arti-page"
+      className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
+    >
+      {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
+      <BackgroundFrame idPrefix="ruang-kosong-arti" />
+
+      {/* ========================================================================= */}
+      {/* LAYER 2 (z-30): TOP HEADER (Logo Kemendikdasmen & Tombol Aksi)            */}
+      {/* ========================================================================= */}
+      <header
+        id="ruang-kosong-arti-header"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
+      >
+        <div
+          id="ruang-kosong-arti-logo-container"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+        >
+          <img
+            id="ruang-kosong-arti-logo-img"
+            src={logoJenama}
+            alt="Logo Kemendikdasmen"
+            className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
+          />
+        </div>
+
+        <div
+          id="ruang-kosong-arti-header-actions"
+          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+        >
+          {/* Tombol Beranda */}
+          <button
+            id="ruang-kosong-arti-btn-home"
+            type="button"
+            onClick={() => {
+              playClick();
+              onHome();
+            }}
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none"
+            title="Kembali ke Beranda Splash"
+          >
+            <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
+            <span className="hidden sm:inline">Beranda</span>
+          </button>
+
+          {/* Tombol Kembali ke Intro */}
+          <button
+            id="ruang-kosong-arti-btn-back"
+            type="button"
+            onClick={() => {
+              playClick();
+              onBack();
+            }}
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
+            <span>Kembali</span>
+          </button>
+        </div>
+      </header>
+
+      {/* SPACER ATAS */}
+      <div
+        id="ruang-kosong-arti-header-spacer"
+        className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* ========================================================================= */}
+      {/* LAYER 2 (z-20): MAIN CONTENT (Split: Kiri Visualizer, Kanan Materi)       */}
+      {/* ========================================================================= */}
+      <main
+        id="ruang-kosong-arti-main-content"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+      >
+        <div
+          id="ruang-kosong-arti-grid"
+          className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
+        >
+          {/* SISI KIRI: SIMULATOR RUANG NAPAS (col-span-6) */}
+          <div
+            id="ruang-kosong-arti-left-container"
+            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
+          >
+            <div
+              id="ruang-kosong-arti-canvas-card"
+              className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-3 sm:p-5 lg:p-6 select-none"
+              style={{
+                height: 'min(58vh, 440px)',
+                maxHeight: '90%',
+                maxWidth: '100%',
+                minHeight: '180px',
+                aspectRatio: '1 / 1',
+                width: 'auto'
+              }}
+            >
+              {/* Header Visualizer */}
+              <div className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1.5 sm:pb-2">
+                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
+                  Visual Ruang Napas
+                </span>
+                <span
+                  style={{ backgroundColor: activePrinciple.themeColor }}
+                  className="px-2 py-0.5 rounded-full text-white text-[9px] sm:text-[10px] font-black tracking-wider uppercase border border-[#004760]"
+                >
+                  {activePrinciple.shortName}
+                </span>
+              </div>
+
+              {/* Center Dynamic Visualizer */}
+              <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-2">
+                <div
+                  className={`bg-[#FAF8F5] w-full rounded-2xl border-2 border-[#004760] transition-all duration-300 flex flex-col items-center justify-center ${
+                    interactiveGap === 'lega' ? 'p-4 sm:p-6 gap-3' : 'p-2 sm:p-3 gap-1.5'
+                  }`}
+                >
+                  {/* Demo Element: Card Mini */}
+                  <div className="bg-white rounded-xl border-2 border-[#004760] p-2.5 sm:p-3 shadow-xs w-full max-w-[240px] text-center">
+                    <span className="inline-block px-2 py-0.5 rounded-md bg-[#f9db00] text-[#004760] border border-[#004760] text-[9px] sm:text-[10px] font-black mb-1">
+                      Elemen Desain
+                    </span>
+                    <h5 className="font-serif font-black text-xs sm:text-sm text-slate-800">
+                      "Ruang Memberi Makna"
+                    </h5>
+                    <p className="text-[9px] sm:text-[10px] text-slate-600 mt-1">
+                      Mata menangkap pesan tanpa gangguan sesak.
+                    </p>
+                  </div>
+
+                  {activePrinciple.demoType === 'proximity' && (
+                    <div className="flex gap-2 w-full max-w-[240px] justify-center">
+                      <div className="flex-1 bg-white border border-[#004760] rounded-lg p-1 text-center text-[9px] font-bold text-[#004760]">
+                        Kelompok A
+                      </div>
+                      <div className="flex-1 bg-white border border-[#004760] rounded-lg p-1 text-center text-[9px] font-bold text-[#004760]">
+                        Kelompok B
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Bottom Interactive Controls */}
+              <div className="w-full flex items-center justify-between border-t border-slate-200 pt-1.5 text-[10px] sm:text-xs text-slate-600">
+                <span className="font-bold text-[#004760]">
+                  Jeda: {interactiveGap.toUpperCase()}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    playClick();
+                    setInteractiveGap((prev) => (prev === 'lega' ? 'sedang' : 'lega'));
+                  }}
+                  className="font-black text-[#00a1db] hover:underline cursor-pointer tracking-wider"
+                >
+                  Ubah Jeda Napas ↺
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* SISI KANAN: MATERI & DESKRIPSI (col-span-6) */}
+          <div
+            id="ruang-kosong-arti-right-content"
+            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto"
+          >
+            <div
+              id="ruang-kosong-arti-content-box"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              style={{
+                height: 'min(58vh, 440px)',
+                maxHeight: '90%',
+                minHeight: '180px'
+              }}
+            >
+              {/* 1. Badge & Judul Prinsip */}
+              <div id="ruang-kosong-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
+                <span
+                  id="ruang-kosong-arti-badge"
+                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
+                >
+                  {activePrinciple.badge}
+                </span>
+
+                <h2
+                  id="ruang-kosong-arti-title-text"
+                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
+                >
+                  {activePrinciple.name}
+                </h2>
+              </div>
+
+              {/* 2. Paragraf Deskripsi & Karakteristik */}
+              <div
+                id="ruang-kosong-arti-desc-wrapper"
+                className="w-full flex flex-col items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-3xl px-1 sm:px-2 my-auto"
+              >
+                <p
+                  id="ruang-kosong-arti-description"
+                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-2 sm:mb-2.5 lg:mb-3 2xl:mb-4"
+                >
+                  {activePrinciple.description}
+                </p>
+
+                {/* Trait Pills */}
+                <div
+                  id="ruang-kosong-arti-traits-container"
+                  className="hidden lg:flex items-center justify-center gap-2 2xl:gap-3 flex-wrap w-full"
+                >
+                  {activePrinciple.traits.map((trait, tIdx) => (
+                    <span
+                      key={tIdx}
+                      id={`ruang-kosong-arti-trait-${tIdx}`}
+                      className="px-2.5 sm:px-3 2xl:px-4 py-0.5 sm:py-1 2xl:py-1.5 rounded-lg 2xl:rounded-xl text-xs 2xl:text-sm font-black border-2 border-[#004760] bg-white text-[#004760] shadow-[2px_2px_0px_#00354c] 2xl:shadow-[3px_3px_0px_#00354c]"
+                    >
+                      {trait}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Area bawah spacer simetris */}
+              <div className="h-1 lg:h-2 shrink-0" />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* LAYER 3 (z-30): BOTTOM PRINCIPLE SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
+      <footer
+        id="ruang-kosong-arti-footer-buttons"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+      >
+        <div
+          id="ruang-kosong-selector-buttons"
+          className="flex flex-row items-center justify-center gap-1.5 min-[360px]:gap-2 sm:gap-3 md:gap-4 lg:gap-5 max-w-full z-30"
+        >
+          {spacePrinciples.map((item, idx) => {
+            const isSelected = selectedIndex === idx;
+
+            return (
+              <button
+                key={item.id}
+                id={`ruang-kosong-arti-button-${item.id}`}
+                type="button"
+                onClick={() => handleSelectPrinciple(idx)}
+                aria-label={item.name}
+                style={{
+                  backgroundColor: '#00a1db'
+                }}
+                className={`group relative flex items-center justify-center rounded-sm min-[360px]:rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl 2xl:rounded-3xl border-1.5 sm:border-2 lg:border-3 2xl:border-4 border-[#004760] transition-all duration-300 ease-out cursor-pointer shadow-[1px_1px_0px_#00354c] min-[360px]:shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[2px_2px_0px_#00354c] lg:shadow-[3px_3px_0px_#00354c] 2xl:shadow-[5px_5px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] select-none shrink-0 outline-none focus:outline-none focus-visible:outline-none ${
+                  isSelected
+                    ? '-translate-y-1 sm:-translate-y-2 2xl:-translate-y-3 shadow-[2.5px_2.5px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] 2xl:shadow-[9px_9px_0px_#00354c] w-14 min-[360px]:w-16 sm:w-[96px] md:w-[120px] lg:w-[150px] xl:w-[170px] 2xl:w-[220px] px-1'
+                    : 'hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_#00354c] 2xl:hover:shadow-[6px_6px_0px_#00354c] w-6 min-[360px]:w-7 sm:w-10 md:w-13 lg:w-16 xl:w-18 2xl:w-24'
+                } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
+              >
+                {isSelected ? (
+                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                    {item.shortName}
+                  </span>
+                ) : (
+                  <span className="font-serif font-black text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl text-white select-none">
+                    {idx + 1}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </footer>
+    </div>
+  );
+}
