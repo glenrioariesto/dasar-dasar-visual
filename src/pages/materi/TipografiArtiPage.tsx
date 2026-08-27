@@ -117,19 +117,19 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
     setActiveTag(tag);
   };
 
-  // Helper scale per semantic tag
+  // Helper scale per semantic tag (Disesuaikan agar tidak overflow pada card aspect-square di mobile)
   const getTagScale = (tag: TypoTag) => {
     switch (tag) {
       case 'h1':
-        return 1.3;
+        return 1.2;
       case 'h2':
         return 1.0;
       case 'h3':
         return 0.85;
       case 'h4':
-        return 0.7;
+        return 0.72;
       case 'p':
-        return 0.55;
+        return 0.58;
     }
   };
 
