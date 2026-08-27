@@ -101,12 +101,18 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [customText, setCustomText] = useState<string>('');
   const [letterSpacing, setLetterSpacing] = useState<number>(0);
+  const [fontSizeScale, setFontSizeScale] = useState<number>(1); // 0.75 (Kecil), 1 (Sedang), 1.25 (Besar)
 
   const activeFont = fontCategoryDetails[selectedIndex];
 
   const handleSelectFont = (index: number) => {
     playClick();
     setSelectedIndex(index);
+  };
+
+  const handleFontSizeChange = (scale: number) => {
+    playClick();
+    setFontSizeScale(scale);
   };
 
   return (
@@ -211,7 +217,9 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 <span
                   style={{
                     fontFamily: activeFont.fontFamily,
-                    letterSpacing: `${letterSpacing}px`
+                    letterSpacing: `${letterSpacing}px`,
+                    transform: `scale(${fontSizeScale})`,
+                    transformOrigin: 'center center'
                   }}
                   className="text-[#004760] leading-none text-4xl min-[360px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl drop-shadow-sm select-none transition-all duration-200"
                 >
@@ -244,12 +252,47 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               </div>
 
               {/* Bottom Bar:
-                  - Mobile (<md): Teks alfabet ringkas hemat ruang vertikal
-                  - Tablet & Desktop (>=md): Type-to-preview input & kerning slider */}
+                  - Mobile (<md): Interactive Font Size Toggle (Kecil / Sedang / Besar)
+                  - Tablet & Desktop (>=md): Type-to-preview input, Kerning slider, dan Font size toggle */}
               <div className="w-full border-t border-slate-200 pt-1 shrink-0">
-                {/* Mobile view */}
-                <div className="flex md:hidden items-center justify-center text-[8px] min-[360px]:text-[9px] text-slate-500 font-bold tracking-wider">
-                  <span>Aa Bb Cc 123 !?</span>
+                {/* Mobile view: Interactive Size Controls */}
+                <div className="flex md:hidden items-center justify-between px-1 text-[8px] min-[360px]:text-[9px] text-slate-600 font-bold">
+                  <span className="text-[#004760]">Ukuran:</span>
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => handleFontSizeChange(0.75)}
+                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
+                        fontSizeScale === 0.75
+                          ? 'bg-[#004760] text-white border-[#004760]'
+                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                      }`}
+                    >
+                      A- (Kecil)
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleFontSizeChange(1)}
+                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
+                        fontSizeScale === 1
+                          ? 'bg-[#004760] text-white border-[#004760]'
+                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                      }`}
+                    >
+                      Sedang
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleFontSizeChange(1.25)}
+                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
+                        fontSizeScale === 1.25
+                          ? 'bg-[#004760] text-white border-[#004760]'
+                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                      }`}
+                    >
+                      A+ (Besar)
+                    </button>
+                  </div>
                 </div>
 
                 {/* Tablet & Desktop view */}
@@ -276,8 +319,8 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     )}
                   </div>
 
-                  {/* Kerning Slider */}
-                  <div className="w-full flex items-center justify-between text-[10px] text-slate-600">
+                  {/* Dual Controls: Kerning Slider & Font Size Scale Buttons */}
+                  <div className="w-full flex items-center justify-between text-[10px] text-slate-600 gap-2">
                     <div className="flex items-center gap-1 font-bold text-[#004760]">
                       <Sliders className="w-3 h-3 text-[#00a1db]" />
                       <span>Kerning: {letterSpacing}px</span>
@@ -289,8 +332,48 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                       step="1"
                       value={letterSpacing}
                       onChange={(e) => setLetterSpacing(Number(e.target.value))}
-                      className="w-20 lg:w-28 accent-[#00a1db] cursor-pointer"
+                      className="w-16 lg:w-20 accent-[#00a1db] cursor-pointer"
                     />
+
+                    {/* Desktop Size Buttons */}
+                    <div className="flex items-center gap-1 ml-auto">
+                      <button
+                        type="button"
+                        onClick={() => handleFontSizeChange(0.75)}
+                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
+                          fontSizeScale === 0.75
+                            ? 'bg-[#004760] text-white border-[#004760]'
+                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                        }`}
+                        title="Ukuran Kecil"
+                      >
+                        A-
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleFontSizeChange(1)}
+                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
+                          fontSizeScale === 1
+                            ? 'bg-[#004760] text-white border-[#004760]'
+                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                        }`}
+                        title="Ukuran Normal"
+                      >
+                        100%
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleFontSizeChange(1.25)}
+                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
+                          fontSizeScale === 1.25
+                            ? 'bg-[#004760] text-white border-[#004760]'
+                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
+                        }`}
+                        title="Ukuran Besar"
+                      >
+                        A+
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
