@@ -265,19 +265,61 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   </div>
                 )}
 
-                {/* 4. DEMO FOKUS / ISOLATION */}
+                {/* 4. DEMO FOKUS / ISOLATION (Perbandingan Nyata: Dikelilingi Gangguan vs Terisolasi Bersih) */}
                 {activePrinciple.demoType === 'focus' && (
-                  <div
-                    className={`w-full h-full max-h-[160px] sm:max-h-[200px] bg-[#FAF8F5] rounded-xl border-2 border-[#004760] flex items-center justify-center transition-all duration-300 ${
-                      spaceLevel === 'sesak' ? 'p-1' : spaceLevel === 'sedang' ? 'p-3' : 'p-6'
-                    }`}
-                  >
-                    <div className="bg-[#ea580c] text-white px-3 py-2 rounded-xl border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] text-center animate-pulse">
-                      <Eye className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-0.5" />
-                      <span className="font-serif font-black text-[9px] sm:text-xs uppercase block">
-                        Fokus Utama
-                      </span>
-                    </div>
+                  <div className="w-full h-full max-h-[160px] sm:max-h-[200px] bg-[#FAF8F5] rounded-xl border-2 border-[#004760] flex flex-col items-center justify-center p-2 relative overflow-hidden transition-all duration-300">
+                    {/* Saat SESAK: Banyak elemen gangguan bertumpuk di sekitar fokus */}
+                    {spaceLevel === 'sesak' && (
+                      <div className="grid grid-cols-3 gap-1 w-full max-w-[210px] items-center justify-items-center opacity-90 transition-all duration-300">
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Iklan Bising</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Banner Promo</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Teks Acak</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Stiker Grafis</div>
+                        <div className="bg-[#ea580c] text-white px-2 py-1 rounded-lg border-2 border-[#004760] shadow-[1px_1px_0px_#00354c] text-center scale-90">
+                          <Eye className="w-3 h-3 mx-auto" />
+                          <span className="font-serif font-black text-[7.5px] uppercase block">Tenggelam</span>
+                        </div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Tombol Lain</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Garis Hiasan</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Label Info</div>
+                        <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Gambar Mini</div>
+                      </div>
+                    )}
+
+                    {/* Saat SEDANG: Gangguan mulai berkurang menjauh */}
+                    {spaceLevel === 'sedang' && (
+                      <div className="flex flex-col items-center justify-center gap-2 w-full transition-all duration-300">
+                        <div className="flex justify-between w-full max-w-[200px] text-[7.5px] text-slate-400">
+                          <span>• elemen latar</span>
+                          <span>elemen latar •</span>
+                        </div>
+                        <div className="bg-[#ea580c] text-white px-3.5 py-1.5 rounded-xl border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] text-center scale-100">
+                          <Eye className="w-4 h-4 mx-auto mb-0.5" />
+                          <span className="font-serif font-black text-[8.5px] sm:text-[9.5px] uppercase block">
+                            Fokus Terlihat
+                          </span>
+                        </div>
+                        <div className="flex justify-between w-full max-w-[200px] text-[7.5px] text-slate-400">
+                          <span>• elemen latar</span>
+                          <span>elemen latar •</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Saat LEGA: Ruang kosong luas murni mengisolasi objek utama sebagai pusat perhatian seketika */}
+                    {spaceLevel === 'lega' && (
+                      <div className="flex flex-col items-center justify-center w-full h-full p-4 transition-all duration-500 animate-fadeIn">
+                        <div className="bg-[#ea580c] text-white px-5 py-3 rounded-2xl border-2 sm:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] text-center transform scale-110 sm:scale-125 transition-transform duration-300">
+                          <Eye className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1 animate-bounce" />
+                          <span className="font-serif font-black text-[10px] sm:text-xs uppercase tracking-wider block">
+                            Pusat Perhatian Murni
+                          </span>
+                          <span className="text-[7.5px] sm:text-[8.5px] font-bold opacity-90 block">
+                            100% Bebas Gangguan
+                          </span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
 
