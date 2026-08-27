@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
-import { ArrowLeft, Home, Sliders, Sparkles } from 'lucide-react';
+import { ArrowLeft, Home, Sliders } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 
@@ -115,7 +115,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       {/* ========================================================================= */}
       <header
         id="tipografi-arti-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-6 lg:pt-8 2xl:pt-14 pointer-events-none"
       >
         <div
           id="tipografi-arti-logo-container"
@@ -125,7 +125,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
             id="tipografi-arti-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
+            className="h-6 min-[360px]:h-7 sm:h-9 md:h-11 lg:h-16 2xl:h-22 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
           />
         </div>
 
@@ -141,7 +141,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               playClick();
               onHome();
             }}
-            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none"
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-4 py-0.5 sm:py-1.5 lg:py-2 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none"
             title="Kembali ke Beranda Splash"
           >
             <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
@@ -156,7 +156,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               playClick();
               onBack();
             }}
-            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-4 lg:px-6 py-0.5 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
           >
             <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
             <span>Kembali</span>
@@ -164,10 +164,10 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
         </div>
       </header>
 
-      {/* SPACER ATAS */}
+      {/* SPACER ATAS (Height-Adaptive) */}
       <div
         id="tipografi-arti-header-spacer"
-        className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
+        className="w-full h-5 min-[360px]:h-6 sm:h-8 md:h-12 lg:h-16 2xl:h-24 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -176,37 +176,37 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       {/* ========================================================================= */}
       <main
         id="tipografi-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-3 sm:px-6 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="tipografi-arti-grid"
-          className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
+          className="grid grid-cols-12 gap-2.5 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
         >
-          {/* SISI KIRI: SPESIMEN TIPOGRAFI BERSIH (TANPA HEADER BAR) */}
+          {/* SISI KIRI: SPESIMEN TIPOGRAFI (col-span-5 di mobile, col-span-5 lg:col-span-5) */}
           <div
             id="tipografi-arti-left-container"
-            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
+            className="col-span-5 sm:col-span-5 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
           >
             <div
               id="tipografi-arti-specimen-card"
-              className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-3 sm:p-5 lg:p-6 select-none"
+              className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[3px_3px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-2 sm:p-4 lg:p-6 select-none"
               style={{
                 height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                maxHeight: '94%',
                 maxWidth: '100%',
-                minHeight: '160px',
+                minHeight: '140px',
                 aspectRatio: '1 / 1',
                 width: 'auto'
               }}
             >
               {/* Center Letterform Focus */}
-              <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-2 text-center">
+              <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-1 sm:px-2 text-center overflow-hidden">
                 <span
                   style={{
                     fontFamily: activeFont.fontFamily,
                     letterSpacing: `${letterSpacing}px`
                   }}
-                  className="text-[#004760] leading-none text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-sm select-none transition-all duration-200"
+                  className="text-[#004760] leading-none text-4xl min-[360px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl drop-shadow-sm select-none transition-all duration-200"
                 >
                   {customText.trim() ? customText : activeFont.sampleLetter}
                 </span>
@@ -216,30 +216,30 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     fontFamily: activeFont.fontFamily,
                     letterSpacing: `${Math.max(0, letterSpacing * 0.5)}px`
                   }}
-                  className="font-black text-[11px] sm:text-sm lg:text-base text-slate-800 mt-2 sm:mt-3 leading-snug line-clamp-1"
+                  className="font-black text-[10px] min-[360px]:text-[11px] sm:text-sm lg:text-base text-slate-800 mt-1 sm:mt-2.5 leading-snug line-clamp-1 truncate max-w-full"
                 >
-                  "{customText.trim() ? 'Pratinjau Kustom Huruf' : activeFont.sampleHeadline}"
+                  "{customText.trim() ? 'Uji Coba Teks' : activeFont.sampleHeadline}"
                 </h4>
 
                 <p
                   style={{ fontFamily: activeFont.fontFamily }}
-                  className="hidden sm:block text-[10px] sm:text-xs text-slate-600 mt-1 max-w-xs line-clamp-2"
+                  className="hidden md:block text-[10px] sm:text-xs text-slate-600 mt-1 max-w-xs line-clamp-2"
                 >
                   {activeFont.sampleSentence}
                 </p>
               </div>
 
-              {/* Bottom Bar: 
-                  - Mobile: Teks alfabet ringkas
-                  - Tablet/Desktop (md: ke atas): Interactive Type-to-Preview Input & Kerning Slider */}
-              <div className="w-full border-t border-slate-200 pt-1.5 shrink-0">
-                {/* Tampilan Mobile: Simpel & Ringkas */}
-                <div className="flex md:hidden items-center justify-center text-[9px] sm:text-xs text-slate-500 font-bold tracking-wider">
-                  <span>Aa Bb Cc Dd 123 !?</span>
+              {/* Bottom Bar:
+                  - Mobile (<md): Teks alfabet ringkas hemat ruang vertikal
+                  - Tablet & Desktop (>=md): Type-to-preview input & kerning slider */}
+              <div className="w-full border-t border-slate-200 pt-1 shrink-0">
+                {/* Mobile view */}
+                <div className="flex md:hidden items-center justify-center text-[8px] min-[360px]:text-[9px] text-slate-500 font-bold tracking-wider">
+                  <span>Aa Bb Cc 123 !?</span>
                 </div>
 
-                {/* Tampilan Tablet & Desktop: Kontrol Interaktif Lengkap */}
-                <div className="hidden md:flex flex-col gap-1.5">
+                {/* Tablet & Desktop view */}
+                <div className="hidden md:flex flex-col gap-1.5 pt-0.5">
                   {/* Type-to-Preview Input */}
                   <div className="w-full flex items-center gap-1.5">
                     <input
@@ -247,7 +247,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                       maxLength={18}
                       value={customText}
                       onChange={(e) => setCustomText(e.target.value)}
-                      placeholder="Ketik teks uji coba di sini..."
+                      placeholder="Ketik teks uji coba..."
                       className="flex-1 px-2 py-0.5 rounded-lg border border-[#004760] text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#00a1db] placeholder:text-slate-400 font-sans"
                     />
                     {customText && (
@@ -275,7 +275,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                       step="1"
                       value={letterSpacing}
                       onChange={(e) => setLetterSpacing(Number(e.target.value))}
-                      className="w-24 lg:w-32 accent-[#00a1db] cursor-pointer"
+                      className="w-20 lg:w-28 accent-[#00a1db] cursor-pointer"
                     />
                   </div>
                 </div>
@@ -283,38 +283,38 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
             </div>
           </div>
 
-          {/* SISI KANAN: MATERI & DESKRIPSI (col-span-6) */}
+          {/* SISI KANAN: MATERI & DESKRIPSI (col-span-7 di mobile untuk kenyamanan baca teks) */}
           <div
             id="tipografi-arti-right-content"
-            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto"
+            className="col-span-7 sm:col-span-7 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto pl-1 sm:pl-2"
           >
             <div
               id="tipografi-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-0.5 sm:py-1 gap-1.5 sm:gap-2.5 lg:gap-3.5 transition-all duration-300"
               style={{
                 height: 'min(58vh, 440px)',
-                maxHeight: '90%',
-                minHeight: '160px'
+                maxHeight: '94%',
+                minHeight: '140px'
               }}
             >
-              {/* 1. Judul Tipe Font dengan Baris Terpisah untuk Makna/Keterangan */}
+              {/* 1. Judul Tipe Font (Baris 1: Nama Utama, Baris 2: Keterangan) */}
               <div id="tipografi-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
                 <h2
                   id="tipografi-arti-title-text"
                   style={{ fontFamily: activeFont.fontFamily }}
-                  className="font-serif font-black text-xl min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
+                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
                 >
                   {activeFont.name.includes('(') ? (
                     <>
                       <span>{activeFont.name.split('(')[0].trim()}</span>
-                      <span className="text-xs min-[360px]:text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
+                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
                         ({activeFont.name.split('(')[1]}
                       </span>
                     </>
                   ) : activeFont.name.includes('/') ? (
                     <>
                       <span>{activeFont.name.split('/')[0].trim()}</span>
-                      <span className="text-xs min-[360px]:text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
+                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
                         / {activeFont.name.split('/')[1].trim()}
                       </span>
                     </>
@@ -331,7 +331,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               >
                 <p
                   id="tipografi-arti-description"
-                  className="text-[10px] min-[360px]:text-[11px] sm:text-[13px] md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-2 sm:mb-2.5 lg:mb-3 2xl:mb-4"
+                  className="text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-1 sm:mb-2 lg:mb-3 2xl:mb-4"
                 >
                   {activeFont.description}
                 </p>
@@ -354,7 +354,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               </div>
 
               {/* Area bawah spacer simetris */}
-              <div className="h-1 lg:h-2 shrink-0" />
+              <div className="h-0.5 sm:h-1 lg:h-2 shrink-0" />
             </div>
           </div>
         </div>
@@ -363,7 +363,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       {/* LAYER 3 (z-30): BOTTOM FONT SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="tipografi-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-0.5 pb-2 sm:pb-3.5 md:pb-8 lg:pb-10 2xl:pb-16"
       >
         <div
           id="tipografi-selector-buttons"
@@ -384,18 +384,18 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 }}
                 className={`group relative flex items-center justify-center rounded-sm min-[360px]:rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl 2xl:rounded-3xl border-1.5 sm:border-2 lg:border-3 2xl:border-4 border-[#004760] transition-all duration-300 ease-out cursor-pointer shadow-[1px_1px_0px_#00354c] min-[360px]:shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[2px_2px_0px_#00354c] lg:shadow-[3px_3px_0px_#00354c] 2xl:shadow-[5px_5px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] select-none shrink-0 outline-none focus:outline-none focus-visible:outline-none ${
                   isSelected
-                    ? '-translate-y-1 sm:-translate-y-2 2xl:-translate-y-3 shadow-[2.5px_2.5px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] 2xl:shadow-[9px_9px_0px_#00354c] w-14 min-[360px]:w-16 sm:w-[96px] md:w-[120px] lg:w-[150px] xl:w-[170px] 2xl:w-[220px] px-1'
-                    : 'hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_#00354c] 2xl:hover:shadow-[6px_6px_0px_#00354c] w-6 min-[360px]:w-7 sm:w-10 md:w-13 lg:w-16 xl:w-18 2xl:w-24'
-                } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
+                    ? '-translate-y-0.5 sm:-translate-y-1.5 2xl:-translate-y-3 shadow-[2px_2px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] 2xl:shadow-[9px_9px_0px_#00354c] w-12 min-[360px]:w-14 sm:w-[96px] md:w-[120px] lg:w-[150px] xl:w-[170px] 2xl:w-[220px] px-1'
+                    : 'hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_#00354c] 2xl:hover:shadow-[6px_6px_0px_#00354c] w-5 min-[360px]:w-6 sm:w-10 md:w-13 lg:w-16 xl:w-18 2xl:w-24'
+                } h-5 min-[360px]:h-6 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                  <span className="font-serif font-black text-[8px] min-[360px]:text-[9px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
                     {item.shortName}
                   </span>
                 ) : (
                   <span
                     style={{ fontFamily: item.fontFamily }}
-                    className="font-serif font-black text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl text-white select-none"
+                    className="font-serif font-black text-[10px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl text-white select-none"
                   >
                     {item.sampleLetter[0]}
                   </span>
