@@ -286,15 +286,8 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 minHeight: '180px'
               }}
             >
-              {/* 1. Badge & Judul Tipe Font */}
+              {/* 1. Judul Tipe Font */}
               <div id="tipografi-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
-                <span
-                  id="tipografi-arti-badge"
-                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
-                >
-                  {activeFont.badge}
-                </span>
-
                 <h2
                   id="tipografi-arti-title-text"
                   style={{ fontFamily: activeFont.fontFamily }}
