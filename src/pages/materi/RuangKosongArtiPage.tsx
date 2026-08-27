@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
-import { ArrowLeft, Home, Sparkles, Layout, AlignJustify, Eye, MoveHorizontal } from 'lucide-react';
+import { ArrowLeft, Home, Maximize2, Minimize2, Sliders, Eye } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 
@@ -81,13 +81,18 @@ const spacePrinciples: SpacePrincipleDetail[] = [
 
 export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [interactiveGap, setInteractiveGap] = useState<'sedang' | 'lega'>('lega');
+  const [spaceLevel, setSpaceLevel] = useState<'sesak' | 'sedang' | 'lega'>('lega');
 
   const activePrinciple = spacePrinciples[selectedIndex];
 
   const handleSelectPrinciple = (index: number) => {
     playClick();
     setSelectedIndex(index);
+  };
+
+  const handleSpaceChange = (level: 'sesak' | 'sedang' | 'lega') => {
+    playClick();
+    setSpaceLevel(level);
   };
 
   return (
@@ -103,7 +108,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* ========================================================================= */}
       <header
         id="ruang-kosong-arti-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-6 lg:pt-8 2xl:pt-14 pointer-events-none"
       >
         <div
           id="ruang-kosong-arti-logo-container"
@@ -113,7 +118,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
             id="ruang-kosong-arti-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
+            className="h-6 min-[360px]:h-7 sm:h-9 md:h-11 lg:h-16 2xl:h-22 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
           />
         </div>
 
@@ -129,7 +134,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
               playClick();
               onHome();
             }}
-            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none"
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-4 py-0.5 sm:py-1.5 lg:py-2 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 transition-all cursor-pointer select-none"
             title="Kembali ke Beranda Splash"
           >
             <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
@@ -144,7 +149,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
               playClick();
               onBack();
             }}
-            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-4 lg:px-6 py-0.5 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
           >
             <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
             <span>Kembali</span>
@@ -152,10 +157,10 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
         </div>
       </header>
 
-      {/* SPACER ATAS */}
+      {/* SPACER ATAS (Height-Adaptive) */}
       <div
         id="ruang-kosong-arti-header-spacer"
-        className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
+        className="w-full h-5 min-[360px]:h-6 sm:h-8 md:h-12 lg:h-16 2xl:h-24 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -164,98 +169,175 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* ========================================================================= */}
       <main
         id="ruang-kosong-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-3 sm:px-6 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="ruang-kosong-arti-grid"
-          className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
+          className="grid grid-cols-12 gap-2.5 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
         >
-          {/* SISI KIRI: SIMULATOR RUANG NAPAS (col-span-6) */}
+          {/* SISI KIRI: SIMULATOR RUANG NAPAS INTERAKTIF (col-span-5 di mobile) */}
           <div
             id="ruang-kosong-arti-left-container"
-            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
+            className="col-span-5 sm:col-span-5 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
           >
             <div
               id="ruang-kosong-arti-canvas-card"
-              className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-3 sm:p-5 lg:p-6 select-none"
+              className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[3px_3px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-2 sm:p-4 lg:p-6 select-none"
               style={{
                 height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                maxHeight: '94%',
                 maxWidth: '100%',
-                minHeight: '180px',
+                minHeight: '140px',
                 aspectRatio: '1 / 1',
                 width: 'auto'
               }}
             >
-              {/* Header Visualizer */}
-              <div className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1.5 sm:pb-2">
-                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
-                  Visual Ruang Napas
-                </span>
-                <span
-                  style={{ backgroundColor: activePrinciple.themeColor }}
-                  className="px-2 py-0.5 rounded-full text-white text-[9px] sm:text-[10px] font-black tracking-wider uppercase border border-[#004760]"
-                >
-                  {activePrinciple.shortName}
-                </span>
-              </div>
+              {/* Center Dynamic Visualizer Simulation */}
+              <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-1 sm:px-2 overflow-hidden">
+                {/* 1. DEMO MAKRO: Margin Kanvas Luas vs Sempit */}
+                {activePrinciple.demoType === 'macro' && (
+                  <div
+                    className={`w-full h-full max-h-[170px] sm:max-h-[220px] bg-[#FAF8F5] rounded-xl border-2 border-dashed border-[#004760] flex items-center justify-center transition-all duration-300 ${
+                      spaceLevel === 'sesak'
+                        ? 'p-0.5'
+                        : spaceLevel === 'sedang'
+                        ? 'p-3 sm:p-4'
+                        : 'p-5 sm:p-7'
+                    }`}
+                  >
+                    <div className="w-full h-full bg-white rounded-lg border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] flex flex-col items-center justify-center p-2 text-center">
+                      <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs text-[#004760] uppercase">
+                        {spaceLevel === 'sesak' ? '⚠️ Kanvas Sesak' : '✨ Kanvas Lega'}
+                      </span>
+                      <p className="text-[8px] min-[360px]:text-[9px] sm:text-[10px] text-slate-600 mt-0.5 leading-snug">
+                        {spaceLevel === 'sesak' ? 'Elemen menempel ke tepi' : 'Margin memberi ruang bernapas'}
+                      </p>
+                    </div>
+                  </div>
+                )}
 
-              {/* Center Dynamic Visualizer */}
-              <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-2">
-                <div
-                  className={`bg-[#FAF8F5] w-full rounded-2xl border-2 border-[#004760] transition-all duration-300 flex flex-col items-center justify-center ${
-                    interactiveGap === 'lega' ? 'p-4 sm:p-6 gap-3' : 'p-2 sm:p-3 gap-1.5'
-                  }`}
-                >
-                  {/* Demo Element: Card Mini */}
-                  <div className="bg-white rounded-xl border-2 border-[#004760] p-2.5 sm:p-3 shadow-xs w-full max-w-[240px] text-center">
-                    <span className="inline-block px-2 py-0.5 rounded-md bg-[#f9db00] text-[#004760] border border-[#004760] text-[9px] sm:text-[10px] font-black mb-1">
-                      Elemen Desain
-                    </span>
-                    <h5 className="font-serif font-black text-xs sm:text-sm text-slate-800">
-                      "Ruang Memberi Makna"
+                {/* 2. DEMO MIKRO: Jarak Antar Teks/Elemen Halus */}
+                {activePrinciple.demoType === 'micro' && (
+                  <div className="w-full bg-[#FAF8F5] rounded-xl border-2 border-[#004760] p-2 sm:p-3 text-center flex flex-col items-center justify-center">
+                    <h5
+                      style={{
+                        letterSpacing: spaceLevel === 'sesak' ? '-1px' : spaceLevel === 'sedang' ? '1px' : '4px',
+                        lineHeight: spaceLevel === 'sesak' ? '1' : spaceLevel === 'sedang' ? '1.3' : '1.7'
+                      }}
+                      className="font-serif font-black text-xs min-[360px]:text-sm sm:text-base lg:text-lg text-[#004760] uppercase transition-all duration-300"
+                    >
+                      Keterbacaan Huruf
                     </h5>
-                    <p className="text-[9px] sm:text-[10px] text-slate-600 mt-1">
-                      Mata menangkap pesan tanpa gangguan sesak.
+                    <p
+                      style={{
+                        lineHeight: spaceLevel === 'sesak' ? '1.1' : spaceLevel === 'sedang' ? '1.4' : '1.8'
+                      }}
+                      className="text-[8px] min-[360px]:text-[9px] sm:text-xs text-slate-700 mt-1 transition-all duration-300"
+                    >
+                      Jeda mikro antarhuruf dan baris menjamin mata tidak cepat lelah saat membaca.
                     </p>
                   </div>
+                )}
 
-                  {activePrinciple.demoType === 'proximity' && (
-                    <div className="flex gap-2 w-full max-w-[240px] justify-center">
-                      <div className="flex-1 bg-white border border-[#004760] rounded-lg p-1 text-center text-[9px] font-bold text-[#004760]">
-                        Kelompok A
-                      </div>
-                      <div className="flex-1 bg-white border border-[#004760] rounded-lg p-1 text-center text-[9px] font-bold text-[#004760]">
-                        Kelompok B
-                      </div>
+                {/* 3. DEMO PROKSIMITAS: Pengelompokan Logis */}
+                {activePrinciple.demoType === 'proximity' && (
+                  <div
+                    className={`w-full bg-[#FAF8F5] rounded-xl border-2 border-[#004760] p-2 flex flex-col items-center justify-center transition-all duration-300 ${
+                      spaceLevel === 'sesak' ? 'gap-1' : spaceLevel === 'sedang' ? 'gap-2' : 'gap-3 sm:gap-4'
+                    }`}
+                  >
+                    <div className="flex gap-1.5 w-full justify-center">
+                      <span className="px-2 py-1 rounded bg-[#f9db00] text-[#004760] font-black text-[8px] sm:text-[9px] border border-[#004760]">
+                        Kelompok Judul A
+                      </span>
+                      <span className="px-2 py-1 rounded bg-[#f9db00] text-[#004760] font-black text-[8px] sm:text-[9px] border border-[#004760]">
+                        Info A
+                      </span>
                     </div>
-                  )}
-                </div>
+                    <div className="flex gap-1.5 w-full justify-center">
+                      <span className="px-2 py-1 rounded bg-[#00a1db] text-white font-black text-[8px] sm:text-[9px] border border-[#004760]">
+                        Kelompok Topik B
+                      </span>
+                      <span className="px-2 py-1 rounded bg-[#00a1db] text-white font-black text-[8px] sm:text-[9px] border border-[#004760]">
+                        Info B
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* 4. DEMO FOKUS / ISOLATION */}
+                {activePrinciple.demoType === 'focus' && (
+                  <div
+                    className={`w-full h-full max-h-[160px] sm:max-h-[200px] bg-[#FAF8F5] rounded-xl border-2 border-[#004760] flex items-center justify-center transition-all duration-300 ${
+                      spaceLevel === 'sesak' ? 'p-1' : spaceLevel === 'sedang' ? 'p-3' : 'p-6'
+                    }`}
+                  >
+                    <div className="bg-[#ea580c] text-white px-3 py-2 rounded-xl border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] text-center animate-pulse">
+                      <Eye className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-0.5" />
+                      <span className="font-serif font-black text-[9px] sm:text-xs uppercase block">
+                        Fokus Utama
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* 5. DEMO IRAMA / RHYTHM */}
+                {activePrinciple.demoType === 'rhythm' && (
+                  <div className="w-full bg-[#FAF8F5] rounded-xl border-2 border-[#004760] p-2.5 flex items-center justify-center gap-1.5 sm:gap-2">
+                    <div className="w-4 h-12 bg-[#004760] rounded-md transition-all duration-300" />
+                    <div className={`h-12 bg-[#00a1db] rounded-md transition-all duration-300 ${spaceLevel === 'sesak' ? 'w-2' : spaceLevel === 'sedang' ? 'w-6' : 'w-10'}`} />
+                    <div className="w-4 h-12 bg-[#004760] rounded-md transition-all duration-300" />
+                    <div className={`h-12 bg-[#f9db00] rounded-md transition-all duration-300 ${spaceLevel === 'sesak' ? 'w-2' : spaceLevel === 'sedang' ? 'w-8' : 'w-12'}`} />
+                  </div>
+                )}
               </div>
 
-              {/* Bottom Interactive Controls */}
-              <div className="w-full flex items-center justify-between border-t border-slate-200 pt-1.5 text-[10px] sm:text-xs text-slate-600">
-                <span className="font-bold text-[#004760]">
-                  Jeda: {interactiveGap.toUpperCase()}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => {
-                    playClick();
-                    setInteractiveGap((prev) => (prev === 'lega' ? 'sedang' : 'lega'));
-                  }}
-                  className="font-black text-[#00a1db] hover:underline cursor-pointer tracking-wider"
-                >
-                  Ubah Jeda Napas ↺
-                </button>
+              {/* Bottom Interactive Controls: Tingkat Ruang Napas (Sesak / Sedang / Lega) */}
+              <div className="w-full border-t border-slate-200 pt-1 shrink-0 flex items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] sm:text-xs text-slate-600 font-bold">
+                <span className="text-[#004760] font-black">Simulasi Ruang:</span>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => handleSpaceChange('sesak')}
+                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                      spaceLevel === 'sesak'
+                        ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
+                        : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
+                    }`}
+                  >
+                    Sesak
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleSpaceChange('sedang')}
+                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                      spaceLevel === 'sedang'
+                        ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
+                        : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
+                    }`}
+                  >
+                    Sedang
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleSpaceChange('lega')}
+                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                      spaceLevel === 'lega'
+                        ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
+                        : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
+                    }`}
+                  >
+                    Lega ✨
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* SISI KANAN: MATERI & DESKRIPSI (col-span-6) */}
+          {/* SISI KANAN: MATERI & DESKRIPSI (col-span-7 di mobile) */}
           <div
             id="ruang-kosong-arti-right-content"
-            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto"
+            className="col-span-7 sm:col-span-7 flex flex-col items-center justify-center h-full w-full min-h-0 my-auto pl-1 sm:pl-2"
           >
             <div
               id="ruang-kosong-arti-content-box"
@@ -297,7 +379,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   {activePrinciple.description}
                 </p>
 
-                {/* Trait Pills */}
+                {/* Trait Pills (Hanya desktop: lg ke atas) */}
                 <div
                   id="ruang-kosong-arti-traits-container"
                   className="hidden lg:flex items-center justify-center gap-2 2xl:gap-3 flex-wrap w-full"
@@ -321,7 +403,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* LAYER 3 (z-30): BOTTOM PRINCIPLE SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="ruang-kosong-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-0.5 pb-2 sm:pb-3.5 md:pb-8 lg:pb-10 2xl:pb-16"
       >
         <div
           id="ruang-kosong-selector-buttons"
@@ -342,7 +424,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                 }}
                 className={`group relative flex items-center justify-center rounded-sm min-[360px]:rounded-md sm:rounded-lg md:rounded-xl lg:rounded-2xl 2xl:rounded-3xl border-1.5 sm:border-2 lg:border-3 2xl:border-4 border-[#004760] transition-all duration-300 ease-out cursor-pointer shadow-[1px_1px_0px_#00354c] min-[360px]:shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[2px_2px_0px_#00354c] lg:shadow-[3px_3px_0px_#00354c] 2xl:shadow-[5px_5px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] select-none shrink-0 outline-none focus:outline-none focus-visible:outline-none ${
                   isSelected
-                    ? '-translate-y-1 sm:-translate-y-2 2xl:-translate-y-3 shadow-[2.5px_2.5px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] 2xl:shadow-[9px_9px_0px_#00354c] w-14 min-[360px]:w-16 sm:w-[96px] md:w-[120px] lg:w-[150px] xl:w-[170px] 2xl:w-[220px] px-1'
+                    ? '-translate-y-0.5 sm:-translate-y-1.5 2xl:-translate-y-3 shadow-[2px_2px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] 2xl:shadow-[9px_9px_0px_#00354c] w-14 min-[360px]:w-16 sm:w-[96px] md:w-[120px] lg:w-[150px] xl:w-[170px] 2xl:w-[220px] px-1'
                     : 'hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_#00354c] 2xl:hover:shadow-[6px_6px_0px_#00354c] w-6 min-[360px]:w-7 sm:w-10 md:w-13 lg:w-16 xl:w-18 2xl:w-24'
                 } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
