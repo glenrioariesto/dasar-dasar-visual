@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 import judulRuangKosong from '../../assets/judul-ruangkosong.webp';
-import ruangKosongIcon from '../../assets/ruangkosong-icon.webp';
+import ruangKosongIcon from '../../assets/ruangkosong.webp';
 
 interface RuangKosongPageProps {
   onBack: () => void;

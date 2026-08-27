@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 import judulTipografi from '../../assets/judul-tifografi.webp';
-import tipografiIcon from '../../assets/tipografi-icon.webp';
+import tipografiIcon from '../../assets/tipografi.webp';
 
 interface TipografiPageProps {
   onBack: () => void;
