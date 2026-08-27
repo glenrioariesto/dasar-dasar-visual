@@ -133,13 +133,13 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
       {/* ========================================================================= */}
       <header
         id="warna-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-6 sm:px-10 md:px-14 pt-3 sm:pt-5"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-4 lg:px-8 2xl:px-12 pt-2.5 lg:pt-5 2xl:pt-6"
       >
         <div className="flex items-center gap-3">
           <img
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-11 sm:h-14 md:h-16 w-auto object-contain drop-shadow-md"
+            className="h-10 lg:h-20 2xl:h-26 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
           />
         </div>
 
@@ -150,34 +150,44 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
             playClick();
             onBack();
           }}
-          className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl border-2 border-slate-900 bg-white hover:bg-slate-100 text-slate-900 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-[3px_3px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+          className="group rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer select-none"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:-translate-x-1" />
           <span>Beranda</span>
         </button>
       </header>
 
       {/* ========================================================================= */}
       {/* LAYER 2 (z-20): MAIN CONTENT (Split: Kiri Color Wheel, Kanan Materi)       */}
+      {/* Layout Konsisten 2-Kolom Berdampingan Seperti Desktop                      */}
       {/* ========================================================================= */}
       <main
         id="warna-main-content"
-        className="z-20 flex-1 flex items-center justify-center px-6 sm:px-12 md:px-16 lg:px-20 py-2 overflow-hidden w-full max-w-7xl mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center pl-1 sm:pl-2 lg:pl-4 2xl:pl-6 pr-3 sm:pr-4 lg:pr-8 2xl:pr-10 pt-0 pb-1 -mt-2 lg:-mt-3 2xl:-mt-4 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center w-full h-full max-h-[620px]">
+        <div className="grid grid-cols-12 gap-3 lg:gap-6 2xl:gap-8 items-center w-full h-full max-h-full my-auto -translate-x-2 lg:-translate-x-4 2xl:-translate-x-6">
           {/* ===================================================================== */}
-          {/* SISI KIRI: COLOR WHEEL INTERAKTIF                                     */}
-          {/* Outline kotak biru: #004760 | Tanpa Pop-up Badge                      */}
+          {/* SISI KIRI: COLOR WHEEL INTERAKTIF (col-span-6)                        */}
           {/* ===================================================================== */}
           <div
             id="warna-left-colorwheel"
-            className="lg:col-span-6 flex flex-col items-center justify-center h-full relative"
+            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
           >
-            {/* Color Wheel SVG Canvas */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
+            {/* Color Wheel SVG Canvas: Responsive berbasis Height (Height-First Scaling) */}
+            <div
+              className="relative flex items-center justify-center transition-all duration-300 mx-auto -translate-x-1 lg:-translate-x-2 aspect-square"
+              style={{
+                height: 'min(60vh, 520px)',
+                maxHeight: '90%',
+                maxWidth: '100%',
+                minHeight: '180px',
+                aspectRatio: '1 / 1',
+                width: 'auto'
+              }}
+            >
               <svg
-                viewBox="-160 -160 320 320"
-                className="w-full h-full drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
+                viewBox="-140 -140 280 280"
+                className="w-full h-full overflow-visible drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
               >
                 {/* 12 Segmen Roda Warna (Outline #004760) */}
                 {renderedColorSegments.map(({ hex, idx }) => {
@@ -237,35 +247,48 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
           {/* ===================================================================== */}
           {/* SISI KANAN: JUDUL-WARNA.WEBP (CENTER) + DESKRIPSI (JUSTIFY) + CARI TAHU */}
           {/* Outline kotak biru: #004760                                           */}
+          {/* Simetris lurus: Atas dengan colorwheel atas, Bawah dengan colorwheel   */}
           {/* ===================================================================== */}
           <div
             id="warna-right-content"
-            className="lg:col-span-6 flex flex-col justify-center items-center text-center pl-0 lg:pl-4"
+            className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 pl-0 lg:pl-2 my-auto"
           >
-            {/* 1. Judul Grafis 3D: judul-warna.webp (CENTERED) */}
-            <div className="w-full flex justify-center mb-3 transition-transform duration-300 hover:scale-[1.02]">
-              <img
-                src={judulWarna}
-                alt="Warna"
-                className="w-full max-w-[240px] sm:max-w-[300px] md:max-w-[360px] h-auto object-contain drop-shadow-[0_8px_16px_rgba(234,88,12,0.25)]"
-              />
-            </div>
+            {/* Container Presisi: Tinggi SAMA PERSIS dengan colorwheel (Height Bounds Match) */}
+            <div
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              style={{
+                height: 'min(60vh, 520px)',
+                maxHeight: '90%',
+                minHeight: '180px'
+              }}
+            >
+              {/* 1. Judul Grafis 3D: judul-warna.webp (SIMETRIS LURUS DENGAN COLORWHEEL ATAS) */}
+              <div className="w-full flex justify-center items-start shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                <img
+                  src={judulWarna}
+                  alt="Warna"
+                  className="w-auto max-w-[190px] sm:max-w-[260px] lg:max-w-[380px] 2xl:max-w-[450px] max-h-[14vh] lg:max-h-[17vh] 2xl:max-h-[20vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(234,88,12,0.25)]"
+                />
+              </div>
 
-            {/* 2. Paragraf Deskripsi (JUSTIFIED) */}
-            <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 leading-relaxed font-medium mb-6 max-w-xl text-justify">
-              Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
-            </p>
+              {/* 2. Paragraf Deskripsi (TENGAH / HARMONIS TANPA JARAK BERLEBIHAN) */}
+              <div className="w-full my-auto py-1 lg:py-2 flex items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-2xl">
+                <p className="text-[10px] md:text-xs lg:text-[15px] 2xl:text-base text-slate-700 leading-relaxed lg:leading-relaxed font-medium text-justify">
+                  Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
+                </p>
+              </div>
 
-            {/* 3. Button Cari Tahu (CENTERED, Outline #004760) */}
-            <div className="w-full flex justify-center">
-              <button
-                type="button"
-                onClick={handleCariTahu}
-                className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 sm:border-3 border-[#004760] shadow-[4px_4px_0px_#00354c] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#00354c] rounded-2xl px-8 sm:px-10 py-3 font-serif font-black text-sm sm:text-base uppercase tracking-wider flex items-center gap-2.5 transition-all cursor-pointer group"
-              >
-                <span>Cari Tahu</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
-              </button>
+              {/* 3. Button Cari Tahu (SIMETRIS LURUS DENGAN COLORWHEEL BAWAH) */}
+              <div className="w-full flex justify-center items-end shrink-0">
+                <button
+                  type="button"
+                  onClick={handleCariTahu}
+                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
+                >
+                  <span>Cari Tahu</span>
+                  <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -277,14 +300,14 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
       {showDeepLab && (
         <div
           id="warna-lab-modal"
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 lg:p-6 animate-fadeIn"
         >
-          <div className="bg-white rounded-3xl border-3 border-[#004760] shadow-[8px_8px_0px_#00354c] w-full max-w-4xl h-[85vh] flex flex-col justify-between p-4 sm:p-6 relative overflow-hidden">
+          <div className="bg-white rounded-3xl border-3 border-[#004760] shadow-[8px_8px_0px_#00354c] w-full max-w-4xl max-h-[90vh] h-[85vh] flex flex-col justify-between p-4 lg:p-6 relative overflow-hidden">
             {/* Header Modal */}
-            <div className="flex items-center justify-between border-b-2 border-[#004760] pb-3">
+            <div className="flex items-center justify-between border-b-2 border-[#004760] pb-3 shrink-0">
               <div className="flex items-center gap-3">
-                <img src={judulWarna} alt="Warna" className="h-8 w-auto object-contain" />
-                <h3 className="font-serif font-black text-lg sm:text-xl text-slate-900">
+                <img src={judulWarna} alt="Warna" className="h-7 lg:h-8 w-auto object-contain" />
+                <h3 className="font-serif font-black text-base lg:text-xl text-slate-900">
                   Laboratorium Eksperimen Warna
                 </h3>
               </div>
@@ -302,20 +325,20 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
             </div>
 
             {/* Isi Lab Interaktif: ColorLab */}
-            <div className="flex-1 overflow-hidden my-3">
+            <div className="flex-1 overflow-y-auto my-3 pr-1">
               <ColorLab />
             </div>
 
             {/* Footer Modal */}
-            <div className="flex items-center justify-between pt-2 border-t border-slate-200 text-xs text-slate-600">
-              <span>💡 Gunakan tombol pengubah suasana di atas untuk merasakan dampak emosi warna secara live!</span>
+            <div className="flex items-center justify-between pt-2 border-t border-slate-200 text-xs text-slate-600 shrink-0">
+              <span className="hidden lg:inline">💡 Gunakan tombol pengubah suasana di atas untuk merasakan dampak emosi warna secara live!</span>
               <button
                 type="button"
                 onClick={() => {
                   playClick();
                   setShowDeepLab(false);
                 }}
-                className="font-bold text-[#00a1db] hover:underline cursor-pointer"
+                className="font-bold text-[#00a1db] hover:underline cursor-pointer ml-auto"
               >
                 Kembali ke Pengertian Warna →
               </button>
@@ -325,7 +348,7 @@ export function WarnaIntroPage({ onBack }: WarnaIntroPageProps) {
       )}
 
       {/* Footer Area Kosong (Menjaga ruang bawah tetap rapi) */}
-      <footer className="h-6 sm:h-8 z-20 shrink-0" />
+      <footer className="h-2 lg:h-4 z-20 shrink-0" />
     </div>
   );
 }

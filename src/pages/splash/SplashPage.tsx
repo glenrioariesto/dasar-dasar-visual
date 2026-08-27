@@ -131,13 +131,13 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-6 lg:px-10 2xl:px-14 pt-6 lg:pt-10 2xl:pt-14"
+        className="w-full flex items-center justify-between z-20 shrink-0 px-4 lg:px-10 2xl:px-14 pt-3 lg:pt-8 2xl:pt-12"
       >
         <div className="flex items-center gap-3">
           <img
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-12 sm:h-16 md:h-20 lg:h-22 xl:h-26 2xl:h-28 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
+            className="h-10 lg:h-20 2xl:h-26 w-auto object-contain drop-shadow-md transition-transform hover:scale-105"
           />
         </div>
       </header>

@@ -1,10 +1,43 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Changa One', system-ui, -apple-system, sans-serif;
+  --font-display: 'Changa One', system-ui, sans-serif;
+  --font-serif: 'Changa One', Georgia, serif;
   --font-mono: 'Space Grotesk', monospace;
+  --font-changa: 'Changa One', sans-serif;
 
   --radius-3xl: 18px;
   --radius-2xl: 14px;
@@ -16,12 +49,16 @@
 
 body {
   background-color: #FAF8F5; /* Warm Ivory Paper */
-  font-family: var(--font-sans);
+  font-family: 'Changa One', var(--font-sans);
   color: #0F172A; /* Deep Slate Ink */
   user-select: none;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 /* Custom Vintage Ink Scrollbars */
