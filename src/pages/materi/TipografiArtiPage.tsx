@@ -97,11 +97,13 @@ const fontCategoryDetails: FontCategoryDetail[] = [
   }
 ];
 
+type TypoTag = 'h1' | 'h2' | 'h3' | 'h4' | 'p';
+
 export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [customText, setCustomText] = useState<string>('');
   const [letterSpacing, setLetterSpacing] = useState<number>(0);
-  const [fontSizeScale, setFontSizeScale] = useState<number>(1); // 0.75 (Kecil), 1 (Sedang), 1.25 (Besar)
+  const [activeTag, setActiveTag] = useState<TypoTag>('h2');
 
   const activeFont = fontCategoryDetails[selectedIndex];
 
@@ -110,9 +112,25 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
     setSelectedIndex(index);
   };
 
-  const handleFontSizeChange = (scale: number) => {
+  const handleTagChange = (tag: TypoTag) => {
     playClick();
-    setFontSizeScale(scale);
+    setActiveTag(tag);
+  };
+
+  // Helper scale per semantic tag
+  const getTagScale = (tag: TypoTag) => {
+    switch (tag) {
+      case 'h1':
+        return 1.3;
+      case 'h2':
+        return 1.0;
+      case 'h3':
+        return 0.85;
+      case 'h4':
+        return 0.7;
+      case 'p':
+        return 0.55;
+    }
   };
 
   return (
@@ -218,7 +236,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                   style={{
                     fontFamily: activeFont.fontFamily,
                     letterSpacing: `${letterSpacing}px`,
-                    transform: `scale(${fontSizeScale})`,
+                    transform: `scale(${getTagScale(activeTag)})`,
                     transformOrigin: 'center center'
                   }}
                   className="text-[#004760] leading-none text-4xl min-[360px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl drop-shadow-sm select-none transition-all duration-200"
@@ -251,47 +269,26 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 </p>
               </div>
 
-              {/* Bottom Bar:
-                  - Mobile (<md): Interactive Font Size Toggle (Kecil / Sedang / Besar)
-                  - Tablet & Desktop (>=md): Type-to-preview input, Kerning slider, dan Font size toggle */}
+              {/* Bottom Bar: Typographic Tags Selector (H1, H2, H3, H4, P) */}
               <div className="w-full border-t border-slate-200 pt-1 shrink-0">
-                {/* Mobile view: Interactive Size Controls */}
-                <div className="flex md:hidden items-center justify-between px-1 text-[8px] min-[360px]:text-[9px] text-slate-600 font-bold">
-                  <span className="text-[#004760]">Ukuran:</span>
+                {/* Mobile view: Tag Hierarchy Buttons */}
+                <div className="flex md:hidden items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] text-slate-600 font-bold">
+                  <span className="text-[#004760] text-[8px]">Tag:</span>
                   <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => handleFontSizeChange(0.75)}
-                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
-                        fontSizeScale === 0.75
-                          ? 'bg-[#004760] text-white border-[#004760]'
-                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                      }`}
-                    >
-                      A- (Kecil)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleFontSizeChange(1)}
-                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
-                        fontSizeScale === 1
-                          ? 'bg-[#004760] text-white border-[#004760]'
-                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                      }`}
-                    >
-                      Sedang
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleFontSizeChange(1.25)}
-                      className={`px-1.5 py-0.5 rounded border transition-all cursor-pointer ${
-                        fontSizeScale === 1.25
-                          ? 'bg-[#004760] text-white border-[#004760]'
-                          : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                      }`}
-                    >
-                      A+ (Besar)
-                    </button>
+                    {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
+                      <button
+                        key={tag}
+                        type="button"
+                        onClick={() => handleTagChange(tag)}
+                        className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                          activeTag === tag
+                            ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
+                            : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -319,7 +316,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     )}
                   </div>
 
-                  {/* Dual Controls: Kerning Slider & Font Size Scale Buttons */}
+                  {/* Dual Controls: Kerning Slider & Tag Buttons */}
                   <div className="w-full flex items-center justify-between text-[10px] text-slate-600 gap-2">
                     <div className="flex items-center gap-1 font-bold text-[#004760]">
                       <Sliders className="w-3 h-3 text-[#00a1db]" />
@@ -335,44 +332,23 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                       className="w-16 lg:w-20 accent-[#00a1db] cursor-pointer"
                     />
 
-                    {/* Desktop Size Buttons */}
+                    {/* Desktop Hierarchy Tags */}
                     <div className="flex items-center gap-1 ml-auto">
-                      <button
-                        type="button"
-                        onClick={() => handleFontSizeChange(0.75)}
-                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
-                          fontSizeScale === 0.75
-                            ? 'bg-[#004760] text-white border-[#004760]'
-                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                        }`}
-                        title="Ukuran Kecil"
-                      >
-                        A-
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleFontSizeChange(1)}
-                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
-                          fontSizeScale === 1
-                            ? 'bg-[#004760] text-white border-[#004760]'
-                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                        }`}
-                        title="Ukuran Normal"
-                      >
-                        100%
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleFontSizeChange(1.25)}
-                        className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
-                          fontSizeScale === 1.25
-                            ? 'bg-[#004760] text-white border-[#004760]'
-                            : 'bg-white text-[#004760] border-slate-300 hover:bg-sky-50'
-                        }`}
-                        title="Ukuran Besar"
-                      >
-                        A+
-                      </button>
+                      {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
+                        <button
+                          key={tag}
+                          type="button"
+                          onClick={() => handleTagChange(tag)}
+                          className={`px-1.5 py-0.5 rounded text-[9px] uppercase font-black transition-all cursor-pointer ${
+                            activeTag === tag
+                              ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
+                              : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
+                          }`}
+                          title={`Tingkat Hierarki: ${tag.toUpperCase()}`}
+                        >
+                          {tag}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 </div>
