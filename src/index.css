@@ -154,3 +154,16 @@ button, input, select, textarea {
 .animate-float {
   animation: floatMascot 4s ease-in-out infinite;
 }
+
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.hover-float:hover {
+  animation: floatSmooth 2.8s ease-in-out infinite;
+}
