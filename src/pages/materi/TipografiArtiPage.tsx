@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
-import { ArrowLeft, Home } from 'lucide-react';
+import { ArrowLeft, Home, Sliders, Sparkles } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 
@@ -92,6 +92,8 @@ const fontCategoryDetails: FontCategoryDetail[] = [
 
 export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [customText, setCustomText] = useState<string>('');
+  const [letterSpacing, setLetterSpacing] = useState<number>(0);
 
   const activeFont = fontCategoryDetails[selectedIndex];
 
@@ -180,7 +182,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
           id="tipografi-arti-grid"
           className="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 2xl:gap-8 items-center justify-center w-full h-full max-h-full my-auto"
         >
-          {/* SISI KIRI: SPESIMEN TIPOGRAFI BERSIH & RESPONSIF (col-span-6) */}
+          {/* SISI KIRI: SPESIMEN TIPOGRAFI BERSIH (TANPA HEADER BAR) */}
           <div
             id="tipografi-arti-left-container"
             className="col-span-6 flex flex-col items-center justify-center h-full w-full min-h-0 relative"
@@ -197,30 +199,26 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 width: 'auto'
               }}
             >
-              {/* Header Card */}
-              <div className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1 sm:pb-2 shrink-0">
-                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
-                  Karakter Huruf
-                </span>
-                <span className="px-2 py-0.5 rounded-full bg-[#00a1db] text-white text-[9px] sm:text-[10px] font-black tracking-wider uppercase border border-[#004760]">
-                  {activeFont.shortName}
-                </span>
-              </div>
-
               {/* Center Letterform Focus */}
               <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-2 text-center">
                 <span
-                  style={{ fontFamily: activeFont.fontFamily }}
-                  className="text-[#004760] leading-none text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-sm select-none transition-all duration-300"
+                  style={{
+                    fontFamily: activeFont.fontFamily,
+                    letterSpacing: `${letterSpacing}px`
+                  }}
+                  className="text-[#004760] leading-none text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-sm select-none transition-all duration-200"
                 >
-                  {activeFont.sampleLetter}
+                  {customText.trim() ? customText : activeFont.sampleLetter}
                 </span>
 
                 <h4
-                  style={{ fontFamily: activeFont.fontFamily }}
-                  className="font-black text-[11px] sm:text-sm lg:text-base text-slate-800 mt-1.5 sm:mt-3 leading-snug line-clamp-1"
+                  style={{
+                    fontFamily: activeFont.fontFamily,
+                    letterSpacing: `${Math.max(0, letterSpacing * 0.5)}px`
+                  }}
+                  className="font-black text-[11px] sm:text-sm lg:text-base text-slate-800 mt-2 sm:mt-3 leading-snug line-clamp-1"
                 >
-                  "{activeFont.sampleHeadline}"
+                  "{customText.trim() ? 'Pratinjau Kustom Huruf' : activeFont.sampleHeadline}"
                 </h4>
 
                 <p
@@ -231,9 +229,56 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 </p>
               </div>
 
-              {/* Bottom Quick Bar */}
-              <div className="w-full flex items-center justify-center border-t border-slate-200 pt-1 sm:pt-1.5 text-[9px] sm:text-xs text-slate-500 font-bold tracking-wider">
-                <span>Aa Bb Cc Dd 123 !?</span>
+              {/* Bottom Bar: 
+                  - Mobile: Teks alfabet ringkas
+                  - Tablet/Desktop (md: ke atas): Interactive Type-to-Preview Input & Kerning Slider */}
+              <div className="w-full border-t border-slate-200 pt-1.5 shrink-0">
+                {/* Tampilan Mobile: Simpel & Ringkas */}
+                <div className="flex md:hidden items-center justify-center text-[9px] sm:text-xs text-slate-500 font-bold tracking-wider">
+                  <span>Aa Bb Cc Dd 123 !?</span>
+                </div>
+
+                {/* Tampilan Tablet & Desktop: Kontrol Interaktif Lengkap */}
+                <div className="hidden md:flex flex-col gap-1.5">
+                  {/* Type-to-Preview Input */}
+                  <div className="w-full flex items-center gap-1.5">
+                    <input
+                      type="text"
+                      maxLength={18}
+                      value={customText}
+                      onChange={(e) => setCustomText(e.target.value)}
+                      placeholder="Ketik teks uji coba di sini..."
+                      className="flex-1 px-2 py-0.5 rounded-lg border border-[#004760] text-xs bg-slate-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#00a1db] placeholder:text-slate-400 font-sans"
+                    />
+                    {customText && (
+                      <button
+                        type="button"
+                        onClick={() => setCustomText('')}
+                        className="px-1.5 py-0.5 text-xs font-bold text-slate-500 hover:text-slate-900 cursor-pointer"
+                        title="Hapus teks"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Kerning Slider */}
+                  <div className="w-full flex items-center justify-between text-[10px] text-slate-600">
+                    <div className="flex items-center gap-1 font-bold text-[#004760]">
+                      <Sliders className="w-3 h-3 text-[#00a1db]" />
+                      <span>Kerning: {letterSpacing}px</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="-2"
+                      max="10"
+                      step="1"
+                      value={letterSpacing}
+                      onChange={(e) => setLetterSpacing(Number(e.target.value))}
+                      className="w-24 lg:w-32 accent-[#00a1db] cursor-pointer"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
