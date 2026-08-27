@@ -290,7 +290,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
           >
             <div
               id="tipografi-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-0.5 sm:py-1 gap-1.5 sm:gap-2.5 lg:gap-3.5 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-0.5 sm:py-1 gap-1.5 sm:gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
               style={{
                 height: 'min(58vh, 440px)',
                 maxHeight: '94%',
@@ -307,14 +307,14 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                   {activeFont.name.includes('(') ? (
                     <>
                       <span>{activeFont.name.split('(')[0].trim()}</span>
-                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
+                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal -mt-0.5">
                         ({activeFont.name.split('(')[1]}
                       </span>
                     </>
                   ) : activeFont.name.includes('/') ? (
                     <>
                       <span>{activeFont.name.split('/')[0].trim()}</span>
-                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal mt-0.5">
+                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal -mt-0.5">
                         / {activeFont.name.split('/')[1].trim()}
                       </span>
                     </>
@@ -327,11 +327,11 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               {/* 2. Paragraf Deskripsi & Karakteristik */}
               <div
                 id="tipografi-arti-desc-wrapper"
-                className="w-full flex flex-col items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-3xl px-1 sm:px-2 my-auto"
+                className="w-full flex flex-col items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-3xl px-1 sm:px-2"
               >
                 <p
                   id="tipografi-arti-description"
-                  className="text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-1 sm:mb-2 lg:mb-3 2xl:mb-4"
+                  className="text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-1.5 sm:mb-2 lg:mb-3 2xl:mb-4"
                 >
                   {activeFont.description}
                 </p>
@@ -352,9 +352,6 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                   ))}
                 </div>
               </div>
-
-              {/* Area bawah spacer simetris */}
-              <div className="h-0.5 sm:h-1 lg:h-2 shrink-0" />
             </div>
           </div>
         </div>
