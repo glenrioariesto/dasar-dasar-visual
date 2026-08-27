@@ -1,4 +1,4 @@
-export type MateriId = 'warna' | 'tipografi' | 'ruang-kosong' | 'keseimbangan' | 'kesimpulan';
+export type MateriId = 'warna' | 'tipografi' | 'ruang-kosong' | 'keseimbangan' | 'contoh-desain';
 
 export interface SubMateri {
   id: string;

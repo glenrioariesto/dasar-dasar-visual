@@ -326,19 +326,19 @@ export const allMateris: Record<MateriId, MateriData> = {
     ]
   },
 
-  'kesimpulan': {
-    id: 'kesimpulan',
+  'contoh-desain': {
+    id: 'contoh-desain',
     orderNumber: '05',
-    title: 'Kesimpulan',
-    englishTitle: 'Summary & Synthesis',
-    iconName: 'Award',
-    tagline: 'Harmoni dari 4 elemen dasar visual: Warna, Tipografi, Ruang Kosong, dan Keseimbangan.',
-    themeColor: '#0284C7',
+    title: 'Contoh Desain',
+    englishTitle: 'Design Showcase & Case Studies',
+    iconName: 'Layout',
+    tagline: 'Harmoni dari 4 elemen dasar visual dalam ragam poster karya nyata.',
+    themeColor: '#00a1db',
     themeBg: '#F0F9FF',
     themeBorder: '#7DD3FC',
     badgeColor: 'bg-sky-100 text-sky-800 border-sky-300',
     shotImageHero: shotConclusion,
-    summary: 'Rangkuman lengkap bagaimana keempat elemen bekerja bersama untuk menciptakan karya yang efektif dan memukau.',
+    summary: 'Rangkuman lengkap dan studi kasus bagaimana keempat elemen berpadu harmonis dalam poster nyata.',
     subMateriList: [
       {
         id: 'harmoni-4-pilar',
@@ -384,3 +384,5 @@ export const allMateris: Record<MateriId, MateriData> = {
     ]
   }
 };
+
+(allMateris as any)['kesimpulan'] = allMateris['contoh-desain'];

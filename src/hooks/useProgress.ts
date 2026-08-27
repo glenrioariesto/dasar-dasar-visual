@@ -9,14 +9,14 @@ const defaultProgress: UserProgress = {
     'tipografi': false,
     'ruang-kosong': false,
     'keseimbangan': false,
-    'kesimpulan': false
+    'contoh-desain': false
   },
   exploredLabs: {
     'warna': false,
     'tipografi': false,
     'ruang-kosong': false,
     'keseimbangan': false,
-    'kesimpulan': false
+    'contoh-desain': false
   }
 };
 
