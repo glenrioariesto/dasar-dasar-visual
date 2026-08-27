@@ -259,31 +259,40 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
           >
             <div
               id="ruang-kosong-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-0.5 sm:py-1 gap-1.5 sm:gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
               style={{
                 height: 'min(58vh, 440px)',
-                maxHeight: '90%',
-                minHeight: '180px'
+                maxHeight: '94%',
+                minHeight: '140px'
               }}
             >
-              {/* 1. Judul Prinsip */}
+              {/* 1. Judul Prinsip (Baris 1: Nama Utama, Baris 2: Makna/Keterangan) */}
               <div id="ruang-kosong-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
                 <h2
                   id="ruang-kosong-arti-title-text"
-                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
+                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
                 >
-                  {activePrinciple.name}
+                  {activePrinciple.name.includes('(') ? (
+                    <>
+                      <span>{activePrinciple.name.split('(')[0].trim()}</span>
+                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal -mt-0.5">
+                        ({activePrinciple.name.split('(')[1]}
+                      </span>
+                    </>
+                  ) : (
+                    activePrinciple.name
+                  )}
                 </h2>
               </div>
 
               {/* 2. Paragraf Deskripsi & Karakteristik */}
               <div
                 id="ruang-kosong-arti-desc-wrapper"
-                className="w-full flex flex-col items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-3xl px-1 sm:px-2 my-auto"
+                className="w-full flex flex-col items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-3xl px-1 sm:px-2"
               >
                 <p
                   id="ruang-kosong-arti-description"
-                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-2 sm:mb-2.5 lg:mb-3 2xl:mb-4"
+                  className="text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs md:text-sm lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify mb-1.5 sm:mb-2 lg:mb-3 2xl:mb-4"
                 >
                   {activePrinciple.description}
                 </p>
@@ -304,9 +313,6 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   ))}
                 </div>
               </div>
-
-              {/* Area bawah spacer simetris */}
-              <div className="h-1 lg:h-2 shrink-0" />
             </div>
           </div>
         </div>
