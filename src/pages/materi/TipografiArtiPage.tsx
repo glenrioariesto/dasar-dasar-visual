@@ -16,6 +16,7 @@ interface FontCategoryDetail {
   fontFamily: string;
   sampleLetter: string;
   sampleHeadline: string;
+  mobileShortHeadline: string;
   sampleSentence: string;
   description: string;
   traits: string[];
@@ -29,6 +30,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: 'Playfair Display, Georgia, serif',
     sampleLetter: 'Aa',
     sampleHeadline: 'Wibawa & Keanggunan Klasik',
+    mobileShortHeadline: 'Klasik & Elegan',
     sampleSentence: 'Huruf dengan sirip kait di setiap ujung guratan garis memberi panduan alur membaca yang nyaman.',
     description: 'Huruf dengan kait atau sirip kecil di setiap ujung guratan garis. Menghadirkan wibawa, keanggunan klasik, dan kesan terpercaya. Sangat ideal untuk media cetak panjang seperti buku, novel, dan koran karena sirip huruf membantu memandu alur mata pembaca.',
     traits: ['Klasik', 'Formal', 'Terpercaya', 'Buku & Koran']
@@ -40,6 +42,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: 'Plus Jakarta Sans, Inter, sans-serif',
     sampleLetter: 'Gg',
     sampleHeadline: 'Kejernihan Antarmuka Digital',
+    mobileShortHeadline: 'Modern & Jernih',
     sampleSentence: 'Garis bersih tanpa sirip membuat teks sangat jernih dan mudah dibaca pada berbagai ukuran layar ponsel.',
     description: 'Huruf tanpa sirip dengan ujung garis yang bersih, geometris, dan proporsional. Memberikan kesan modern, jernih, dan ramah pengguna. Pilihan utama untuk layar digital, aplikasi ponsel, website, dan teks instruksi karena keterbacaannya yang sangat tinggi.',
     traits: ['Modern', 'Minimalis', 'Jernih', 'Antarmuka Digital']
@@ -51,6 +54,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: "'Changa One', Impact, sans-serif",
     sampleLetter: 'Qq',
     sampleHeadline: 'Fokus Perhatian Utama',
+    mobileShortHeadline: 'Karakter Kuat & Tebal',
     sampleSentence: 'Dirancang berani dan atraktif untuk langsung memikat pandangan pertama penonton acara.',
     description: 'Ragam huruf yang dirancang khusus untuk ukuran besar guna memikat pandangan seketika. Memiliki kepribadian yang ekspresif, tebal, dan berkarakter kuat. Digunakan eksklusif untuk judul utama, poster acara, atau logo desain.',
     traits: ['Atraktif', 'Berani', 'Ekspresif', 'Judul & Poster']
@@ -62,6 +66,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: 'Courier New, monospace',
     sampleLetter: 'Mm',
     sampleHeadline: 'Presisi Kode & Mesin Tik',
+    mobileShortHeadline: 'Presisi & Rapi',
     sampleSentence: 'Setiap huruf menempati ruang horizontal yang persis sama, menciptakan kesan teknis dan teratur.',
     description: 'Setiap karakter huruf memiliki lebar horizontal yang persis sama. Memberikan nuansa teknis, presisi, dan retro komputer seperti mesin ketik atau kode pemrograman. Sangat efektif untuk data tabular, angka keuangan, atau desain bertema futuristik.',
     traits: ['Presisi', 'Teknis', 'Rapi', 'Data & Mesin Tik']
@@ -73,6 +78,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: 'Brush Script MT, cursive',
     sampleLetter: 'Jj',
     sampleHeadline: 'Goresan Tangan Luwes',
+    mobileShortHeadline: 'Luwes & Artistik',
     sampleSentence: 'Sentuhan personal kuas kaligrafi memancarkan nuansa kehangatan hati dan kemewahan acara istimewa.',
     description: 'Gaya tulisan tangan yang mengalir luwes dengan goresan berliku layaknya tinta kuas atau pena kaligrafi. Memancarkan kehangatan personal, kemewahan, dan sentuhan artistik. Sangat pas untuk undangan pernikahan, sertifikat kehormatan, dan kemasan produk premium.',
     traits: ['Artistik', 'Elegan', 'Personal', 'Undangan & Kemasan']
@@ -84,6 +90,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
     fontFamily: 'Rockwell, serif',
     sampleLetter: 'Kk',
     sampleHeadline: 'Ketegasan Kait Balok',
+    mobileShortHeadline: 'Tegas & Kokoh',
     sampleSentence: 'Sirip berbentuk balok persegi tebal menghadirkan kesan percaya diri yang kokoh dan berenergi.',
     description: 'Memiliki kait tebal berbentuk balok persegi yang kokoh tanpa perbedaan kontras tebal-tipis garis yang mencolok. Terkesan tegas, percaya diri, dan berdaya tahan tinggi. Populer digunakan pada poster retro, identitas kampus, serta merek olahraga.',
     traits: ['Tegas', 'Kokoh', 'Sportif', 'Poster Retro']
@@ -216,9 +223,16 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     fontFamily: activeFont.fontFamily,
                     letterSpacing: `${Math.max(0, letterSpacing * 0.5)}px`
                   }}
-                  className="font-black text-[10px] min-[360px]:text-[11px] sm:text-sm lg:text-base text-slate-800 mt-1 sm:mt-2.5 leading-snug line-clamp-1 truncate max-w-full"
+                  className="font-black text-[10px] min-[360px]:text-[11px] sm:text-sm lg:text-base text-slate-800 mt-1 sm:mt-2.5 leading-snug whitespace-nowrap text-center"
                 >
-                  "{customText.trim() ? 'Uji Coba Teks' : activeFont.sampleHeadline}"
+                  {customText.trim() ? (
+                    `"${customText}"`
+                  ) : (
+                    <>
+                      <span className="inline md:hidden">"{activeFont.mobileShortHeadline}"</span>
+                      <span className="hidden md:inline">"{activeFont.sampleHeadline}"</span>
+                    </>
+                  )}
                 </h4>
 
                 <p
