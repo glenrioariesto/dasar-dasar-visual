@@ -8,7 +8,7 @@ import { BalanceLab } from '../../components/labs/BalanceLab';
 import { SummaryLab } from '../../components/labs/SummaryLab';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Home } from 'lucide-react';
-import logoPusbuk from '../../assets/logo-pusbuk.webp';
+import logoJenama from '../../assets/logo-jenama.webp?v2';
 
 import judulWarna from '../../assets/judul-warna.webp';
 import judulTipografi from '../../assets/judul-tifografi.webp';
@@ -109,7 +109,7 @@ export function MateriPage({
           </button>
 
           <img
-            src={logoPusbuk}
+            src={logoJenama}
             alt="Logo Pusbuk"
             className="h-8 sm:h-9 w-auto object-contain drop-shadow-xs"
           />
