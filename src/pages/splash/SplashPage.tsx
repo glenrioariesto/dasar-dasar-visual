@@ -107,7 +107,7 @@ export function SplashPage({
         id="splash-header"
         className="w-full flex items-center justify-between z-20 shrink-0 px-2.5 sm:px-4 md:px-6 lg:px-8 2xl:px-10 pt-1.5 sm:pt-2 md:pt-3.5 lg:pt-4 2xl:pt-6"
       >
-        <div id="splash-logo-container" className="flex items-center gap-1.5 sm:gap-3">
+        <div id="splash-logo-container" className="flex items-center gap-1.5 sm:gap-3 translate-x-[2px] translate-y-[4px]">
           <img
             id="splash-logo-img"
             src={logoJenama}

@@ -150,7 +150,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       >
         <div
           id="tipografi-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[4px]"
         >
           <img
             id="tipografi-arti-logo-img"
@@ -162,7 +162,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
 
         <div
           id="tipografi-arti-header-actions"
-          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto"
+          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3"
         >
           {/* Tombol Beranda */}
           <button

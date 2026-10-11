@@ -246,7 +246,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
         id="warna-arti-header"
         className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-1.5 sm:pt-2 md:pt-5 lg:pt-5.5 2xl:pt-9 pointer-events-none"
       >
-        <div id="warna-arti-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto">
+        <div id="warna-arti-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[4px]">
           <img
             id="warna-arti-logo-img"
             src={logoJenama}
@@ -256,7 +256,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
         </div>
 
         {/* Buttons on top right: Roda Warna & Beranda (Digeser ke bawah di md & 2xl) */}
-        <div id="warna-arti-header-actions" className="flex items-center gap-1 sm:gap-2 lg:gap-3 pointer-events-auto">
+        <div id="warna-arti-header-actions" className="flex items-center gap-1 sm:gap-2 lg:gap-3 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3">
           <button
             id="warna-arti-btn-back"
             type="button"
