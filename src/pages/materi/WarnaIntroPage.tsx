@@ -345,10 +345,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
                   {/* Info & Progress Slider */}
                   <div className="flex-1 flex flex-col gap-0.5 min-w-0">
                     <div className="flex items-center justify-between text-[10px] sm:text-xs font-semibold text-[#00354c]">
-                      <div className="flex items-center gap-1.5 truncate">
-                        <Volume2 className={`w-3.5 h-3.5 shrink-0 ${isPlaying ? 'text-[#00a1db]' : 'text-slate-500'}`} />
-                        <span className="truncate">Penjelasan Suara</span>
-                      </div>
+                      <Volume2 className={`w-3.5 h-3.5 shrink-0 ${isPlaying ? 'text-[#00a1db]' : 'text-slate-500'}`} />
                       <span className="font-mono text-[9px] sm:text-[11px] text-slate-600 shrink-0">
                         {formatTime(currentTime)} / {formatTime(duration)}
                       </span>
