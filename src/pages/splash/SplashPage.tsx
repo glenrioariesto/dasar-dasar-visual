@@ -105,9 +105,9 @@ export function SplashPage({
       {/* ========================================================================= */}
       <header
         id="splash-header"
-        className="w-full flex items-center justify-between z-20 shrink-0 px-2.5 sm:px-4 md:px-6 lg:px-8 2xl:px-10 pt-1.5 sm:pt-2 md:pt-3.5 lg:pt-4 2xl:pt-6"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-2.5 sm:px-4 md:px-6 lg:px-8 2xl:px-10 pt-1.5 sm:pt-2 md:pt-3.5 lg:pt-4 2xl:pt-6 pointer-events-none"
       >
-        <div id="splash-logo-container" className="flex items-center gap-1.5 sm:gap-3 translate-x-[2px] translate-y-[8px]">
+        <div id="splash-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]">
           <img
             id="splash-logo-img"
             src={logoJenama}
@@ -116,6 +116,9 @@ export function SplashPage({
           />
         </div>
       </header>
+
+      {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tengah tidak tergeser */}
+      <div id="splash-header-spacer" className="w-full h-6 sm:h-8 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none" aria-hidden="true" />
 
       {/* ========================================================================= */}
       {/* LAYER 3 (z-30): CENTER HERO CANVAS (Judul Atas & Judul Bawah Dimajukan)   */}

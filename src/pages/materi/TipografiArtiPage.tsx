@@ -146,17 +146,16 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       {/* ========================================================================= */}
       <header
         id="tipografi-arti-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-1.5 sm:pt-2 md:pt-4.5 lg:pt-5 2xl:pt-8 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-2.5 sm:px-4 md:px-6 lg:px-8 2xl:px-10 pt-1.5 sm:pt-2 md:pt-3.5 lg:pt-4 2xl:pt-6 pointer-events-none"
       >
         <div
-          id="tipografi-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
+          id="tipografi-arti-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
         >
           <img
             id="tipografi-arti-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-6 sm:h-9 md:h-14 lg:h-18 2xl:h-28 w-auto object-contain drop-shadow-[0_6px_12px_rgba(56,69,91,0.45)] transition-transform hover:scale-105"
+            className="h-7 sm:h-10 md:h-14 lg:h-16 2xl:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(56,69,91,0.55)] transition-transform hover:scale-105"
           />
         </div>
 
