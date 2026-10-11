@@ -237,8 +237,8 @@ export default function App() {
       {/* Footer Copyright: Hanya tampil di halaman tanpa kontrol interaktif */}
       {!currentView.endsWith('-arti') && (
         <footer
-          className={`fixed bottom-1.5 left-0 right-0 z-40 text-center pointer-events-none select-none text-[10px] font-medium tracking-wide ${
-            currentView === 'splash' ? 'text-white/80' : 'text-slate-500/90'
+          className={`fixed bottom-1.5 left-0 right-0 z-40 text-center pointer-events-none select-none text-[10px] sm:text-xs font-['CCRegeneration','CC_Regeneration',sans-serif] tracking-wider ${
+            currentView === 'splash' ? 'text-white' : 'text-slate-600'
           }`}
         >
           Copyright 2026 Pusat Perbukuan
