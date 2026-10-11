@@ -43,20 +43,56 @@ const artiRoutes: Record<string, AppView> = {
 
 const getViewFromUrl = (): AppView => {
   if (typeof window === 'undefined') return 'splash';
-  const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
-  if (artiRoutes[path]) {
-    return artiRoutes[path];
+
+  // 1. Check Hash first (primary for GitHub Pages SPA to prevent 404 on refresh)
+  const rawHash = window.location.hash.replace(/^#\/?/, '').toLowerCase().trim();
+  if (rawHash) {
+    if (artiRoutes[rawHash]) {
+      return artiRoutes[rawHash];
+    }
+    if (validMateriIds.includes(rawHash as MateriId)) {
+      return rawHash as MateriId;
+    }
   }
-  if (validMateriIds.includes(path as MateriId)) {
-    return path as MateriId;
+
+  // 2. Check query parameter fallback (e.g. ?p=/warna)
+  try {
+    const searchParams = new URLSearchParams(window.location.search);
+    const paramRoute = searchParams.get('p') || searchParams.get('route');
+    if (paramRoute) {
+      const cleanParam = paramRoute.replace(/^\/+|\/+$/g, '').toLowerCase().trim();
+      if (artiRoutes[cleanParam]) {
+        return artiRoutes[cleanParam];
+      }
+      if (validMateriIds.includes(cleanParam as MateriId)) {
+        return cleanParam as MateriId;
+      }
+    }
+  } catch (e) {}
+
+  // 3. Check Pathname (stripping repository base path if present)
+  const pathSegments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  const filteredSegments = pathSegments.filter(s => s.toLowerCase() !== 'dasar-dasar-visual');
+  const cleanPath = filteredSegments.join('/').toLowerCase();
+
+  if (cleanPath) {
+    if (artiRoutes[cleanPath]) {
+      return artiRoutes[cleanPath];
+    }
+    if (validMateriIds.includes(cleanPath as MateriId)) {
+      return cleanPath as MateriId;
+    }
+    const lastSeg = filteredSegments[filteredSegments.length - 1]?.toLowerCase();
+    if (lastSeg) {
+      if (artiRoutes[lastSeg]) {
+        return artiRoutes[lastSeg];
+      }
+      if (validMateriIds.includes(lastSeg as MateriId)) {
+        return lastSeg as MateriId;
+      }
+    }
   }
-  const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
-  if (artiRoutes[hash]) {
-    return artiRoutes[hash];
-  }
-  if (validMateriIds.includes(hash as MateriId)) {
-    return hash as MateriId;
-  }
+
   return 'splash';
 };
 
@@ -78,12 +114,17 @@ export default function App() {
   }, []);
 
   const navigateTo = (view: AppView) => {
-    let targetPath = '/';
-    if (view !== 'splash') {
-      targetPath = `/${view}`;
-    }
-    if (window.location.pathname !== targetPath) {
-      window.history.pushState({}, '', targetPath);
+    if (view === 'splash') {
+      if (window.location.hash) {
+        // Cleanly remove hash while staying on the current base repository URL
+        const cleanPath = window.location.pathname + window.location.search;
+        window.history.pushState(null, '', cleanPath);
+      }
+    } else {
+      const targetHash = `#/${view}`;
+      if (window.location.hash !== targetHash) {
+        window.location.hash = targetHash;
+      }
     }
     setCurrentView(view);
     if (view !== 'splash') {

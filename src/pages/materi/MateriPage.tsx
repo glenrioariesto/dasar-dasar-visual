@@ -8,7 +8,7 @@ import { BalanceLab } from '../../components/labs/BalanceLab';
 import { SummaryLab } from '../../components/labs/SummaryLab';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Home } from 'lucide-react';
-import logoJenama from '../../assets/logo-jenama.webp?v2';
+import logoJenama from '../../assets/logo-jenama-primer.png';
 
 import judulWarna from '../../assets/judul-warna.webp';
 import judulTipografi from '../../assets/judul-tifografi.webp';
