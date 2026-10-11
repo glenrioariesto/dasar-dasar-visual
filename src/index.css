@@ -215,12 +215,12 @@ button, input, select, textarea {
   div[id$="-header-spacer"] {
     height: 24px !important;
   }
-  /* Logo diperbesar di mobile */
+  /* Logo diperbesar signifikan di mobile */
   img[id$="-logo-img"] {
-    height: 38px !important;
+    height: 60px !important;
   }
   div[id$="-logo-container"] {
-    transform: translate(6px, 8px) !important;
+    transform: translate(6px, 4px) !important;
   }
   header[id$="-header"] button {
     padding: 3px 10px !important;
@@ -575,10 +575,10 @@ button, input, select, textarea {
     height: 18px !important;
   }
   img[id$="-logo-img"] {
-    height: 30px !important;
+    height: 50px !important;
   }
   div[id$="-logo-container"] {
-    transform: translate(4px, 4px) !important;
+    transform: translate(4px, 2px) !important;
   }
   #app-copyright,
   footer#app-copyright {
