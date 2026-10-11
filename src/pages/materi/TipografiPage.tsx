@@ -192,10 +192,10 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               id="tipografi-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
                 maxWidth: '100%',
-                minHeight: '180px',
+                minHeight: '220px',
                 aspectRatio: '1 / 1',
                 width: 'auto'
               }}
@@ -204,7 +204,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
                 id="tipografi-left-img"
                 src={tipografiIcon}
                 alt="Ilustrasi Tipografi"
-                className="w-full h-full object-contain drop-shadow-[0_12px_24px_rgba(0,53,76,0.18)] select-none pointer-events-none"
+                className="w-full h-full object-contain scale-110 sm:scale-115 drop-shadow-[0_16px_32px_rgba(0,53,76,0.22)] select-none pointer-events-none transition-transform duration-300"
               />
             </div>
           </div>
@@ -221,9 +221,9 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               id="tipografi-content-box"
               className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
-                minHeight: '180px'
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
+                minHeight: '220px'
               }}
             >
               {/* 1. Judul Grafis 3D: judul-tifografi.webp */}
@@ -235,7 +235,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
                   id="tipografi-title-img"
                   src={judulTipografi}
                   alt="Tipografi"
-                  className="w-auto max-w-[190px] sm:max-w-[260px] lg:max-w-[380px] 2xl:max-w-[450px] max-h-[14vh] lg:max-h-[17vh] 2xl:max-h-[20vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(2,132,199,0.25)]"
+                  className="w-auto max-w-[220px] sm:max-w-[320px] lg:max-w-[440px] 2xl:max-w-[540px] max-h-[16vh] lg:max-h-[19vh] 2xl:max-h-[22vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(2,132,199,0.25)]"
                 />
               </div>
 
@@ -246,7 +246,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               >
                 <p
                   id="tipografi-description"
-                  className="text-[10px] md:text-xs lg:text-[13px] xl:text-[14px] 2xl:text-lg text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify"
+                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Tipografi adalah cara memilih, mengatur, dan menggunakan huruf dalam sebuah desain agar informasi dapat dibaca dengan jelas, mudah dipahami, dan terlihat menarik. Jenis, ukuran, ketebalan, serta jarak antarhuruf dapat memengaruhi kesan yang muncul, seperti formal, modern, santai, tegas, atau elegan. Karena itu, penggunaan tipografi perlu disesuaikan dengan pesan, tujuan, dan karakter desain agar tulisan tidak hanya terlihat bagus, tetapi juga dapat menyampaikan informasi dengan efektif.
                 </p>

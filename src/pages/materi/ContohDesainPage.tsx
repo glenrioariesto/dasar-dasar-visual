@@ -86,10 +86,10 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               id="contoh-desain-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
                 maxWidth: '100%',
-                minHeight: '180px',
+                minHeight: '220px',
                 aspectRatio: '1 / 1',
                 width: 'auto'
               }}
@@ -98,7 +98,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
                 id="contoh-desain-left-img"
                 src={roboHappyImg}
                 alt="Contoh Desain & Karya Nyata"
-                className="w-full h-full object-contain drop-shadow-[0_12px_24px_rgba(0,53,76,0.18)] select-none pointer-events-none"
+                className="w-full h-full object-contain scale-120 sm:scale-125 drop-shadow-[0_16px_32px_rgba(0,53,76,0.22)] select-none pointer-events-none transition-transform duration-300"
               />
             </div>
           </div>
@@ -112,9 +112,9 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               id="contoh-desain-content-box"
               className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
-                minHeight: '180px'
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
+                minHeight: '220px'
               }}
             >
               {/* 1. Judul Halaman */}
@@ -122,10 +122,10 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
                 id="contoh-desain-title-wrapper"
                 className="w-full flex flex-col items-center shrink-0 transition-transform duration-300 hover:scale-[1.02]"
               >
-                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-2">
+                <span className="font-serif font-black text-[10px] sm:text-xs lg:text-sm 2xl:text-base text-[#004760] uppercase tracking-widest px-3 sm:px-4 py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-2">
                   Studi Kasus Karya Nyata
                 </span>
-                <h1 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#004760] uppercase tracking-tight drop-shadow-sm">
+                <h1 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-[#004760] uppercase tracking-tight drop-shadow-sm">
                   Contoh Desain
                 </h1>
               </div>
@@ -137,16 +137,35 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               >
                 <p
                   id="contoh-desain-description"
-                  className="text-[10px] md:text-xs lg:text-[13px] xl:text-[14px] 2xl:text-lg text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify"
+                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Penguasaan empat pilar dasar desain—Warna, Tipografi, Ruang Kosong, dan Keseimbangan—adalah kunci utama dalam menghasilkan karya visual yang tidak hanya memukau, tetapi juga mampu mengomunikasikan pesan dengan jelas, efektif, dan meninggalkan kesan mendalam bagi audiens. Lihat bagaimana prinsip-prinsip ini berpadu harmonis dalam ragam poster karya nyata.
                 </p>
               </div>
 
+              {/* 4 Pilar Dasar Desain Badges */}
+              <div
+                id="contoh-desain-pillars"
+                className="w-full flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0 py-0.5"
+              >
+                <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl border-1.5 sm:border-2 border-[#004760] bg-amber-50 text-amber-900 font-serif font-black text-[10px] sm:text-xs lg:text-sm shadow-[1.5px_1.5px_0px_#00354c]">
+                  🎨 Warna
+                </span>
+                <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl border-1.5 sm:border-2 border-[#004760] bg-sky-50 text-sky-900 font-serif font-black text-[10px] sm:text-xs lg:text-sm shadow-[1.5px_1.5px_0px_#00354c]">
+                  🔤 Tipografi
+                </span>
+                <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl border-1.5 sm:border-2 border-[#004760] bg-emerald-50 text-emerald-900 font-serif font-black text-[10px] sm:text-xs lg:text-sm shadow-[1.5px_1.5px_0px_#00354c]">
+                  📐 Ruang Kosong
+                </span>
+                <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl border-1.5 sm:border-2 border-[#004760] bg-purple-50 text-purple-900 font-serif font-black text-[10px] sm:text-xs lg:text-sm shadow-[1.5px_1.5px_0px_#00354c]">
+                  ⚖️ Keseimbangan
+                </span>
+              </div>
+
               {/* 3. Button Cari Tahu */}
               <div
                 id="contoh-desain-btn-wrapper"
-                className="w-full flex justify-center items-end shrink-0"
+                className="w-full flex justify-center items-end shrink-0 pt-1"
               >
                 <button
                   id="contoh-desain-btn-cari-tahu"

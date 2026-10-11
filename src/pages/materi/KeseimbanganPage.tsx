@@ -188,10 +188,10 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
               id="keseimbangan-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
                 maxWidth: '100%',
-                minHeight: '180px',
+                minHeight: '220px',
                 aspectRatio: '1 / 1',
                 width: 'auto'
               }}
@@ -200,7 +200,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
                 id="keseimbangan-left-img"
                 src={shotBalance}
                 alt="Ilustrasi Keseimbangan"
-                className="w-full h-full object-contain drop-shadow-[0_12px_24px_rgba(0,53,76,0.18)] select-none pointer-events-none"
+                className="w-full h-full object-contain scale-120 sm:scale-125 drop-shadow-[0_16px_32px_rgba(0,53,76,0.22)] select-none pointer-events-none transition-transform duration-300"
               />
             </div>
           </div>
@@ -214,9 +214,9 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
               id="keseimbangan-content-box"
               className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(62vh, 520px)',
-                maxHeight: '94%',
-                minHeight: '180px'
+                height: 'min(68vh, 580px)',
+                maxHeight: '96%',
+                minHeight: '220px'
               }}
             >
               {/* 1. Judul Grafis 3D */}
@@ -228,7 +228,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
                   id="keseimbangan-title-img"
                   src={judulKeseimbangan}
                   alt="Keseimbangan"
-                  className="w-auto max-w-[190px] sm:max-w-[260px] lg:max-w-[380px] 2xl:max-w-[450px] max-h-[14vh] lg:max-h-[17vh] 2xl:max-h-[20vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,161,219,0.25)]"
+                  className="w-auto max-w-[260px] sm:max-w-[360px] lg:max-w-[490px] 2xl:max-w-[580px] max-h-[16vh] lg:max-h-[19vh] 2xl:max-h-[22vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,161,219,0.25)]"
                 />
               </div>
 
@@ -239,7 +239,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
               >
                 <p
                   id="keseimbangan-description"
-                  className="text-[10px] md:text-xs lg:text-[13px] xl:text-[14px] 2xl:text-lg text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify"
+                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Keseimbangan (balance) adalah prinsip menata bobot visual dari seluruh elemen desain—seperti warna, bentuk, ukuran, dan tekstur—agar karya terasa stabil, nyaman dipandang, dan tidak berat sebelah. Penataan keseimbangan yang baik menciptakan keselarasan yang memandu mata audiens menjelajahi seluruh informasi karya dengan runtut.
                 </p>
