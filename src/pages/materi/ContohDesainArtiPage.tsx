@@ -38,7 +38,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Harmoni Marun & Ruang Tenang',
     description: 'Poster ini mengaplikasikan palet warna marun elegan yang berkelas dipadukan dengan tipografi sans-serif geometris yang bersih. Ruang makro di sisi atas memberikan kelegaan visual yang membuat mata audiens fokus ke objek utama secara instan.',
     traits: ['Warna Marun', 'Tipografi Bersih', 'Ruang Lega', 'Fokus Sentral'],
-    themeColor: '#7c2234'
+    themeColor: '#e54c95'
   },
   {
     id: 'poster-2',
@@ -49,7 +49,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Kontras Berani & Tipografi Dinamis',
     description: 'Menggunakan warna kontras hangat komplementer untuk menciptakan urgensi dan daya tarik yang kuat. Ukuran font bervariasi secara terstruktur menciptakan hierarki informasi yang membimbing mata membaca dari judul ke detail acara.',
     traits: ['Palet Emas Hangat', 'Hierarki Kuat', 'Tipografi Display', 'Dinamis'],
-    themeColor: '#d97706'
+    themeColor: '#ffd801'
   },
   {
     id: 'poster-3',
@@ -60,7 +60,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Elegansi Klasik & Serif Wibawa',
     description: 'Nuansa biru samudra dan langit dipadukan dengan tata letak simetris yang tertata apik. Memberikan kesan berwibawa, segar, dan profesional untuk menyampaikan pesan visual secara jernih.',
     traits: ['Biru Samudra', 'Tata Letak Tertata', 'Ruang Napas Seimbang', 'Elegan'],
-    themeColor: '#0e84aa'
+    themeColor: '#09b9fc'
   },
   {
     id: 'poster-4',
@@ -71,7 +71,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Keseimbangan Asimetris Modern',
     description: 'Dominasi warna merah membara dipadukan dengan elemen visual asimetris yang dinamis namun tetap berbobot seimbang. Menghadirkan kesan modern, berenergi tinggi, dan memikat rasa ingin tahu pembaca.',
     traits: ['Merah Berani', 'Asimetris Seimbang', 'Energi Kuat', 'Alur Runtut'],
-    themeColor: '#b91c1c'
+    themeColor: '#f41c1c'
   },
   {
     id: 'poster-5',
@@ -82,7 +82,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Irama Warna & Ruang Mikro Presisi',
     description: 'Palet warna oranye jingga yang cerah dan hangat membangkitkan semangat. Spasi baris kalimat dan kerning huruf diatur dengan ruang mikro yang presisi sehingga pesan tetap nyaman dibaca.',
     traits: ['Jingga Hangat', 'Keterbacaan Tinggi', 'Irama Ceria', 'Struktur Tertata'],
-    themeColor: '#ea580c'
+    themeColor: '#ff8b00'
   },
   {
     id: 'poster-6',
@@ -93,7 +93,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     title: 'Sintesis Pilar Visual Terpadu',
     description: 'Nuansa hijau daun segar yang memikat merangkai keempat pilar: warna yang hidup, tipografi yang tegas, ruang kosong yang lega, dan keseimbangan visual yang kokoh menjadi satu kesatuan karya desain utuh.',
     traits: ['Hijau Segar', 'Sintesis 4 Pilar', 'Desain Utuh', 'Karya Memukau'],
-    themeColor: '#65a30d'
+    themeColor: '#93db2c'
   }
 ];
 
@@ -305,11 +305,11 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
                 } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white drop-shadow-[0_1.5px_2px_rgba(0,53,76,0.9)]">
                     {item.shortName}
                   </span>
                 ) : (
-                  <span className="font-serif font-black text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl text-white select-none">
+                  <span className="font-serif font-black text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl text-white drop-shadow-[0_1.5px_2px_rgba(0,53,76,0.9)] select-none">
                     {idx + 1}
                   </span>
                 )}

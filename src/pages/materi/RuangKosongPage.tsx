@@ -259,7 +259,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
                 {/* Audio UI Player */}
                 <div
                   id="ruang-kosong-audio-player"
-                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-sky-50/95 border-2 border-[#004760] rounded-xl lg:rounded-2xl px-3 py-1.5 sm:py-2 shadow-[2px_2px_0px_#00354c] flex items-center gap-2.5 transition-all"
+                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-sky-50/95 border-2 border-[#004760] rounded-xl lg:rounded-2xl px-3 py-1.5 sm:py-2 shadow-[2px_2px_0px_#00354c] flex items-center gap-2.5 transition-all mb-3.5 sm:mb-4.5 lg:mb-6 2xl:mb-7"
                 >
                   {/* Play / Pause Toggle Button */}
                   <button

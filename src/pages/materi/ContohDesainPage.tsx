@@ -146,7 +146,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               {/* 4 Pilar Dasar Desain Badges */}
               <div
                 id="contoh-desain-pillars"
-                className="w-full flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0 py-0.5"
+                className="w-full flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0 py-0.5 mb-3.5 sm:mb-4.5 lg:mb-6 2xl:mb-7"
               >
                 <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl border-1.5 sm:border-2 border-[#004760] bg-amber-50 text-amber-900 font-serif font-black text-[10px] sm:text-xs lg:text-sm shadow-[1.5px_1.5px_0px_#00354c]">
                   🎨 Warna
@@ -171,7 +171,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
                   id="contoh-desain-btn-cari-tahu"
                   type="button"
                   onClick={handleCariTahu}
-                  className="bg-[#0075fd] hover:bg-[#0060d0] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
+                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
                 >
                   <span>Cari Tahu</span>
                   <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" />
