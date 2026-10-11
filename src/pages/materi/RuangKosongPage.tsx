@@ -139,7 +139,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
         className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-2.5 sm:px-4 md:px-6 lg:px-8 2xl:px-10 pt-1.5 sm:pt-2 md:pt-3.5 lg:pt-4 2xl:pt-6 pointer-events-none"
       >
         <div
-          id="ruang-kosong-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
+          id="ruang-kosong-logo-container" className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[8px] translate-y-[16px]"
         >
           <img
             id="ruang-kosong-logo-img"
