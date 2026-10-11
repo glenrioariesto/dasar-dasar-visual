@@ -207,57 +207,68 @@ button, input, select, textarea {
 @media (max-height: 540px) and (orientation: landscape), (max-height: 500px) {
   /* 1. Header & Header Spacers */
   header[id$="-header"] {
-    padding-top: 2px !important;
+    padding-top: 4px !important;
     padding-bottom: 2px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
   div[id$="-header-spacer"] {
-    height: 26px !important;
+    height: 24px !important;
   }
+  /* Logo diperbesar di mobile */
   img[id$="-logo-img"] {
-    height: 22px !important;
+    height: 38px !important;
   }
   div[id$="-logo-container"] {
-    transform: translate(4px, 4px) !important;
+    transform: translate(6px, 8px) !important;
   }
   header[id$="-header"] button {
-    padding: 2px 8px !important;
-    font-size: 10px !important;
-    border-radius: 6px !important;
+    padding: 3px 10px !important;
+    font-size: 10.5px !important;
+    border-radius: 7px !important;
     transform: translateY(2px) !important;
     box-shadow: 1.5px 1.5px 0px #00354c !important;
     border-width: 1.5px !important;
   }
   header[id$="-header"] button svg {
-    width: 11px !important;
-    height: 11px !important;
+    width: 12px !important;
+    height: 12px !important;
   }
   #warna-arti-header-actions {
     transform: translateY(2px) !important;
-    gap: 4px !important;
+    gap: 6px !important;
   }
 
-  /* 2. Footer & Footer Spacers */
+  /* 2. Footer & Copyright Diperkecil */
   footer[id$="-footer"] {
-    height: 16px !important;
+    height: 14px !important;
+  }
+  #app-copyright,
+  footer#app-copyright {
+    font-size: 7px !important;
+    bottom: 2px !important;
+    letter-spacing: 0.04em !important;
   }
 
-  /* 3. Main Content Areas */
+  /* 3. Main Content Areas & Padding Layout */
   main[id$="-main-content"],
   main[id$="-center-area"] {
     padding-top: 2px !important;
     padding-bottom: 2px !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   /* 4. Sisi Kiri: Artwork Container & Wrapper */
+  #contoh-desain-arti-poster-card,
+  #warna-arti-visual-card,
+  #tipografi-arti-specimen-card,
+  div[id$="-arti-visual-card"],
   div[id$="-img-wrapper"],
   #warna-left-colorwheel > div {
-    height: min(58vh, 195px) !important;
-    min-height: 120px !important;
-    max-height: 200px !important;
+    height: min(60vh, 210px) !important;
+    min-height: 130px !important;
+    max-height: 220px !important;
   }
   
   /* Reset Scale Gambar di Mobile Landscape agar tidak meluber */
@@ -265,38 +276,37 @@ button, input, select, textarea {
     transform: scale(1) !important;
   }
 
-  /* 5. Sisi Kanan: Content Box */
+  /* 5. Sisi Kanan: Content Box Intro Pages */
   div[id$="-content-box"] {
-    height: min(64vh, 230px) !important;
-    min-height: 120px !important;
-    max-height: 240px !important;
-    gap: 3px !important;
+    height: auto !important;
+    max-height: min(66vh, 245px) !important;
+    gap: 4px !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     justify-content: center !important;
   }
 
-  /* 6. Judul Grafis 3D / Teks (Bagian Atas Konten - Diperkecil agar Tidak Terpotong) */
+  /* 6. Judul Grafis 3D / Teks */
   div[id$="-title-wrapper"] {
     margin-bottom: 0px !important;
     flex-shrink: 0 !important;
   }
   img[id$="-title-img"] {
-    max-height: 30px !important;
-    max-width: 175px !important;
+    max-height: 34px !important;
+    max-width: 190px !important;
     height: auto !important;
     width: auto !important;
   }
 
   /* Khusus Judul Halaman Contoh Desain */
   #contoh-desain-title-wrapper span {
-    font-size: 7.5px !important;
-    padding: 1px 6px !important;
+    font-size: 8px !important;
+    padding: 1px 7px !important;
     margin-bottom: 1px !important;
     border-width: 1px !important;
   }
   #contoh-desain-title-wrapper h1 {
-    font-size: 1.15rem !important;
+    font-size: 1.25rem !important;
     line-height: 1.2 !important;
   }
 
@@ -316,62 +326,64 @@ button, input, select, textarea {
 
   /* 8. Tombol & Pemutar Audio */
   div[id$="-btn-wrapper"] {
-    gap: 3px !important;
+    gap: 4px !important;
     flex-shrink: 0 !important;
   }
 
   /* Audio Player Compact */
   div[id$="-audio-player"] {
-    padding: 2px 8px !important;
+    padding: 2px 10px !important;
     gap: 6px !important;
     border-radius: 8px !important;
     border-width: 1.5px !important;
-    max-width: 290px !important;
+    max-width: 310px !important;
     height: 28px !important;
     box-shadow: 1.5px 1.5px 0px #00354c !important;
+    margin-bottom: 2px !important;
   }
   button[id$="-audio-toggle-btn"] {
-    width: 20px !important;
-    height: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
   button[id$="-audio-toggle-btn"] svg {
-    width: 10px !important;
-    height: 10px !important;
+    width: 11px !important;
+    height: 11px !important;
   }
   div[id$="-audio-player"] span {
-    font-size: 7.5px !important;
+    font-size: 8px !important;
   }
   div[id$="-audio-player"] input[type="range"] {
     height: 3px !important;
   }
   div[id$="-audio-player"] svg {
-    width: 10px !important;
-    height: 10px !important;
+    width: 11px !important;
+    height: 11px !important;
   }
 
   /* Tombol Cari Tahu Compact */
   button[id$="-btn-cari-tahu"] {
-    padding: 2px 14px !important;
-    font-size: 10px !important;
-    border-radius: 7px !important;
+    padding: 3px 16px !important;
+    font-size: 10.5px !important;
+    border-radius: 8px !important;
     border-width: 1.5px !important;
     height: 28px !important;
     box-shadow: 2px 2px 0px #00354c !important;
   }
   button[id$="-btn-cari-tahu"] svg {
-    width: 11px !important;
-    height: 11px !important;
+    width: 12px !important;
+    height: 12px !important;
   }
 
   /* Badges 4 Pilar Contoh Desain Compact */
   #contoh-desain-pillars {
-    gap: 3px !important;
+    gap: 4px !important;
     padding: 0px !important;
+    margin-bottom: 2px !important;
   }
   #contoh-desain-pillars span {
-    font-size: 8px !important;
-    padding: 1px 5px !important;
-    border-radius: 5px !important;
+    font-size: 8.5px !important;
+    padding: 1px 6px !important;
+    border-radius: 6px !important;
     border-width: 1px !important;
     box-shadow: 1px 1px 0px #00354c !important;
   }
@@ -379,23 +391,85 @@ button, input, select, textarea {
   /* ========================================================================= */
   /* HALAMAN INTERAKTIF / ARTI COMPACT                                         */
   /* ========================================================================= */
-  #warna-arti-visual-card,
-  #tipografi-arti-specimen-card,
-  div[id$="-arti-visual-card"] {
-    height: min(58vh, 195px) !important;
-    max-height: 200px !important;
-    padding: 6px !important;
-  }
-  #warna-arti-card-icon {
-    width: 60px !important;
-    height: 60px !important;
-  }
   #warna-arti-content-box,
   div[id$="-arti-content-box"] {
-    height: min(64vh, 230px) !important;
-    max-height: 240px !important;
-    gap: 3px !important;
+    height: auto !important;
+    max-height: min(68vh, 250px) !important;
+    gap: 4px !important;
     padding: 0 !important;
+    justify-content: center !important;
+  }
+  /* Interactive Visual Cards Compact Scaling */
+  #tipografi-arti-specimen-card,
+  #keseimbangan-arti-visual-card,
+  #ruang-kosong-arti-visual-card,
+  #warna-arti-visual-card {
+    height: min(60vh, 210px) !important;
+    max-height: 220px !important;
+    padding: 6px !important;
+  }
+
+  /* Tipografi Card: Gunakan mode Tag ringkas di landscape mobile */
+  #tipografi-arti-specimen-card div.flex.md\:hidden {
+    display: flex !important;
+  }
+  #tipografi-arti-specimen-card div.hidden.md\:flex {
+    display: none !important;
+  }
+  #tipografi-arti-specimen-card span.inline.md\:hidden {
+    display: inline !important;
+  }
+  #tipografi-arti-specimen-card span.hidden.md\:inline,
+  #tipografi-arti-specimen-card p.hidden.md\:block {
+    display: none !important;
+  }
+  #tipografi-arti-specimen-letter {
+    font-size: 3.2rem !important;
+    line-height: 1 !important;
+  }
+  #tipografi-arti-specimen-card h4 {
+    font-size: 11px !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Keseimbangan Card: Optimasi proporsi timbangan di landscape mobile */
+  #keseimbangan-arti-card-header {
+    padding-bottom: 2px !important;
+  }
+  #keseimbangan-arti-card-title {
+    font-size: 9px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0px !important;
+  }
+  #keseimbangan-arti-card-header span:last-child {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+  }
+  #keseimbangan-arti-seesaw-container {
+    max-width: 170px !important;
+  }
+  #keseimbangan-arti-seesaw-container .absolute.-top-10 {
+    top: -26px !important;
+    padding: 2px 4px !important;
+    border-radius: 8px !important;
+  }
+  #keseimbangan-arti-seesaw-container .absolute.-top-10 span {
+    font-size: 13px !important;
+  }
+  #keseimbangan-arti-seesaw-container .w-0.h-0 {
+    border-bottom-width: 20px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+    margin-top: 1px !important;
+  }
+  #keseimbangan-arti-seesaw-container .w-24.h-2 {
+    width: 60px !important;
+    height: 6px !important;
+  }
+  #keseimbangan-arti-card-footer {
+    padding-top: 2px !important;
+    font-size: 8px !important;
   }
   #warna-arti-title-wrapper h2,
   #tipografi-arti-title-wrapper h2,
@@ -406,31 +480,34 @@ button, input, select, textarea {
     line-height: 1.2 !important;
     margin-bottom: 1px !important;
   }
-  #tipografi-arti-title-wrapper span,
-  #ruang-kosong-arti-title-wrapper span,
-  #keseimbangan-arti-title-wrapper span,
-  #contoh-desain-arti-title-wrapper span {
+  #contoh-desain-arti-badge {
     font-size: 8px !important;
-    margin-bottom: 1px !important;
+    padding: 1px 6px !important;
+    margin-bottom: 2px !important;
   }
   p[id$="-arti-description"] {
     font-size: 9.5px !important;
     line-height: 1.34 !important;
     margin-bottom: 2px !important;
   }
+
+  /* Button Berjajar (Footer Buttons) Diperbesar di Mobile */
   footer[id$="-footer-buttons"],
   #warna-arti-footer-buttons {
     padding-top: 2px !important;
-    padding-bottom: 4px !important;
+    padding-bottom: 6px !important;
+    transform: translateY(-4px) !important;
   }
   #warna-12-buttons {
-    gap: 4px !important;
+    gap: 6px !important;
   }
   #warna-12-buttons button {
-    width: 22px !important;
-    height: 22px !important;
+    width: 32px !important;
+    height: 32px !important;
     padding: 0 !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
+    border-width: 2px !important;
+    box-shadow: 2px 2px 0px #00354c !important;
   }
   #warna-12-buttons button span {
     display: none !important;
@@ -439,65 +516,92 @@ button, input, select, textarea {
   #keseimbangan-arti-footer-buttons button,
   #ruang-kosong-arti-footer-buttons button,
   #contoh-desain-arti-footer-buttons button {
-    padding: 2px 8px !important;
-    font-size: 10px !important;
-    height: 26px !important;
-    border-radius: 8px !important;
+    padding: 4px 14px !important;
+    font-size: 11px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 10px !important;
+    border-width: 2px !important;
+    box-shadow: 2px 2px 0px #00354c !important;
   }
 
   /* ========================================================================= */
-  /* SPLASH PAGE COMPACT                                                       */
+  /* SPLASH PAGE COMPACT (Judul & Button Diperbesar)                           */
   /* ========================================================================= */
   #splash-header-spacer {
-    height: 16px !important;
+    height: 12px !important;
   }
   #splash-center-area {
-    margin-top: -4px !important;
+    margin-top: 2px !important;
   }
+  /* Judul Splash Diperbesar di Mobile */
   #splash-title-atas {
-    max-height: 18vh !important;
-    max-width: 260px !important;
+    max-height: 25vh !important;
+    max-width: 440px !important;
   }
   #splash-title-bawah {
-    max-height: 14vh !important;
-    max-width: 135px !important;
+    max-height: 19vh !important;
+    max-width: 230px !important;
   }
   #splash-footer-panel {
-    height: 20vh !important;
+    height: 22vh !important;
     padding-bottom: 16px !important;
   }
+  /* Button Berjajar Splash Diperbesar di Mobile */
   #splash-5-buttons {
-    gap: 8px !important;
+    gap: 12px !important;
   }
   #splash-5-buttons button {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 10px !important;
-    border-width: 2px !important;
-    box-shadow: 2.5px 2.5px 0px #00354c !important;
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 14px !important;
+    border-width: 2.5px !important;
+    box-shadow: 3px 3px 0px #00354c !important;
   }
   #splash-5-buttons button img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
 }
 
 /* Very short screens (Height <= 380px, e.g. 360px Android & 375px iPhone) */
 @media (max-height: 380px) and (orientation: landscape), (max-height: 380px) {
-  div[id$="-header-spacer"] {
-    height: 20px !important;
+  header[id$="-header"] {
+    padding-top: 2px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
-  footer[id$="-footer"] {
-    height: 12px !important;
+  div[id$="-header-spacer"] {
+    height: 18px !important;
+  }
+  img[id$="-logo-img"] {
+    height: 30px !important;
+  }
+  div[id$="-logo-container"] {
+    transform: translate(4px, 4px) !important;
+  }
+  #app-copyright,
+  footer#app-copyright {
+    font-size: 6.5px !important;
+    bottom: 1px !important;
+  }
+  main[id$="-main-content"],
+  main[id$="-center-area"] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
   div[id$="-img-wrapper"],
-  #warna-left-colorwheel > div {
-    height: min(56vh, 175px) !important;
-    max-height: 180px !important;
+  #warna-left-colorwheel > div,
+  #contoh-desain-arti-poster-card,
+  #warna-arti-visual-card,
+  #tipografi-arti-specimen-card,
+  div[id$="-arti-visual-card"] {
+    height: min(58vh, 185px) !important;
+    max-height: 190px !important;
   }
   img[id$="-title-img"] {
-    max-height: 26px !important;
-    max-width: 145px !important;
+    max-height: 28px !important;
+    max-width: 160px !important;
   }
   p[id$="-description"],
   p[id$="-arti-description"] {
@@ -505,28 +609,57 @@ button, input, select, textarea {
     line-height: 1.28 !important;
   }
   button[id$="-btn-cari-tahu"] {
-    height: 25px !important;
-    font-size: 9px !important;
-    padding: 2px 10px !important;
+    height: 26px !important;
+    font-size: 9.5px !important;
+    padding: 2px 12px !important;
   }
   div[id$="-audio-player"] {
-    height: 25px !important;
+    height: 26px !important;
   }
-  #splash-center-area {
-    margin-top: 0px !important;
+  /* Splash 380px */
+  #splash-title-atas {
+    max-height: 23vh !important;
+    max-width: 390px !important;
+  }
+  #splash-title-bawah {
+    max-height: 17vh !important;
+    max-width: 200px !important;
   }
   #splash-footer-panel {
-    height: 18vh !important;
-    padding-bottom: 14px !important;
+    height: 20vh !important;
+    padding-bottom: 12px !important;
+  }
+  #splash-5-buttons {
+    gap: 9px !important;
   }
   #splash-5-buttons button {
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 8px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 11px !important;
+    border-width: 2px !important;
   }
   #splash-5-buttons button img {
-    width: 20px !important;
-    height: 20px !important;
+    width: 26px !important;
+    height: 26px !important;
+  }
+  /* Arti Buttons 380px */
+  #warna-12-buttons {
+    gap: 5px !important;
+  }
+  #warna-12-buttons button {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 6px !important;
+  }
+  #tipografi-arti-footer-buttons button,
+  #keseimbangan-arti-footer-buttons button,
+  #ruang-kosong-arti-footer-buttons button,
+  #contoh-desain-arti-footer-buttons button {
+    padding: 3px 10px !important;
+    font-size: 9.5px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    border-radius: 8px !important;
   }
 }
 

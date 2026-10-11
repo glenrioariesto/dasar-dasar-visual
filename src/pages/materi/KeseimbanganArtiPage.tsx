@@ -180,8 +180,8 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
               }}
             >
               {/* Header Visualizer */}
-              <div className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1.5 sm:pb-2">
-                <span className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
+              <div id="keseimbangan-arti-card-header" className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1.5 sm:pb-2">
+                <span id="keseimbangan-arti-card-title" className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
                   Timbangan Bobot Visual
                 </span>
                 <span
@@ -217,7 +217,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
                   </div>
                 ) : (
                   /* Simetris / Asimetris: Jungkat-jungkit Timbangan */
-                  <div className="w-full max-w-[260px] flex flex-col items-center">
+                  <div id="keseimbangan-arti-seesaw-container" className="w-full max-w-[260px] flex flex-col items-center">
                     {/* Beam Jungkat-jungkit */}
                     <div
                       style={{
@@ -248,7 +248,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
               </div>
 
               {/* Bottom Quick Controls */}
-              <div className="w-full flex items-center justify-between border-t border-slate-200 pt-1.5 text-[10px] sm:text-xs text-slate-600">
+              <div id="keseimbangan-arti-card-footer" className="w-full flex items-center justify-between border-t border-slate-200 pt-1.5 text-[10px] sm:text-xs text-slate-600">
                 <span className="font-bold text-[#004760]">
                   Status: Seimbang Harmonis ✓
                 </span>

@@ -232,6 +232,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               {/* Center Letterform Focus */}
               <div className="w-full flex-1 flex flex-col items-center justify-center my-auto px-1 sm:px-2 text-center overflow-hidden">
                 <span
+                  id="tipografi-arti-specimen-letter"
                   style={{
                     fontFamily: activeFont.fontFamily,
                     letterSpacing: `${letterSpacing}px`,
