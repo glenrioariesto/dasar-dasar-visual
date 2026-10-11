@@ -193,13 +193,12 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
           >
             <div
               id="contoh-desain-arti-poster-card"
-              className="relative flex items-center justify-center transition-all duration-300 mx-auto rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-2 sm:p-3 select-none hover:scale-[1.02]"
+              className="relative flex items-center justify-center transition-all duration-300 mx-auto rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden select-none hover:scale-[1.02]"
               style={{
                 height: 'min(62vh, 520px)',
                 maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '180px',
-                aspectRatio: '3 / 4',
                 width: 'auto'
               }}
             >
@@ -207,7 +206,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
                 id="contoh-desain-arti-poster-img"
                 src={activeCase.image}
                 alt={activeCase.name}
-                className="w-full h-full object-contain rounded-xl drop-shadow-sm select-none"
+                className="w-auto h-full max-h-full object-cover block select-none"
               />
             </div>
           </div>
