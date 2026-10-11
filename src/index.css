@@ -180,6 +180,25 @@ button, input, select, textarea {
   }
 }
 
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle {
+    animation: none;
+  }
+}
+
 .hover-float:hover {
   animation: floatSmooth 2.8s ease-in-out infinite;
 }

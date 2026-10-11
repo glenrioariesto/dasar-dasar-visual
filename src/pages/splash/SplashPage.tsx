@@ -127,6 +127,11 @@ export function SplashPage({
         id="splash-center-area"
         className="z-30 flex-1 flex flex-col items-center justify-center text-center px-4 w-full max-w-6xl mx-auto -mt-12 lg:-mt-25 2xl:-mt-28 pointer-events-none select-none"
       >
+        {/* Container Judul Splash: Geser ke bawah 6px & Animasi Mengambang Pelan */}
+        <div
+          id="splash-title-container"
+          className="relative top-[6px] flex flex-col items-center justify-center animate-float-gentle will-change-transform"
+        >
         {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
         <div className="transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
           <img
@@ -145,6 +150,7 @@ export function SplashPage({
             alt="Visual"
             className="w-full max-w-[165px] xs:max-w-[200px] sm:max-w-[255px] md:max-w-[340px] lg:max-w-[420px] xl:max-w-[485px] 2xl:max-w-[550px] max-h-[22vh] h-auto object-contain"
           />
+        </div>
         </div>
       </main>
 
