@@ -118,7 +118,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
             id="ruang-kosong-arti-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-6 min-[360px]:h-7 sm:h-9 md:h-11 lg:h-16 2xl:h-22 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
+            className="h-8 sm:h-11 md:h-14 lg:h-16 xl:h-20 w-auto object-contain drop-shadow-[0_6px_12px_rgba(56,69,91,0.45)] transition-transform hover:scale-105"
           />
         </div>
 

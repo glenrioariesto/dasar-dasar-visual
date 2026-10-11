@@ -112,7 +112,7 @@ export function SplashPage({
             id="splash-logo-img"
             src={logoJenama}
             alt="Logo Kemendikdasmen"
-            className="h-7 sm:h-9 md:h-11 lg:h-18 2xl:h-24 w-auto object-contain drop-shadow-sm transition-transform hover:scale-105"
+            className="h-10 sm:h-14 md:h-16 lg:h-20 xl:h-24 2xl:h-28 w-auto object-contain drop-shadow-[0_8px_16px_rgba(56,69,91,0.55)] transition-transform hover:scale-105"
           />
         </div>
       </header>

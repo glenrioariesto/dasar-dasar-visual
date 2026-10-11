@@ -111,7 +111,7 @@ export function MateriPage({
           <img
             src={logoJenama}
             alt="Logo Pusbuk"
-            className="h-8 sm:h-9 w-auto object-contain drop-shadow-xs"
+            className="h-8 sm:h-11 md:h-14 lg:h-16 xl:h-20 w-auto object-contain drop-shadow-[0_6px_12px_rgba(56,69,91,0.45)] transition-transform hover:scale-105"
           />
 
           <div className="h-6 w-px bg-slate-300 mx-1 hidden sm:block" />
