@@ -277,16 +277,11 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
                     )}
                   </button>
 
-                  {/* Info & Progress Slider */}
-                  <div className="flex-1 flex flex-col gap-0.5 min-w-0">
-                    <div className="flex items-center justify-between text-[10px] sm:text-xs font-semibold text-[#00354c]">
-                      <Volume2 className={`w-3.5 h-3.5 shrink-0 ${isPlaying ? 'text-[#00a1db]' : 'text-slate-500'}`} />
-                      <span className="font-mono text-[9px] sm:text-[11px] text-slate-600 shrink-0">
-                        {formatTime(currentTime)} / {formatTime(duration)}
-                      </span>
-                    </div>
+                  {/* Volume Icon (Inline separator: NOT overlapping with slider thumb) */}
+                  <Volume2 className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-colors ${isPlaying ? 'text-[#00a1db]' : 'text-slate-500'}`} />
 
-                    {/* Progress Slider */}
+                  {/* Progress Slider */}
+                  <div className="flex-1 flex items-center min-w-0">
                     <input
                       id="ruang-kosong-audio-slider"
                       type="range"
@@ -301,6 +296,11 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
                       }}
                     />
                   </div>
+
+                  {/* Time Display */}
+                  <span className="font-mono text-[9px] sm:text-[11px] font-bold text-[#00354c] shrink-0 select-none">
+                    {formatTime(currentTime)} / {formatTime(duration)}
+                  </span>
 
                   {/* Animated Wave Indicator */}
                   <div className="hidden sm:flex items-center gap-0.5 h-4 px-0.5 shrink-0">
