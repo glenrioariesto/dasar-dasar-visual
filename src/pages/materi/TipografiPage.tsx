@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Volume2 } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 import judulTipografi from '../../assets/judul-tifografi.webp';
 import tipografiIcon from '../../assets/tipografi.webp';
+import tipografiAudioUrl from '../../assets/audio/tipografi.mp3';
 
 interface TipografiPageProps {
   onBack: () => void;
@@ -12,11 +13,116 @@ interface TipografiPageProps {
 }
 
 export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [duration, setDuration] = useState<number>(0);
+
+  // Inisialisasi dan putar audio narasi tipografi secara otomatis saat masuk halaman
+  useEffect(() => {
+    const audio = new Audio(tipografiAudioUrl);
+    audioRef.current = audio;
+    audio.preload = 'auto';
+
+    const handleTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
+    };
+
+    const handleLoadedMetadata = () => {
+      if (audio.duration && !isNaN(audio.duration)) {
+        setDuration(audio.duration);
+      }
+    };
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setCurrentTime(0);
+    };
+
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('ended', handleEnded);
+
+    // Otomatis langsung play saat awal masuk halaman Tipografi
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(() => {
+          setIsPlaying(false);
+          // Bila browser memblokir autoplay tanpa gesture (misal saat reload langsung),
+          // audio langsung diputar pada gesture pertama pengguna di halaman
+          const handleFirstGesture = () => {
+            if (audioRef.current && audioRef.current.paused) {
+              audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+            }
+            window.removeEventListener('pointerdown', handleFirstGesture);
+            window.removeEventListener('keydown', handleFirstGesture);
+          };
+          window.addEventListener('pointerdown', handleFirstGesture, { once: true });
+          window.addEventListener('keydown', handleFirstGesture, { once: true });
+        });
+    }
+
+    return () => {
+      audio.pause();
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('ended', handleEnded);
+      audioRef.current = null;
+    };
+  }, []);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(console.error);
+    }
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!audioRef.current) return;
+    const seekTime = parseFloat(e.target.value);
+    audioRef.current.currentTime = seekTime;
+    setCurrentTime(seekTime);
+  };
+
+  const handleRestart = () => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = 0;
+    audioRef.current.play().then(() => setIsPlaying(true)).catch(console.error);
+  };
+
+  const formatTime = (time: number) => {
+    if (isNaN(time) || time < 0) return '0:00';
+    const mins = Math.floor(time / 60);
+    const secs = Math.floor(time % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
   const handleCariTahu = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     playSynthesizerNote('unlock');
     if (onCariTahu) {
       onCariTahu();
     }
+  };
+
+  const handleBack = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    playClick();
+    onBack();
   };
 
   return (
@@ -49,10 +155,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
         <button
           id="tipografi-btn-back"
           type="button"
-          onClick={() => {
-            playClick();
-            onBack();
-          }}
+          onClick={handleBack}
           className="pointer-events-auto group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none md:translate-y-1.5 2xl:translate-y-3"
         >
           <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
@@ -150,16 +253,95 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
                 </p>
               </div>
 
-              {/* 3. Button Cari Tahu */}
+              {/* 3. Audio Narasi & Button Cari Tahu */}
               <div
                 id="tipografi-btn-wrapper"
-                className="w-full flex justify-center items-end shrink-0"
+                className="w-full flex flex-col items-center justify-end shrink-0 gap-2 lg:gap-2.5"
               >
+                {/* Audio UI Player */}
+                <div
+                  id="tipografi-audio-player"
+                  className="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-sky-50/95 border-2 border-[#004760] rounded-xl lg:rounded-2xl px-3 py-1.5 sm:py-2 shadow-[2px_2px_0px_#00354c] flex items-center gap-2.5 transition-all"
+                >
+                  {/* Play / Pause Toggle Button */}
+                  <button
+                    id="tipografi-audio-toggle-btn"
+                    type="button"
+                    onClick={togglePlay}
+                    className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full bg-[#00a1db] hover:bg-[#0bb2ef] text-white flex items-center justify-center border border-[#004760] shadow-[1px_1px_0px_#00354c] active:translate-x-[0.5px] active:translate-y-[0.5px] shrink-0 cursor-pointer transition-transform hover:scale-105"
+                    title={isPlaying ? 'Jeda Audio' : 'Putar Audio'}
+                    aria-label={isPlaying ? 'Jeda Audio' : 'Putar Audio'}
+                  >
+                    {isPlaying ? (
+                      <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
+                    ) : (
+                      <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current translate-x-0.5" />
+                    )}
+                  </button>
+
+                  {/* Info & Progress Slider */}
+                  <div className="flex-1 flex flex-col gap-0.5 min-w-0">
+                    <div className="flex items-center justify-between text-[10px] sm:text-xs font-semibold text-[#00354c]">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <Volume2 className={`w-3.5 h-3.5 shrink-0 ${isPlaying ? 'text-[#00a1db]' : 'text-slate-500'}`} />
+                        <span className="truncate">Penjelasan Suara</span>
+                      </div>
+                      <span className="font-mono text-[9px] sm:text-[11px] text-slate-600 shrink-0">
+                        {formatTime(currentTime)} / {formatTime(duration)}
+                      </span>
+                    </div>
+
+                    {/* Progress Slider */}
+                    <input
+                      id="tipografi-audio-slider"
+                      type="range"
+                      min={0}
+                      max={duration > 0 ? duration : 100}
+                      step={0.1}
+                      value={currentTime}
+                      onChange={handleSeek}
+                      className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#00a1db] focus:outline-none"
+                      style={{
+                        background: `linear-gradient(to right, #00a1db ${(currentTime / (duration || 1)) * 100}%, #cbd5e1 ${(currentTime / (duration || 1)) * 100}%)`
+                      }}
+                    />
+                  </div>
+
+                  {/* Animated Wave Indicator */}
+                  <div className="hidden sm:flex items-center gap-0.5 h-4 px-0.5 shrink-0">
+                    {[45, 90, 60, 100, 35].map((h, i) => (
+                      <span
+                        key={i}
+                        className={`w-0.5 rounded-full transition-all duration-300 ${
+                          isPlaying ? 'bg-[#00a1db] animate-pulse' : 'bg-slate-300'
+                        }`}
+                        style={{
+                          height: isPlaying ? `${h}%` : '25%',
+                          animationDelay: `${i * 120}ms`
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Restart Audio Button */}
+                  <button
+                    id="tipografi-audio-restart-btn"
+                    type="button"
+                    onClick={handleRestart}
+                    className="p-1 sm:p-1.5 text-slate-600 hover:text-[#00a1db] hover:bg-white rounded-lg transition-colors shrink-0 cursor-pointer"
+                    title="Ulangi audio dari awal"
+                    aria-label="Ulangi audio"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  </button>
+                </div>
+
+                {/* Button Cari Tahu */}
                 <button
                   id="tipografi-btn-cari-tahu"
                   type="button"
                   onClick={handleCariTahu}
-                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
+                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2 lg:py-2.5 2xl:py-3.5 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
                 >
                   <span>Cari Tahu</span>
                   <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" />

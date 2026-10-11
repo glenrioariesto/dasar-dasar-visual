@@ -3,7 +3,7 @@ import { playClick, playSynthesizerNote } from '../../utils/audio';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
-import roboHappyImg from '../../assets/images/page_11_image_9.png';
+import roboHappyImg from '../../assets/contohdesain.webp';
 
 interface ContohDesainPageProps {
   onBack: () => void;

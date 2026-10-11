@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 import judulKeseimbangan from '../../assets/judul-keseimbangan.webp';
-import shotBalance from '../../assets/images/page_9_image_7.png';
+import shotBalance from '../../assets/keseimbangan.webp';
 
 interface KeseimbanganPageProps {
   onBack: () => void;

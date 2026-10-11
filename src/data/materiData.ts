@@ -7,9 +7,9 @@ import shotWarnaIntro from '../assets/images/page_5_image_3.png';
 import shotWarnaCompare from '../assets/images/page_6_image_4.png';
 import shotTypo from '../assets/images/page_7_image_5.png';
 import shotSpace from '../assets/images/page_8_image_6.png';
-import shotBalance from '../assets/images/page_9_image_7.png';
+import shotBalance from '../assets/keseimbangan.webp';
 import shotSummary from '../assets/images/page_10_image_8.png';
-import shotConclusion from '../assets/images/page_11_image_9.png';
+import shotConclusion from '../assets/contohdesain.webp';
 
 export const robotImages = {
   shot1: shot1Img,
