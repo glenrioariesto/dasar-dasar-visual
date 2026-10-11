@@ -96,11 +96,11 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* ========================================================================= */}
       <header
         id="keseimbangan-arti-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-1.5 sm:pt-2 md:pt-5 lg:pt-5.5 2xl:pt-9 pointer-events-none"
       >
         <div
           id="keseimbangan-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto"
         >
           <img
             id="keseimbangan-arti-logo-img"
@@ -112,7 +112,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
 
         <div
           id="keseimbangan-arti-header-actions"
-          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto"
         >
           {/* Tombol Beranda */}
           <button
@@ -148,7 +148,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* SPACER ATAS */}
       <div
         id="keseimbangan-arti-header-spacer"
-        className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
+        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 

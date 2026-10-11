@@ -136,11 +136,11 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
       {/* ========================================================================= */}
       <header
         id="ruang-kosong-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-8 lg:pt-9 2xl:pt-16 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-1.5 sm:pt-2 md:pt-5 lg:pt-5.5 2xl:pt-9 pointer-events-none"
       >
         <div
           id="ruang-kosong-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto"
         >
           <img
             id="ruang-kosong-logo-img"
@@ -155,7 +155,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
           id="ruang-kosong-btn-back"
           type="button"
           onClick={handleBack}
-          className="pointer-events-auto group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none md:translate-y-1.5 2xl:translate-y-3"
+          className="pointer-events-auto group rounded-md sm:rounded-xl lg:rounded-2xl px-2.5 sm:px-4 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
         >
           <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
           <span>Beranda</span>
@@ -165,7 +165,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
       {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tidak terdorong */}
       <div
         id="ruang-kosong-header-spacer"
-        className="w-full h-6 sm:h-8 md:h-16 lg:h-18 2xl:h-28 shrink-0 pointer-events-none"
+        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 

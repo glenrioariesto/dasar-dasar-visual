@@ -108,11 +108,11 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* ========================================================================= */}
       <header
         id="ruang-kosong-arti-header"
-        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-2 sm:pt-3.5 md:pt-6 lg:pt-8 2xl:pt-14 pointer-events-none"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between z-30 px-3.5 sm:px-6 lg:px-12 2xl:px-16 pt-1.5 sm:pt-2 md:pt-4.5 lg:pt-5 2xl:pt-8 pointer-events-none"
       >
         <div
           id="ruang-kosong-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto"
         >
           <img
             id="ruang-kosong-arti-logo-img"
@@ -124,7 +124,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
 
         <div
           id="ruang-kosong-arti-header-actions"
-          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto md:translate-y-1.5 2xl:translate-y-3"
+          className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto"
         >
           {/* Tombol Beranda */}
           <button
