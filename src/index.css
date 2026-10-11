@@ -185,19 +185,16 @@ button, input, select, textarea {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-14px);
   }
 }
 
+#splash-title-container,
 .animate-float-gentle {
-  animation: floatGentle 4.5s ease-in-out infinite;
+  animation: floatGentle 3s ease-in-out infinite !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-float-gentle {
-    animation: none;
-  }
-}
+
 
 .hover-float:hover {
   animation: floatSmooth 2.8s ease-in-out infinite;

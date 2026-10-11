@@ -286,7 +286,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
       </header>
 
       {/* SPACER ATAS: Memberikan safe zone vertikal proporsional */}
-      <div id="warna-arti-header-spacer" className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none" aria-hidden="true" />
+      <div id="warna-arti-header-spacer" className="w-full h-6 sm:h-8 md:h-10 lg:h-12 2xl:h-16 shrink-0 pointer-events-none" aria-hidden="true" />
 
       {/* LAYER 2 (z-20): MAIN CONTENT (Berada di dalam safe zone SVG frame) */}
       <main

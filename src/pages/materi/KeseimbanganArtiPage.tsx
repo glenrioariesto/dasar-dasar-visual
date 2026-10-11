@@ -147,7 +147,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* SPACER ATAS */}
       <div
         id="keseimbangan-arti-header-spacer"
-        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
+        className="w-full h-6 sm:h-8 md:h-10 lg:h-12 2xl:h-16 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 

@@ -62,7 +62,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
       {/* SPACER ATAS */}
       <div
         id="contoh-desain-header-spacer"
-        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
+        className="w-full h-6 sm:h-8 md:h-10 lg:h-12 2xl:h-16 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -110,7 +110,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
           >
             <div
               id="contoh-desain-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300 -translate-y-3 sm:-translate-y-4 lg:-translate-y-6 2xl:-translate-y-8"
               style={{
                 height: 'min(68vh, 580px)',
                 maxHeight: '96%',

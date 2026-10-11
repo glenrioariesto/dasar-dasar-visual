@@ -131,6 +131,7 @@ export function SplashPage({
         <div
           id="splash-title-container"
           className="relative top-[6px] flex flex-col items-center justify-center animate-float-gentle will-change-transform"
+          style={{ animation: 'floatGentle 3s ease-in-out infinite' }}
         >
         {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
         <div className="transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
