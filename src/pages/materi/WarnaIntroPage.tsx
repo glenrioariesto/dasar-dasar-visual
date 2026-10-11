@@ -215,6 +215,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
           >
             {/* Color Wheel SVG Canvas: Responsive berbasis Height (Height-First Scaling) */}
             <div
+              id="warna-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square"
               style={{
                 height: 'min(62vh, 520px)',
@@ -295,6 +296,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
           >
             {/* Container Presisi: Tinggi SAMA PERSIS dengan colorwheel (Height Bounds Match) */}
             <div
+              id="warna-content-box"
               className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
                 height: 'min(62vh, 520px)',
