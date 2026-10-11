@@ -124,7 +124,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
       >
         <div
           id="contoh-desain-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[4px]"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
         >
           <img
             id="contoh-desain-arti-logo-img"

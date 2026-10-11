@@ -140,7 +140,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
       >
         <div
           id="keseimbangan-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[4px]"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
         >
           <img
             id="keseimbangan-logo-img"

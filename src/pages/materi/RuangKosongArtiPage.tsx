@@ -112,7 +112,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       >
         <div
           id="ruang-kosong-arti-logo-container"
-          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[4px]"
+          className="flex items-center gap-1.5 sm:gap-3 pointer-events-auto translate-x-[2px] translate-y-[8px]"
         >
           <img
             id="ruang-kosong-arti-logo-img"
