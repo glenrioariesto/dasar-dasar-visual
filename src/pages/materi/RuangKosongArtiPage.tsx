@@ -444,7 +444,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* LAYER 3 (z-30): BOTTOM PRINCIPLE SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="ruang-kosong-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8 -translate-y-3 sm:-translate-y-5 md:-translate-y-8 lg:-translate-y-12 2xl:-translate-y-16"
       >
         <div
           id="ruang-kosong-selector-buttons"
