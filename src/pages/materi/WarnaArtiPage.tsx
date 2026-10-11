@@ -286,12 +286,12 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
       </header>
 
       {/* SPACER ATAS: Memberikan safe zone vertikal proporsional */}
-      <div id="warna-arti-header-spacer" className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none" aria-hidden="true" />
+      <div id="warna-arti-header-spacer" className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none" aria-hidden="true" />
 
       {/* LAYER 2 (z-20): MAIN CONTENT (Berada di dalam safe zone SVG frame) */}
       <main
         id="warna-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="warna-arti-grid"
@@ -307,9 +307,9 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
               className="group hover-float relative flex items-center justify-center transition-all duration-500 ease-out mx-auto rounded-2xl lg:rounded-3xl hover:rounded-full border-2 sm:border-3 border-[#004760] shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] hover:shadow-[6px_14px_0px_#00354c] sm:hover:shadow-[8px_18px_0px_#00354c] hover:-translate-y-3 sm:hover:-translate-y-4 hover:scale-[1.03] cursor-pointer select-none overflow-hidden text-center p-4 sm:p-6"
               style={{
                 backgroundColor: activeColor.hex,
-                height: 'min(58vh, 440px)',
-                maxHeight: '100%',
-                width: 'min(58vh, 440px)',
+                height: 'min(62vh, 500px)',
+                maxHeight: '94%',
+                width: 'min(62vh, 500px)',
                 maxWidth: '100%',
                 aspectRatio: '1 / 1'
               }}
@@ -332,10 +332,10 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
             {/* Container Presisi: Selaras dengan Kartu Kiri */}
             <div
               id="warna-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-3xl flex flex-col justify-center items-center text-center mx-auto py-0.5 sm:py-1 gap-2 sm:gap-2.5 lg:gap-3.5 2xl:gap-5 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-3xl flex flex-col justify-center items-center text-center mx-auto py-1 sm:py-2 gap-2.5 sm:gap-3.5 lg:gap-4.5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '100%'
+                height: 'min(62vh, 500px)',
+                maxHeight: '94%'
               }}
             >
               {/* 1. Title Warna Terpilih (Besar, Bold di 2xl & Responsive) */}
@@ -382,7 +382,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
       {/* LAYER 3 (z-30): BOTTOM COLOR BUTTONS DOCK (Digeser ke atas pada md & 2xl) */}
       <footer
         id="warna-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8"
       >
         <div
           id="warna-12-buttons"

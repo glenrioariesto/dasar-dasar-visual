@@ -62,7 +62,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
       {/* SPACER ATAS */}
       <div
         id="contoh-desain-header-spacer"
-        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
+        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -71,7 +71,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
       {/* ========================================================================= */}
       <main
         id="contoh-desain-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="contoh-desain-grid"
@@ -86,8 +86,8 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               id="contoh-desain-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '180px',
                 aspectRatio: '1 / 1',
@@ -110,10 +110,10 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
           >
             <div
               id="contoh-desain-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 minHeight: '180px'
               }}
             >
@@ -152,7 +152,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
                   id="contoh-desain-btn-cari-tahu"
                   type="button"
                   onClick={handleCariTahu}
-                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
+                  className="bg-[#0075fd] hover:bg-[#0060d0] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2.5 lg:py-3.5 2xl:py-4 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
                 >
                   <span>Cari Tahu</span>
                   <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" />
@@ -164,7 +164,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
       </main>
 
       {/* Footer Area Kosong */}
-      <footer id="contoh-desain-footer" className="h-2 lg:h-4 z-20 shrink-0 pointer-events-none" />
+      <footer id="contoh-desain-footer" className="h-6 sm:h-8 md:h-10 lg:h-12 2xl:h-16 z-20 shrink-0 pointer-events-none" />
     </div>
   );
 }

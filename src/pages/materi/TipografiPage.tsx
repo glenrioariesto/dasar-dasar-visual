@@ -165,7 +165,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
       {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tidak terdorong */}
       <div
         id="tipografi-header-spacer"
-        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
+        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -175,7 +175,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
       {/* ========================================================================= */}
       <main
         id="tipografi-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="tipografi-grid"
@@ -192,8 +192,8 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               id="tipografi-img-wrapper"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto aspect-square select-none hover:scale-[1.03]"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '180px',
                 aspectRatio: '1 / 1',
@@ -219,10 +219,10 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
             {/* Container Presisi: Selaras dengan Kartu Kiri */}
             <div
               id="tipografi-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-3 sm:gap-4 lg:gap-5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 minHeight: '180px'
               }}
             >
@@ -349,7 +349,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
       </main>
 
       {/* Footer Area Kosong */}
-      <footer id="tipografi-footer" className="h-2 lg:h-4 z-20 shrink-0 pointer-events-none" />
+      <footer id="tipografi-footer" className="h-6 sm:h-8 md:h-10 lg:h-12 2xl:h-16 z-20 shrink-0 pointer-events-none" />
     </div>
   );
 }

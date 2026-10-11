@@ -159,7 +159,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* SPACER ATAS (Height-Adaptive) */}
       <div
         id="ruang-kosong-arti-header-spacer"
-        className="w-full h-5 min-[360px]:h-6 sm:h-8 md:h-12 lg:h-16 2xl:h-24 shrink-0 pointer-events-none"
+        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -168,7 +168,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* ========================================================================= */}
       <main
         id="ruang-kosong-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-3 sm:px-6 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="ruang-kosong-arti-grid"
@@ -183,7 +183,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
               id="ruang-kosong-arti-canvas-card"
               className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-xl sm:rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[3px_3px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-2 sm:p-4 lg:p-6 select-none"
               style={{
-                height: 'min(58vh, 440px)',
+                height: 'min(62vh, 520px)',
                 maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '140px',
@@ -382,9 +382,9 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
           >
             <div
               id="ruang-kosong-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-0.5 sm:py-1 gap-1.5 sm:gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 sm:py-2 gap-2 sm:gap-2.5 lg:gap-3.5 2xl:gap-5 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
+                height: 'min(62vh, 520px)',
                 maxHeight: '94%',
                 minHeight: '140px'
               }}
@@ -444,7 +444,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       {/* LAYER 3 (z-30): BOTTOM PRINCIPLE SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="ruang-kosong-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-0.5 pb-2 sm:pb-3.5 md:pb-8 lg:pb-10 2xl:pb-16"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-2 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8"
       >
         <div
           id="ruang-kosong-selector-buttons"

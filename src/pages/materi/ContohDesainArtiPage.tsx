@@ -31,14 +31,14 @@ interface PosterCaseStudy {
 const posterCaseStudies: PosterCaseStudy[] = [
   {
     id: 'poster-1',
-    name: 'Poster 1: Harmoni Alam & Ruang Tenang',
+    name: 'Poster 1: Harmoni Marun & Ruang Tenang',
     shortName: 'Poster 1',
     badge: 'STUDI KASUS #1 · POSTER 1',
     image: poster1,
-    title: 'Harmoni Alam & Ruang Tenang',
-    description: 'Poster ini mengaplikasikan palet warna hijau alami yang menyejukkan dipadukan dengan tipografi sans-serif geometris yang bersih. Ruang makro di sisi atas memberikan kelegaan visual yang membuat mata audiens fokus ke objek utama secara instan.',
-    traits: ['Warna Alami', 'Tipografi Bersih', 'Ruang Lega', 'Fokus Sentral'],
-    themeColor: '#10b981'
+    title: 'Harmoni Marun & Ruang Tenang',
+    description: 'Poster ini mengaplikasikan palet warna marun elegan yang berkelas dipadukan dengan tipografi sans-serif geometris yang bersih. Ruang makro di sisi atas memberikan kelegaan visual yang membuat mata audiens fokus ke objek utama secara instan.',
+    traits: ['Warna Marun', 'Tipografi Bersih', 'Ruang Lega', 'Fokus Sentral'],
+    themeColor: '#7c2234'
   },
   {
     id: 'poster-2',
@@ -47,9 +47,9 @@ const posterCaseStudies: PosterCaseStudy[] = [
     badge: 'STUDI KASUS #2 · POSTER 2',
     image: poster2,
     title: 'Kontras Berani & Tipografi Dinamis',
-    description: 'Menggunakan warna kontras komplementer untuk menciptakan urgensi dan daya tarik yang kuat. Ukuran font bervariasi secara terstruktur menciptakan hierarki informasi yang membimbing mata membaca dari judul ke detail acara.',
-    traits: ['Kontras Tinggi', 'Hierarki Kuat', 'Tipografi Display', 'Dinamis'],
-    themeColor: '#ea580c'
+    description: 'Menggunakan warna kontras hangat komplementer untuk menciptakan urgensi dan daya tarik yang kuat. Ukuran font bervariasi secara terstruktur menciptakan hierarki informasi yang membimbing mata membaca dari judul ke detail acara.',
+    traits: ['Palet Emas Hangat', 'Hierarki Kuat', 'Tipografi Display', 'Dinamis'],
+    themeColor: '#d97706'
   },
   {
     id: 'poster-3',
@@ -58,9 +58,9 @@ const posterCaseStudies: PosterCaseStudy[] = [
     badge: 'STUDI KASUS #3 · POSTER 3',
     image: poster3,
     title: 'Elegansi Klasik & Serif Wibawa',
-    description: 'Perpaduan font serif berkait dengan tata letak simetris formal. Memberikan kesan berwibawa, berkelas sastra tinggi, dan dapat diandalkan untuk institusi budaya dan akademik.',
-    traits: ['Serif Formal', 'Simetris Agung', 'Ruang Napas Seimbang', 'Elegan'],
-    themeColor: '#004760'
+    description: 'Nuansa biru samudra dan langit dipadukan dengan tata letak simetris yang tertata apik. Memberikan kesan berwibawa, segar, dan profesional untuk menyampaikan pesan visual secara jernih.',
+    traits: ['Biru Samudra', 'Tata Letak Tertata', 'Ruang Napas Seimbang', 'Elegan'],
+    themeColor: '#0e84aa'
   },
   {
     id: 'poster-4',
@@ -69,9 +69,9 @@ const posterCaseStudies: PosterCaseStudy[] = [
     badge: 'STUDI KASUS #4 · POSTER 4',
     image: poster4,
     title: 'Keseimbangan Asimetris Modern',
-    description: 'Elemen visual ditempatkan secara tidak simetris namun tetap seimbang melalui pengaturan bobot warna gelap di kanan bawah dan ruang kosong terang di kiri atas. Menghadirkan kesan modern dan memikat rasa ingin tahu pembaca.',
-    traits: ['Asimetris Seimbang', 'Modern', 'Warna Senada', 'Alur Runtut'],
-    themeColor: '#00a1db'
+    description: 'Dominasi warna merah membara dipadukan dengan elemen visual asimetris yang dinamis namun tetap berbobot seimbang. Menghadirkan kesan modern, berenergi tinggi, dan memikat rasa ingin tahu pembaca.',
+    traits: ['Merah Berani', 'Asimetris Seimbang', 'Energi Kuat', 'Alur Runtut'],
+    themeColor: '#b91c1c'
   },
   {
     id: 'poster-5',
@@ -80,9 +80,9 @@ const posterCaseStudies: PosterCaseStudy[] = [
     badge: 'STUDI KASUS #5 · POSTER 5',
     image: poster5,
     title: 'Irama Warna & Ruang Mikro Presisi',
-    description: 'Spasi baris kalimat dan kerning huruf diatur dengan ruang mikro yang presisi sehingga pesan panjang tetap nyaman dibaca dalam jarak pandang jauh tanpa rasa lelah pada mata.',
-    traits: ['Ruang Mikro', 'Keterbacaan Tinggi', 'Palet Hangat', 'Struktur Tertata'],
-    themeColor: '#8b5cf6'
+    description: 'Palet warna oranye jingga yang cerah dan hangat membangkitkan semangat. Spasi baris kalimat dan kerning huruf diatur dengan ruang mikro yang presisi sehingga pesan tetap nyaman dibaca.',
+    traits: ['Jingga Hangat', 'Keterbacaan Tinggi', 'Irama Ceria', 'Struktur Tertata'],
+    themeColor: '#ea580c'
   },
   {
     id: 'poster-6',
@@ -91,9 +91,9 @@ const posterCaseStudies: PosterCaseStudy[] = [
     badge: 'STUDI KASUS #6 · POSTER 6',
     image: poster6,
     title: 'Sintesis Pilar Visual Terpadu',
-    description: 'Sebuah perpaduan utuh yang merangkai keempat pilar: warna yang memikat, tipografi yang tegas, ruang kosong yang lega, dan keseimbangan visual yang kokoh menjadi satu kesatuan karya desain yang berdaya guna.',
-    traits: ['Sintesis 4 Pilar', 'Desain Utuh', 'Pesan Efektif', 'Karya Memukau'],
-    themeColor: '#f59e0b'
+    description: 'Nuansa hijau daun segar yang memikat merangkai keempat pilar: warna yang hidup, tipografi yang tegas, ruang kosong yang lega, dan keseimbangan visual yang kokoh menjadi satu kesatuan karya desain utuh.',
+    traits: ['Hijau Segar', 'Sintesis 4 Pilar', 'Desain Utuh', 'Karya Memukau'],
+    themeColor: '#65a30d'
   }
 ];
 
@@ -171,7 +171,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
       {/* SPACER ATAS */}
       <div
         id="contoh-desain-arti-header-spacer"
-        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
+        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -180,7 +180,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
       {/* ========================================================================= */}
       <main
         id="contoh-desain-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="contoh-desain-arti-grid"
@@ -195,8 +195,8 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
               id="contoh-desain-arti-poster-card"
               className="relative flex items-center justify-center transition-all duration-300 mx-auto rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-2 sm:p-3 select-none hover:scale-[1.02]"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '180px',
                 aspectRatio: '3 / 4',
@@ -219,10 +219,10 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
           >
             <div
               id="contoh-desain-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-2.5 sm:gap-3.5 lg:gap-4.5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 minHeight: '180px'
               }}
             >
@@ -271,9 +271,6 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
                   ))}
                 </div>
               </div>
-
-              {/* Area bawah spacer simetris */}
-              <div className="h-1 lg:h-2 shrink-0" />
             </div>
           </div>
         </div>
@@ -282,7 +279,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
       {/* LAYER 3 (z-30): BOTTOM POSTER SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="contoh-desain-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8"
       >
         <div
           id="contoh-desain-selector-buttons"

@@ -147,7 +147,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* SPACER ATAS */}
       <div
         id="keseimbangan-arti-header-spacer"
-        className="w-full h-5 sm:h-7 md:h-12 lg:h-14 2xl:h-20 shrink-0 pointer-events-none"
+        className="w-full h-10 sm:h-14 md:h-20 lg:h-24 2xl:h-36 shrink-0 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -156,7 +156,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* ========================================================================= */}
       <main
         id="keseimbangan-arti-main-content"
-        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-8 md:px-10 lg:px-16 2xl:px-20 py-0 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
+        className="z-20 flex-1 min-h-0 h-full w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 2xl:px-20 py-2 sm:py-3 md:py-4 lg:py-5 overflow-hidden max-w-7xl 2xl:max-w-[1600px] mx-auto"
       >
         <div
           id="keseimbangan-arti-grid"
@@ -171,8 +171,8 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
               id="keseimbangan-arti-balance-card"
               className="relative flex flex-col justify-between items-center transition-all duration-300 mx-auto aspect-square rounded-2xl lg:rounded-3xl border-2 sm:border-3 border-[#004760] bg-white shadow-[4px_4px_0px_#00354c] sm:shadow-[5px_5px_0px_#00354c] lg:shadow-[6px_6px_0px_#00354c] overflow-hidden p-3 sm:p-5 lg:p-6 select-none"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 maxWidth: '100%',
                 minHeight: '180px',
                 aspectRatio: '1 / 1',
@@ -266,10 +266,10 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
           >
             <div
               id="keseimbangan-arti-content-box"
-              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-between items-center text-center mx-auto py-1 lg:py-2 gap-2 lg:gap-3 2xl:gap-4 transition-all duration-300"
+              className="w-full max-w-xl 2xl:max-w-2xl flex flex-col justify-center items-center text-center mx-auto py-1 lg:py-2 gap-2.5 sm:gap-3.5 lg:gap-4.5 2xl:gap-6 transition-all duration-300"
               style={{
-                height: 'min(58vh, 440px)',
-                maxHeight: '90%',
+                height: 'min(62vh, 520px)',
+                maxHeight: '94%',
                 minHeight: '180px'
               }}
             >
@@ -318,9 +318,6 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
                   ))}
                 </div>
               </div>
-
-              {/* Area bawah spacer simetris */}
-              <div className="h-1 lg:h-2 shrink-0" />
             </div>
           </div>
         </div>
@@ -329,7 +326,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       {/* LAYER 3 (z-30): BOTTOM BALANCE TYPE SELECTOR DOCK (Memanjang 2 kotak saat aktif) */}
       <footer
         id="keseimbangan-arti-footer-buttons"
-        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-10 lg:pb-12 2xl:pb-20 md:-translate-y-2 2xl:-translate-y-4"
+        className="w-full z-30 shrink-0 flex items-center justify-center px-3 sm:px-6 pt-1 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 2xl:pb-8"
       >
         <div
           id="keseimbangan-selector-buttons"
