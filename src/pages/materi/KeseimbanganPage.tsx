@@ -241,7 +241,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
                   id="keseimbangan-description"
                   className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
-                  Keseimbangan (balance) adalah prinsip menata bobot visual dari seluruh elemen desain—seperti warna, bentuk, ukuran, dan tekstur—agar karya terasa stabil, nyaman dipandang, dan tidak berat sebelah. Penataan keseimbangan yang baik menciptakan keselarasan yang memandu mata audiens menjelajahi seluruh informasi karya dengan runtut.
+                  Keseimbangan adalah cara mengatur posisi, ukuran, bentuk, warna, dan jumlah elemen dalam sebuah desain agar keseluruhan tampilan terasa stabil dan nyaman dilihat. Keseimbangan membuat perhatian tidak hanya tertumpu pada satu sisi, sehingga desain terlihat lebih harmonis, teratur, dan enak dipandang. Sebuah desain tidak harus memiliki elemen yang sama persis di setiap sisi untuk terlihat seimbang, karena keseimbangan juga dapat dibuat dengan mengatur perbedaan ukuran, warna, atau posisi elemen secara tepat.
                 </p>
               </div>
 
