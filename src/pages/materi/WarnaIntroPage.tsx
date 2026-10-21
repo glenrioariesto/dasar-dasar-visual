@@ -316,7 +316,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
 
               {/* 2. Paragraf Deskripsi (TENGAH / HARMONIS TANPA JARAK BERLEBIHAN) */}
               <div id="warna-desc-wrapper" className="w-full my-auto py-1 lg:py-2 flex items-center justify-center max-w-lg lg:max-w-xl 2xl:max-w-2xl">
-                <p id="warna-description" className="text-[10px] md:text-xs lg:text-[15px] 2xl:text-lg text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify">
+                <p id="warna-description" className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed lg:leading-relaxed font-medium text-justify">
                   Warna adalah elemen visual yang digunakan untuk menciptakan suasana, menarik perhatian, dan memperkuat pesan dalam sebuah desain. Setiap warna dapat memberikan kesan yang berbeda, seperti biru yang terasa tenang, merah yang berani, atau hijau yang alami. Karena itu, pemilihan warna perlu disesuaikan dengan tujuan dan pesan yang ingin disampaikan agar desain lebih mudah dipahami dan memberikan kesan yang tepat kepada audiens.
                 </p>
               </div>

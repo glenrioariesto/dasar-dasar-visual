@@ -239,7 +239,7 @@ export function KeseimbanganPage({ onBack, onCariTahu }: KeseimbanganPageProps) 
               >
                 <p
                   id="keseimbangan-description"
-                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
+                  className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Keseimbangan adalah cara mengatur posisi, ukuran, bentuk, warna, dan jumlah elemen dalam sebuah desain agar keseluruhan tampilan terasa stabil dan nyaman dilihat. Keseimbangan membuat perhatian tidak hanya tertumpu pada satu sisi, sehingga desain terlihat lebih harmonis, teratur, dan enak dipandang. Sebuah desain tidak harus memiliki elemen yang sama persis di setiap sisi untuk terlihat seimbang, karena keseimbangan juga dapat dibuat dengan mengatur perbedaan ukuran, warna, atau posisi elemen secara tepat.
                 </p>

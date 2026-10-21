@@ -245,7 +245,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
               >
                 <p
                   id="ruang-kosong-description"
-                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
+                  className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Ruang kosong adalah area dalam sebuah desain yang sengaja dibiarkan tanpa teks, gambar, atau elemen visual lainnya untuk memberikan jarak dan ruang bernapas bagi setiap bagian desain. Ruang kosong membantu mata lebih mudah menemukan informasi penting, membuat tampilan terasa lebih rapi, nyaman, dan tidak terlalu penuh, serta dapat memperkuat fokus pada elemen utama. Ruang kosong tidak selalu berarti area berwarna putih, tetapi dapat berupa bagian kosong dengan warna atau latar apa pun selama tidak dipenuhi oleh elemen visual.
                 </p>

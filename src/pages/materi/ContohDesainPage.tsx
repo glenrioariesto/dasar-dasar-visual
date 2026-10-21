@@ -137,7 +137,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
               >
                 <p
                   id="contoh-desain-description"
-                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
+                  className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Penguasaan empat pilar dasar desain—Warna, Tipografi, Ruang Kosong, dan Keseimbangan—adalah kunci utama dalam menghasilkan karya visual yang tidak hanya memukau, tetapi juga mampu mengomunikasikan pesan dengan jelas, efektif, dan meninggalkan kesan mendalam bagi audiens. Lihat bagaimana prinsip-prinsip ini berpadu harmonis dalam ragam poster karya nyata.
                 </p>

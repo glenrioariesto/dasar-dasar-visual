@@ -246,7 +246,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
               >
                 <p
                   id="tipografi-description"
-                  className="text-xs sm:text-[13px] md:text-sm lg:text-[15px] xl:text-[16px] 2xl:text-xl text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
+                  className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
                   Tipografi adalah cara memilih, mengatur, dan menggunakan huruf dalam sebuah desain agar informasi dapat dibaca dengan jelas, mudah dipahami, dan terlihat menarik. Jenis, ukuran, ketebalan, serta jarak antarhuruf dapat memengaruhi kesan yang muncul, seperti formal, modern, santai, tegas, atau elegan. Karena itu, penggunaan tipografi perlu disesuaikan dengan pesan, tujuan, dan karakter desain agar tulisan tidak hanya terlihat bagus, tetapi juga dapat menyampaikan informasi dengan efektif.
                 </p>
